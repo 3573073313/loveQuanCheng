@@ -1,0 +1,39 @@
+<view class="qy-online-wrapper">
+    <view class="qy-online-goods-wrapper">
+        <image src="{{staticurl}}qy_detail_bg.png"></image>
+        <view class="qy-online-goods">
+            <view class="qy-online-goods-name">精美乐扣水杯水杯水杯水杯水杯水杯水杯水杯水杯水杯水杯水杯水杯水杯水杯水杯水杯水杯</view>
+            <view class="qy-online-goods-price">兑换价： 43积分</view>
+            <view class="qy-online-goods-size">规格： 500ml</view>
+        </view>
+    </view>
+    <view class="qy-online-items-wrapper">
+        <view class="qy-online-items">
+            <view class="qy-online-item">
+                <image src="{{staticurl}}index_tx.jpg"></image>
+                <view class="qy-online-item-info">
+                    <view class="qy-online-item-infot">
+                        <view style="font-size:32rpx">客服-阳阳</view>
+                        <view class="qy-online-item-time">2020-02-2 12:30</view>
+                    </view>
+                    <view class="qy-online-item-cont">尊敬的客户，您好，请问有什么可以帮助？</view>
+                </view>
+            </view>
+            <view class="qy-online-item">
+                <image src="{{staticurl}}index_tx.jpg"></image>
+                <view class="qy-online-item-info">
+                    <view class="qy-online-item-infot">
+                        <view style="font-size:32rpx">阳阳</view>
+                        <view class="qy-online-item-time">2020-02-2 12:30</view>
+                    </view>
+                    <view class="qy-online-item-cont">尊敬的客户，您好，请问有什么可以帮助？</view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="qy-online-btn">
+    <image src="{{staticurl}}zf_add.png"></image>
+    <input style="width:70%;"></input>
+    <view class="qy-online-sendtn">发送</view>
+</view>

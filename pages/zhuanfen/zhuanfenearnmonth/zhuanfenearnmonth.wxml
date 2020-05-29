@@ -1,0 +1,22 @@
+<view class="zf-usewrapper">
+    <view class="zf-usetop">
+        <view>累计赚分</view>
+        <view class="zf-usetop-det">
+            <view style="color:#C51A2A">+{{allScore}}分</view>
+        </view>
+    </view>
+    <tippage listlen="{{listLen}}"></tippage>
+    <view class="zf-use-items" style="min-height:1050rpx;">
+        <view class="zf-use-item" wx:for="{{list}}" wx:key="index">
+            <view class="zf-use-iteml">
+                <view class="zf-use-itemltop">
+                    <view class="zf-use-itemltop-type" style="background-color:#F35A03;">{{item.matter}}</view>
+                    <view style="font-size:32rpx;">{{item.projectTypeName}}</view>
+                </view>
+                <view class="zf-use-iteml-time">{{item.createDate}}</view>
+            </view>
+            <view class="zf-use-itemr-score">
+                <span style="font-size:36rpx;margin-right:4rpx;">+{{item.score}}</span>分</view>
+        </view>
+    </view>
+</view>

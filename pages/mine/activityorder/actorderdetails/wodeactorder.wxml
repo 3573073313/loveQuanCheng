@@ -1,0 +1,74 @@
+<view class="body">
+    <navigator class="order_info top" url="/pages/zhuanfen/zhuanfenorder/zhuanfenorder?id={{info.activity_id}}">
+        <image mode="aspectFill" src="{{info.activity_cover}}"></image>
+        <view class="r">
+            <view class="ord_top_name">
+       {{info.act_name}}
+      </view>
+            <view class="ord_top_place">地址：{{info.address}} ></view>
+        </view>
+    </navigator>
+    <view class="order_info date" style="height:148rpx">
+        <view class="inf_date">
+            <image src="{{imgDate}}"></image>
+            <view class="l1">日期:</view>
+            <view class="l2">{{info.star_date}}至{{info.end_date}}</view>
+        </view>
+        <view class="inf_date">
+            <image src="{{imgTime}}"></image>
+            <view class="l1">时间:</view>
+            <view class="l2">{{info.star_time}}-{{info.end_time}}</view>
+        </view>
+    </view>
+    <view class="order_info date" style="height:151rpx">
+        <view class="inf_date">
+            <image src="{{imgConcats}}"></image>
+            <view class="l1">预订联系人:</view>
+            <view class="l2">{{info.use_name}}</view>
+        </view>
+        <view class="inf_date">
+            <image src="{{imgTelephone}}"></image>
+            <view class="l1">联系人电话:</view>
+            <view class="l2">{{info.use_phone}}</view>
+        </view>
+    </view>
+    <view class="order_info tel" style="height:150rpx">
+        <view class="inf_tel0">
+            <view class="f l">订单编号：</view>
+            <view class="f r">{{info.order_sn}}</view>
+        </view>
+        <view class="inf_tel1">
+            <view class="f l">下单时间：</view>
+            <view class="f r">{{info.ordercreatdate}}</view>
+        </view>
+    </view>
+    <view class="btn redBack" wx:if="{{info.order_state=='1'}}">等待审核</view>
+    <view bindtap="clickOrder" class="btn redBack" wx:if="{{info.order_state=='2'}}">{{info.is_limit=='1'?'去使用':'去签到'}}
+  </view>
+    <view class="btn redBack" wx:if="{{info.order_state=='6'}}">已完成</view>
+    <view class="btn redBack" wx:if="{{info.order_state=='5'}}">已取消</view>
+    <view class="modal {{showModal==0?'show':'hidden'}}">
+        <view class="modal_inf">
+            <canvas canvasId="myQrcode" class="canvas-code" style="background:#fff;width: 200px;height: 200px;"></canvas>
+            <view class="nums">核销码:{{info.code}}</view>
+            <view bindtap="closehxm" class="modal_cross">×</view>
+        </view>
+    </view>
+    <view class="modal {{showModalFlag==0?'show':'hidden'}}">
+        <view class="modal_inf">
+            <view style="font-size:32rpx;font-weight:bold;">发表评价</view>
+            <view style="display:flex;flex-direction:row;align-items:center;margin-top:40rpx;">
+                <view style="margin-right:40rpx;">总体评价</view>
+                <view>
+                    <image bindtap="changeColor1" class="star-img" src="{{flag>=1?starOn:starOff}}"></image>
+                    <image bindtap="changeColor2" class="star-img" src="{{flag>=2?starOn:starOff}}"></image>
+                    <image bindtap="changeColor3" class="star-img" src="{{flag>=3?starOn:starOff}}"></image>
+                    <image bindtap="changeColor4" class="star-img" src="{{flag>=4?starOn:starOff}}"></image>
+                    <image bindtap="changeColor5" class="star-img" src="{{flag>=5?starOn:starOff}}"></image>
+                </view>
+            </view>
+            <view bindtap="surepingjia" class="sure redBack">发布</view>
+            <view bindtap="closepingjia" class="modal_cross">×</view>
+        </view>
+    </view>
+</view>

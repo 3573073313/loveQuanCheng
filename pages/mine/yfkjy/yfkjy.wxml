@@ -1,0 +1,32 @@
+<tippage listlen="{{activesLen}}"></tippage>
+<view class="mine-yfkjy-wrapper" wx:if="{{!activesLen}}">
+    <view class="mine-yfkjy-item" wx:for="{{jyList}}" wx:key="index">
+        <view class="yfkjy-time">
+            <view>反馈时间：{{item.createDate}}</view>
+            <view class="redBorderBtn" style="height: 33rpx;">{{item.feedBackType=='1'?'功能吐槽':item.feedBackType=='2'?'系统故障':'内容意见'}}</view>
+        </view>
+        <view class="yfkjy-cont">{{item.content}}</view>
+        <view class="preimg" wx:if="{{item.pictures[0]!=''&&item.pictures.length>1}}">
+            <view class="gzimgs-area" style="float:left;" wx:for="{{item.pictures}}" wx:for-index="idx" wx:for-item="img" wx:key="idx">
+                <image bindtap="previewImg" data-index="{{idx}}" data-number="{{index}}" mode="aspectFill" src="{{img}}"></image>
+            </view>
+        </view>
+        <view class="preimg" wx:if="{{item.pictures[0]!=''&&item.pictures.length==1}}">
+            <image bindtap="previewImg" data-index="{{idx}}" data-number="{{index}}" mode="widthFix" src="{{img}}" style="width:300rpx;" wx:for="{{item.pictures}}" wx:for-index="idx" wx:for-item="img" wx:key="idx"></image>
+        </view>
+        <view class="pre-video" wx:if="{{item.videos!=''&&item.videos!=null}}">
+            <video initialTime="0.01" preload="auto" src="{{item.videos[0]}}" style="border-radius:10rpx;"></video>
+        </view>
+        <view class="yfkjy-angle" wx:if="{{item.isReply=='2'}}"></view>
+        <view class="yfkjy-reply-wrapper" wx:if="{{item.isReply=='2'}}">
+            <view class="yfkjy-reply-tit">{{item.replyContent}}</view>
+            <view class="yfkjy-reply-bot">
+                <view class="yfkjy-reply-botl">
+                    <image src="{{staticurl}}index_mess_admin.png"></image>
+                    <view>系统管理员</view>
+                </view>
+                <view>{{item.updateDate}}</view>
+            </view>
+        </view>
+    </view>
+</view>

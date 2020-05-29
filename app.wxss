@@ -1,0 +1,635 @@
+view {
+    padding: 0rpx;
+    margin: 0rpx;
+    box-sizing: border-box;
+}
+
+.red {
+    color: #c70304!important;
+}
+
+.redBorder {
+    border-color: #c70304!important;
+}
+
+.redBack {
+    background: #c70304!important;
+}
+
+.yellow {
+    color: #feab17!important;
+}
+
+.yellowBorder {
+    border-color: #feab17!important;
+}
+
+.yellowBack {
+    background: #feab17!important;
+}
+
+.white {
+    color: #fff!important;
+}
+
+.whiteBack {
+    background: #fff!important;
+}
+
+.gray {
+    color: #999!important;
+}
+
+.normal {
+    font-weight: normal!important;
+}
+
+.grayBack {
+    background: #ccc!important;
+}
+
+.redBtn {
+    background: #c70304;
+    color: #fff;
+    border-radius: 5rpx;
+    width: 100%;
+    height: 80rpx;
+    line-height: 80rpx;
+    text-align: center;
+    font-size: 30rpx;
+}
+
+.radius50 {
+    border-radius: 50rpx;
+}
+
+.scoreStyle {
+    font-size: 20rpx;
+    padding: 2rpx 10rpx;
+    border-radius: 5rpx;
+    height: 30rpx;
+    display: inline-block;
+    line-height: 30rpx;
+    margin-left: 10rpx;
+    font-weight: normal;
+    vertical-align: middle;
+    color: #fff;
+    background: rgba(199,3,4,0.7);
+}
+
+page {
+    background-color: #f6f6f6;
+}
+
+cover-view {
+    white-space: pre-wrap!important;
+}
+
+.share {
+    background: #fff;
+    padding: 0;
+    height: 36rpx;
+    line-height: 36rpx;
+    color: rgb(128,128,128);
+    font-size: 24rpx;
+    display: flex;
+}
+
+.share::after {
+    border: none;
+}
+
+button::after {
+    border: none;
+}
+
+.share image {
+    width: 32rpx!important;
+    height: 32rpx!important;
+}
+
+.clearBtn {
+    background: #fff;
+    margin: 0;
+}
+
+.clearBtn::after {
+    border: none;
+}
+
+.collect {
+    width: 40rpx;
+    height: 40rpx;
+    position: absolute;
+    top: 15rpx;
+    right: 25rpx;
+    background: rgba(0,0,0,0.3);
+    border-radius: 50%;
+    padding: 15rpx;
+}
+
+movable-view {
+    pointer-events: auto;
+}
+
+movable-area {
+    pointer-events: none;
+}
+
+.more {
+    color: #666;
+    font-size: 24rpx;
+    display: flex;
+    align-items: center;
+    margin-right: -10rpx;
+}
+
+.more::after {
+    content: '〉';
+    margin-left: 10rpx;
+    margin-top: -2rpx;
+}
+
+.redBorderBtn {
+    color: #c70304;
+    border: 1rpx solid #c70304;
+    font-size: 22rpx;
+    padding: 2rpx 10rpx;
+    border-radius: 10rpx;
+    height: 22rpx;
+    display: inline-block;
+    line-height: 20rpx;
+}
+
+.redBgBtn {
+    font-size: 20rpx;
+    padding: 2rpx 10rpx;
+    border-radius: 5rpx;
+    height: 30rpx;
+    display: inline-block;
+    line-height: 30rpx;
+    margin-left: 20rpx;
+    font-weight: normal;
+    color: #fff;
+    background: #c70304;
+    vertical-align: middle;
+}
+
+.html-view image {
+    width: 100%;
+}
+
+.show {
+    display: block;
+}
+
+.hidden {
+    display: none;
+}
+
+.rel {
+    position: relative;
+    overflow: hidden;
+}
+
+.isOut {
+    position: absolute;
+    top: 8rpx;
+    left: -76rpx;
+    background: #999;
+    color: #fff;
+    font-size: 22rpx;
+    width: 100%;
+    height: 50rpx;
+    text-align: center;
+    line-height: 50rpx;
+    transform: rotate(-45deg);
+}
+
+.addressBotWay {
+    width: max-content;
+    max-width: 70%;
+    height: 40rpx;
+}
+
+.address {
+    font-size: 24rpx;
+    color: #999!important;
+    overflow: hidden;
+    height: 40rpx;
+    line-height: 40rpx;
+    display: flex;
+    align-items: center;
+    background: #ebebeb;
+    padding: 0 10rpx;
+    border-radius: 20rpx;
+}
+
+.address>image {
+    width: 7%;
+    height: 100%;
+}
+
+.addressText {
+    max-width: 93%;
+    height: 100%;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    padding-right: 10rpx;
+    padding: 0 10rpx;
+    border-radius: 20rpx;
+}
+
+.clamp1 {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+    word-break: break-word;
+}
+
+.clamp2 {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    word-break: break-word;
+}
+
+.clamp3 {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+    word-break: break-word;
+}
+
+.clamp5 {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 5;
+    overflow: hidden;
+    word-break: break-word;
+}
+
+.radioIcon {
+    width: 40rpx;
+    height: 40rpx;
+    border-radius: 50%;
+    border: 1rpx solid #e3e3e3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 20rpx;
+}
+
+.radioIcon .radioIconCon {
+    width: 50%;
+    height: 50%;
+    border-radius: 50%;
+    background: #eee;
+}
+
+.radioIconFill {
+    border-color: #3275ff;
+}
+
+.radioIconFill .radioIconCon {
+    background: #3275ff;
+}
+
+.flex {
+    display: flex;
+}
+
+.flexCenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flexXCenter {
+    display: flex;
+    justify-content: center;
+}
+
+.flexYCenter {
+    display: flex;
+    align-items: center;
+}
+
+.flexBtCenter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.flexBt {
+    display: flex;
+    justify-content: space-between;
+}
+
+.flexArCenter {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.flexEndCenter {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.ml20 {
+    margin-left: 20rpx;
+}
+
+.mt20 {
+    margin-top: 20rpx;
+}
+
+.p20 {
+    padding: 20rpx;
+}
+
+.pY20 {
+    padding: 20rpx 0;
+}
+
+.pX20 {
+    padding: 0 20rpx;
+}
+
+.mX20 {
+    margin: 0 20rpx;
+}
+
+.mY20 {
+    margin: 20rpx 0;
+}
+
+.mX10 {
+    margin: 0 10rpx;
+}
+
+.mY10 {
+    margin: 10rpx 0;
+}
+
+.indent2 {
+    text-indent: 2rem;
+}
+
+.textSpace2 {
+    letter-spacing: 2rpx;
+}
+
+.required::before {
+    content: '*';
+    color: #c70304;
+    margin-right: 10rpx;
+}
+
+.toIndex {
+    height: 100rpx;
+    line-height: 100rpx;
+    background: #c70304;
+    text-align: center;
+    width: 60%;
+    color: #fff;
+    border-radius: 50rpx;
+    margin: 90rpx auto;
+}
+
+.modalShow {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    position: fixed;
+    top: 0rpx;
+    left: 0rpx;
+    z-index: 9999999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modalShow .jftab01-modal-info-wrapper {
+    width: 80%;
+    background-color: #fff;
+    border-radius: 10rpx;
+    padding: 54rpx 50rpx;
+}
+
+.modalShow .jftab01-modal-info-tit {
+    font-size: 32rpx;
+    padding-bottom: 30rpx;
+    font-weight: bold;
+    text-align: center;
+}
+
+.modalShow .jftab01-modal-info-cont {
+    font-size: 32rpx;
+    line-height: 40rpx;
+    letter-spacing: 0.7px;
+    text-align: justify;
+    margin-bottom: 30rpx;
+}
+
+.modalShow .jftab01-modal-info-btn {
+    display: flex;
+    justify-content: space-between;
+}
+
+.modalShow .jftab01-modal-info-btn0 {
+    width: 45%;
+    height: 80rpx;
+    background-color: #f5f5f5;
+    color: #000;
+    text-align: center;
+    line-height: 80rpx;
+    border-radius: 10rpx;
+    font-size: 32rpx;
+    margin-top: 40rpx;
+}
+
+.modalShow .jftab01-modal-info-btn1 {
+    width: 45%;
+    height: 80rpx;
+    background-color: #c70304;
+    color: #fff;
+    text-align: center;
+    line-height: 80rpx;
+    border-radius: 10rpx;
+    font-size: 32rpx;
+    margin-top: 40rpx;
+}
+
+.modalYellow .jftab01-modal-info-btn1,.yellowBtn {
+    background-color: #feab17!important;
+}
+
+.indexsnap {
+    background-color: #fff;
+    padding: 25rpx 21rpx;
+    margin-bottom: 26rpx;
+}
+
+.indexsnap .content {
+    box-shadow: 0 0 7rpx 7rpx rgba(238,238,238,0.4);
+    padding: 30rpx 22rpx 0;
+    margin-bottom: 30rpx;
+    border-radius: 9rpx;
+}
+
+.indexsnap .content .item .head .headimg image {
+    width: 80rpx;
+    height: 80rpx;
+    border-radius: 50%;
+}
+
+.indexsnap .content .item .head {
+    width: 100%;
+    height: 100rpx;
+    display: flex;
+    justify-content: space-between;
+}
+
+.indexsnap .content .item .head .headimg {
+    width: 100rpx;
+    height: 80rpx;
+    position: relative;
+}
+
+.indexsnap .content .item .head .headinfo {
+}
+
+.indexsnap .content .item .head .headinfo .headinfo_name {
+    font-size: 30rpx;
+    font-weight: bold;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: #222;
+}
+
+.indexsnap .content .item .head .headinfo .headinfo_time {
+    font-size: 24rpx;
+    color: #aaa;
+    margin-top: 10rpx;
+}
+
+.indexsnap .ygz {
+    color: #666;
+    font-size: 24rpx;
+}
+
+.indexsnap .content .context {
+    margin-top: 0rpx;
+    margin-bottom: 0rpx;
+    padding-bottom: 25rpx;
+}
+
+.indexsnap .content .context text {
+    color: #333;
+    font-size: 30rpx;
+}
+
+.indexsnap .content .context .preimg {
+    width: 100%;
+    margin-top: 28rpx;
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.indexsnap .content .context .oneImg {
+    width: 400rpx;
+}
+
+.indexsnap .content .context .preimg image {
+    width: 100%;
+    height: 100%;
+    border-radius: 10rpx;
+}
+
+.indexsnap .gzimgs-area {
+    width: 31%;
+    height: 200rpx;
+    margin-right: 10rpx;
+    overflow: hidden;
+    margin-bottom: 10rpx;
+    border-radius: 10rpx;
+}
+
+.indexsnap .tools {
+    font-size: 24rpx;
+    color: #666;
+    display: flex;
+    padding-bottom: 50rpx;
+    justify-content: space-between;
+    align-items: center;
+    height: 35rpx;
+    line-height: 35rpx;
+    margin-top: 10rpx;
+    position: relative;
+}
+
+.indexsnap .addressBotWay {
+    max-width: 70%;
+    height: 40rpx;
+}
+
+.indexsnap .address,.addressText {
+}
+
+.indexsnap .toolItem {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.indexsnap .toolsl {
+    width: 56%;
+    display: flex;
+    border-bottom: 2rpx solid #f0f0f0;
+    padding-bottom: 32rpx;
+}
+
+.indexsnap .toolsl image {
+    width: 24rpx;
+    height: 29rpx;
+    margin-right: 10rpx;
+}
+
+.indexsnap .toolsc {
+    display: flex;
+    align-items: center;
+    color: rgb(128,128,128);
+    font-size: 26rpx;
+    margin-left: 30rpx;
+}
+
+.indexsnap .toolsc:first-child {
+    margin-left: 0;
+}
+
+.indexsnap .toolsc image {
+    width: 36rpx!important;
+    height: 36rpx!important;
+    margin-right: 10rpx;
+}
+
+.indexsnap .toolsr {
+    width: 32%;
+    justify-content: flex-end;
+    display: flex;
+    align-items: center;
+}
+
+.indexsnap .toolsr image {
+    width: 30rpx;
+    height: 30rpx;
+    margin-right: 10rpx;
+}

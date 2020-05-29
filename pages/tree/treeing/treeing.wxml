@@ -1,0 +1,67 @@
+<view class="page" style="height:{{windowHeight}}px">
+    <navigator class="goNavBack" hoverClass="navigator-hover" openType="navigateBack" style="top:{{top}}px">
+        <view class="navBack"></view>
+    </navigator>
+    <image class="treeingBg" mode="widthFix" src="{{staticurl}}treeingBg.png"></image>
+    <view class="user" wx:if="{{isLogin}}">
+        <view class="userImg" type="userAvatarUrl">
+            <image mode="aspectFill" src="{{member.face}}"></image>
+        </view>
+        <view type="userNickName">{{member.nickname}}</view>
+    </view>
+    <view class="flowingCloud flowingCloud{{index+1}}" wx:for="{{3}}" wx:key="unique">
+        <image mode="widthFix" src="{{staticurl}}cloud{{index+1}}.png"></image>
+    </view>
+    <view class="treeing">
+        <view class="treeGrow {{treeGrowStart?'treeGrowStart':''}} {{isWaterMore?'treeGrowEnd':''}}">
+            <image mode="widthFix" src="{{treeUrl}}"></image>
+            <view class="fruitWrap" wx:if="{{isFinish}}">
+                <view class="fruit {{index==1||index==2?'fruit1':''}} {{index==3||index==4?'fruit2':''}} {{index==5||index==0?'fruit3':''}}" wx:for="{{6}}" wx:key="unique">
+                    <image mode="widthFix" src="{{staticurl}}fruitNew.png"></image>
+                    <view class="fruitName" wx:if="{{isTextShow}}">文明果</view>
+                </view>
+            </view>
+        </view>
+        <image class="soil" mode="widthFix" src="{{staticurl}}soil.png"></image>
+    </view>
+    <view class="startTreeing">
+        <image bindtap="chooseTree" mode="widthFix" src="{{staticurl}}startTreeing.png" wx:if="{{isShowBtn}}"></image>
+        <view class="modal" wx:if="{{isChoose}}">
+            <view class="modalTitle">
+                <image class="modalTitleImg" mode="widthFix" src="{{staticurl}}treeTitleImg.png"></image>
+                <image bindtap="chooseTree" class="iconClose" src="{{staticurl}}iconClose.png"></image>
+            </view>
+            <view bindtap="seeding" class="seedWrap">
+                <image class="seedImg" mode="widthFix" src="{{staticurl}}seed.png"></image>
+                <view class="treeBtn">播种</view>
+            </view>
+        </view>
+        <view class="seedBubble" wx:if="{{isSeeding}}">
+            <image mode="widthFix" src="{{staticurl}}seedOne.png"></image>
+        </view>
+        <view class="progressBot" wx:if="{{!isShowBtn&&!isFinish}}">
+            <view class="progressBg {{treeGrowStart?'progressBgStart':''}} {{isWaterMore?'progressBgEnd':''}}" style="background:url({{staticurl}}progressBg.png);" wx:if="{{treeGrowStart||isWaterMore}}"></view>
+        </view>
+    </view>
+    <view bindtap="wateringStart" class="watering {{isHasTreeOver&&!isFinish?'show':'hidden'}}">
+        <image class="wateringCan {{isWateringStart?'isWateringStart':''}} {{isHasTreeOver?'shake':''}}" mode="widthFix" src="{{staticurl}}waterPot.png"></image>
+        <button class="wateringBtn">点我浇水</button>
+        <view class="waterMore">
+            <image class="waterMoreImg {{isWaterMore?'isWaterMore':''}}" mode="widthFix" src="{{staticurl}}waterMore.png" wx:if="{{isWaterMore}}"></image>
+        </view>
+        <audio id="wateringMp3" src="{{wateringMp3Src}}"></audio>
+    </view>
+    <view class="finishModal" wx:if="{{isModal}}">
+        <image class="finishTitle" mode="widthFix" src="{{staticurl}}finishTitle.png"></image>
+        <view class="finishHead">恭喜您植树完成</view>
+        <view class="finishContent">
+            <view>您是第
+        <text class="finishNum">{{usersTreesNum?usersTreesNum:'1'}}</text>位</view>
+            <view>参与植树的爱心人士</view>
+            <view>赠送您
+        <text class="finishNum">10</text>个文明积分</view>
+        </view>
+        <button bindtap="toIndx" class="getBtn">返回首页</button>
+        <audio id="successMp3" src="{{successMp3Src}}"></audio>
+    </view>
+</view>

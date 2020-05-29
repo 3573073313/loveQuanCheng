@@ -1,0 +1,36 @@
+<view class="nav">
+    <view bindtap="listqy" class="nav-son {{hyopen?'active':''}}" data-nav="1" style="border-right:1px solid #f0f0f0;">
+        <view class="content">{{dropDownMenuTitle[0]}}</view>
+        <view class="icon {{arrowDirec0?'':'arrow_up'}}"></view>
+    </view>
+    <view bindtap="list" class="nav-son borders {{sqopen?'active':''}}" data-nav="2">
+        <view class="content">{{dropDownMenuTitle[1]}}</view>
+        <view class="icon {{arrowDirec1?'':'arrow_up'}}"></view>
+    </view>
+</view>
+<view class="quyu {{hyopen?'show':'disappear'}}  {{clickLeft==1?'bgc':''}}">
+    <view class="qy quyu-left">
+        <view bindtap="selectleft" class="{{select1==item.id?'current':''}}" data-model="{{item}}" wx:for="{{dropDownMenuFirstData}}" wx:key="unique">
+        {{item.title}}
+      </view>
+    </view>
+    <view class="qy quyu-center">
+        <view bindtap="selectcenter" class="{{select2==item.id?'current2':''}}" data-model="{{item}}" wx:for="{{dropDownMenuDataFirstRight}}" wx:key="unique">
+        {{item.title}}
+      </view>
+    </view>
+</view>
+<view class="temp temp3 {{sqopen?'show':'disappear'}} ">
+    <view class="tempheight">
+        <view>
+            <view bindtap="selectsqitem" class="sortitem {{selectedSq==item.id?' active ':' '}}" data-model="{{item}}" wx:for="{{dropDownMenuSecondData}}" wx:key="unique"> {{item.title}}</view>
+        </view>
+    </view>
+</view>
+<view class="temp temp3 {{pxopen?'show':'disappear'}} ">
+    <view class="tempheight">
+        <view>
+            <view bindtap="selecqtlitem" class="sortitem {{selectedQt==item.id?' active ':' '}}" data-model="{{item}}" wx:for="{{dropDownMenuThirdData}}" wx:key="unique"> {{item.title}}</view>
+        </view>
+    </view>
+</view>

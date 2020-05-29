@@ -1,0 +1,4 @@
+<view bindtap="{{isChoose?'':'openMap'}}" class="address" data-item="{{item}}">
+    <image mode="aspectFit" src="{{staticurl}}iconBigAdd@3x.png" style="width:24rpx;height:28rpx"></image>
+    <view class="addressText">{{item.address?item.address:'请选择地址'}}</view>
+</view>

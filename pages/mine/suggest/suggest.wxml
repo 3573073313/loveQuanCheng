@@ -1,0 +1,34 @@
+<view class="release-news-wrap">
+    <view class="release-news-infos">
+        <textarea autoHeight="true" bindinput="bindTextAreaBlur" class="cont" maxlength="-1" placeholder="尊敬的市民您好，您有任何的意见或建议，请及时向我们反馈，工作人员将尽快核实并给予回复。" value="{{obj.content}}"></textarea>
+        <view class="add-imgs">
+            <view class="info4-imgs" wx:for="{{pictures}}" wx:key="index">
+                <image bindtap="previewImg" data-index="{{index}}" data-src="{{item}}" mode="aspectFill" src="{{item}}"></image>
+                <text bindtap="deleteImg" class="del" data-index="{{index}}" data-src="{{item}}">×</text>
+            </view>
+            <image bindtap="showmodal" class="{{isAdd?'show':'hidden'}} index-top-tx" src="{{staticurl}}mine_imgadd.png"></image>
+            <view class="info4-imgs" src="{{videoUrl}}" wx:if="{{videoUrl!=''}}">
+                <video mode="aspectFill" src="{{videoUrl}}" style="height:300rpx;width:180rpx;margin-bottom:30rpx;"></video>
+            </view>
+        </view>
+        <view class="goodthings-addr">
+            <address item="{{obj}}" staticurl="{{staticurl}}"></address>
+        </view>
+    </view>
+    <view class="typeChoose">
+        <view class="titleType">请选择反馈类型</view>
+        <view class="typeWrap">
+            <view bindtap="chooseType" class="typeItem" data-index="{{index}}" wx:for="{{typeList}}" wx:key="unique">
+                <view class="typeChooseIcon">
+                    <view class="isChoose" wx:if="{{item.show}}"></view>
+                </view>
+                <view>{{item.label}}</view>
+            </view>
+        </view>
+    </view>
+</view>
+<view bindtap="isFinish" class="release-news-btn redBack">
+  确认提交
+</view>
+<navigator class="release-yfk" url="/pages/mine/yfkjy/yfkjy">已反馈建议</navigator>
+<modal bindconfirm="clickCancle" confirmText="好的，知道了！" content="市民您好！谢谢您的意见!" isRed="{{true}}" show="{{showModal==0}}" showCancel="{{false}}"></modal>

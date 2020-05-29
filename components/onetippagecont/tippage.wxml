@@ -1,0 +1,6 @@
+<view class="tip-page" wx:if="{{listlen==true}}">
+    <view class="wraper">
+        <image src="https://jn.zhuwentec.com/jn-cultural-cdn/wxapp/blanktipPage/search_cont.png"></image>
+        <text>亲，此处暂无内容，去逛逛其他地方吧！</text>
+    </view>
+</view>

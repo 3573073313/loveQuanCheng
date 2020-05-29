@@ -1,0 +1,13 @@
+{
+    "navigationBarTitleText": "我爱泉城",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh": true,
+    "component": true,
+    "usingComponents": {
+        "wxc-dialog": "/components/dialog/dialog",
+        "activity": "/components/activity/activity",
+        "modal": "/components/modal/modal",
+        "address": "/components/address/address"
+    }
+}

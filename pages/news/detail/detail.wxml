@@ -1,0 +1,66 @@
+<import src="../../../html-view/index.wxml"></import>
+<view class="body">
+    <view wx:if="{{!news.video}}">
+        <view class="cont_detail">
+            <view class="detail_tit">{{news.contentName}}</view>
+            <view class="detail_inf">
+                <view class="inf" style="width:66%;">来源：{{news.contentSource}}</view>
+                <view class="inf">{{news.releaseDate}}</view>
+            </view>
+            <view class="inf" style="marginD-top:-10rpx;">作者：{{news.publisher}}</view>
+            <view class="detail" style="text-align:justify">
+                <template is="html-view" data="{{data:html}}"></template>
+            </view>
+        </view>
+        <view class="cont_read">
+            <view class="cont_readl">
+                <view>阅读</view>
+                <view>{{readingNum}}</view>
+            </view>
+            <view class="cont_readr">
+                <image bindtap="doFavourite" class="" src="{{isFavourite?imgStarselect:imgStar}}"></image>
+                <view class="toolsc">
+                    <button class="share" data-item="{{news}}" data-type="2" openType="share">
+                        <image mode="widthFix" src="{{staticurl}}iconShareNew.png"></image>{{shareContentNum}}
+          </button>
+                </view>
+                <view class="goodIcon">
+                    <image bindtap="clickLike" src="{{staticurl}}iconGoodNew{{isLikeStatus>0?'Fill':''}}.png"></image>
+                    <view>{{upContentNum}}</view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view wx:else>
+        <view class="cont_detail">
+            <view class="detail_tit">{{news.contentName}}</view>
+            <view class="detail_inf">
+                <view class="inf" style="width:66%;">来源：{{news.contentSource}}</view>
+                <view class="inf">{{news.releaseDate}}</view>
+            </view>
+            <view class="inf" style="margin-top:-10rpx;">作者：{{news.publisher}}</view>
+            <view class="detail" style="text-align:justify">
+                <video autoplay controls objectFit="cover" poster="{{news.listImg[0]}}" src="{{videoSrc?videoSrc:news.video}}" style="width:100%;border-radius: 10rpx;"></video>
+            </view>
+        </view>
+        <view class="cont_read">
+            <view class="cont_readl">
+                <view>阅读</view>
+                <view>{{readingNum}}</view>
+            </view>
+            <view class="cont_readr">
+                <image bindtap="doFavourite" class="" src="{{isFavourite?imgStarselect:imgStar}}"></image>
+                <view class="toolsc">
+                    <button class="share" data-item="{{item}}" data-type="2" openType="share">
+                        <image mode="widthFix" src="{{staticurl}}iconShareNew.png"></image>{{shareContentNum}}
+          </button>
+                </view>
+                <view>
+                    <image bindtap="clickLike" src="{{staticurl}}iconGoodNew.png" wx:if="{{isLikeStatus==0}}"></image>
+                    <image bindtap="clickLike" src="{{staticurl}}iconGoodNewFill.png" wx:if="{{isLikeStatus>0}}"></image>
+                    <view>{{upContentNum}}</view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

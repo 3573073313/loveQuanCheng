@@ -1,0 +1,48 @@
+<view class="container" wx:if="{{login}}">
+    <wxc-dialog bindcancel="onCancel" bindconfirm="onConfirm" class="wxc-dialog" show="{{login}}"></wxc-dialog>
+</view>
+<view class="qy-online-wrapper" style="padding-bottom:100rpx;">
+    <navigator class="qy-online-goods-wrapper" url="/pages/quanyi/goodsdetail/goodsdetail?id={{item.goodsId}}" wx:for="{{cartList}}" wx:key="index">
+        <image catchtap="selectItem" class="qy-carted" data-index="{{index}}" data-item="{{item}}" mode="aspectFill" src="{{staticurl}}qy_carted.png" wx:if="{{item.select}}"></image>
+        <image catchtap="selectItem" class="qy-carted" data-index="{{index}}" data-item="{{item}}" mode="aspectFill" src="{{staticurl}}qy_no_carted.png" wx:if="{{!item.select}}"></image>
+        <image src="{{item.listImg}}"></image>
+        <view class="qy-online-goods">
+            <view class="qy-online-goods-name">{{item.goodsName}}</view>
+            <view class="qy-online-spec-name">{{item.specName}}</view>
+            <view class="qy-online-goods-price red">
+                <view class="flex" style="align-items: flex-end;">
+                    <text>{{item.goodsAmount*item.integral}}</text>
+                    <text style="font-size:26rpx;margin-left:10rpx">豆</text>
+                </view>
+                <view class="qy-goodsdel-changemodal-botsizeimg">
+                    <view catchtap="numjian" class="computerIcon" data-item="{{item}}" src="{{imgMinus}}">-</view>
+                    <view class="one">{{item.goodsAmount}}</view>
+                    <view catchtap="numjia" class="computerIcon" data-item="{{item}}" src="{{imgAdd}}">+</view>
+                </view>
+            </view>
+        </view>
+    </navigator>
+    <view class="chooseWay" wx:if="{{cartList.length}}">
+        <picker bindchange="bindPickerChange" range="{{wayArray}}" value="{{wayIndex}}">
+            <view class="picker">
+        兑换方式：
+        <text class="red">{{wayArray[wayIndex]}}</text>
+            </view>
+        </picker>
+    </view>
+    <tippage listlen="{{!cartList.length}}"></tippage>
+</view>
+<view class="qy-fillorder-btn-wrapper">
+    <view bindtap="allBtn" class="qy-bot-all">
+        <image src="{{staticurl}}qy_carted.png" wx:if="{{allSelect}}"></image>
+        <image src="{{staticurl}}qy_no_carted.png" wx:if="{{!allSelect}}"></image>
+        <view class="qy-bot-all-tex">全选</view>
+    </view>
+    <view style="width:57%;text-align:right;padding-right:12rpx;">合计:
+    <text class="red">{{totalScore}}豆</text>
+    </view>
+    <view bindtap="{{selectCartList.length&&member?'commitOrder':''}}" class="qy-fillorder-btn {{selectCartList.length&&member?'redBack':'noBtn'}}" wx:if="{{wayIndex==0}}">提交订单</view>
+    <view bindtap="{{selectCartList.length&&member?'commitOrder':''}}" class="qy-fillorder-btn {{selectCartList.length&&member?'redBack':'noBtn'}}" wx:else>确认</view>
+</view>
+<modal bindconfirm="commitOrderSure" content="亲，请再次确认是否兑换，确定后将扣除文明豆!" show="{{isShowModal}}"></modal>
+<modal bindconfirm="toAuthentication" cancelText="以后再说" confirmText="去认证" content="使用此功能需要先完成实名认证。" show="{{isShowModal3}}" title="亲爱的市民"></modal>

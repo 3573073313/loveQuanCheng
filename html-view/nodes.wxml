@@ -1,0 +1,191 @@
+<template name="html-view-nodes-10"></template>
+<template name="html-view-nodes-9">
+    <block wx:for="{{nodes}}" wx:key="index">
+        <block wx:if="{{item.type==='Text'}}">{{item.content}}</block>
+        <block wx:elif="{{item.type==='Element'}}">
+            <view class="{{item.tagName}} {{item.attributes.className}}" style="{{item.attributes.styleString}}" wx:if="{{item.wxTag==='view'}}">
+                <template is="html-view-nodes-10" data="{{nodes:item.children}}"></template>
+            </view>
+            <text class="{{item.tagName}} {{item.attributes.className}}" style="{{item.attributes.styleString}}" wx:elif="{{item.wxTag==='text'}}">
+                <template is="html-view-nodes-10" data="{{nodes:item.children}}"></template>
+            </text>
+            <navigator class="{{item.tagName}} {{item.attributes.className}}" style="{{item.attributes.styleString}}" url="{{item.url}}" wx:elif="{{item.wxTag==='navigator'}}">
+                <template is="html-view-nodes-10" data="{{nodes:item.children}}"></template>
+            </navigator>
+            <image bindtap="lookImg" class="img" data-src="{{item.attributes.src}}" mode="widthFix" src="{{item.attributes.src}}" style="{{item.attributes.styleString}}" wx:if="{{item.wxTag==='image'}}"></image>
+            <video class="video" initialTime="0.01" objectFit="cover" src="{{item.attributes.src}}" wx:elif="{{item.wxTag==='video'}}"></video>
+            <wxc-audio show="{{item.wxTag==='audio'}}" src="{{item.attributes.src}}" wx:elif="{{item.wxTag==='audio'}}"></wxc-audio>
+        </block>
+    </block>
+</template>
+<template name="html-view-nodes-8">
+    <block wx:for="{{nodes}}" wx:key="index">
+        <block wx:if="{{item.type==='Text'}}">{{item.content}}</block>
+        <block wx:elif="{{item.type==='Element'}}">
+            <view class="{{item.tagName}} {{item.attributes.className}}" style="{{item.attributes.styleString}}" wx:if="{{item.wxTag==='view'}}">
+                <template is="html-view-nodes-9" data="{{nodes:item.children}}"></template>
+            </view>
+            <text class="{{item.tagName}} {{item.attributes.className}}" style="{{item.attributes.styleString}}" wx:elif="{{item.wxTag==='text'}}">
+                <template is="html-view-nodes-9" data="{{nodes:item.children}}"></template>
+            </text>
+            <navigator class="{{item.tagName}} {{item.attributes.className}}" style="{{item.attributes.styleString}}" url="{{item.url}}" wx:elif="{{item.wxTag==='navigator'}}">
+                <template is="html-view-nodes-9" data="{{nodes:item.children}}"></template>
+            </navigator>
+            <image bindtap="lookImg" class="img" data-src="{{item.attributes.src}}" mode="widthFix" src="{{item.attributes.src}}" style="{{item.attributes.styleString}}" wx:if="{{item.wxTag==='image'}}"></image>
+            <video class="video" initialTime="0.01" objectFit="cover" src="{{item.attributes.src}}" wx:elif="{{item.wxTag==='video'}}"></video>
+            <wxc-audio show="{{item.wxTag==='audio'}}" src="{{item.attributes.src}}" wx:elif="{{item.wxTag==='audio'}}"></wxc-audio>
+        </block>
+    </block>
+</template>
+<template name="html-view-nodes-7">
+    <block wx:for="{{nodes}}" wx:key="index">
+        <block wx:if="{{item.type==='Text'}}">{{item.content}}</block>
+        <block wx:elif="{{item.type==='Element'}}">
+            <view class="{{item.tagName}} {{item.attributes.className}}" style="{{item.attributes.styleString}}" wx:if="{{item.wxTag==='view'}}">
+                <template is="html-view-nodes-8" data="{{nodes:item.children}}"></template>
+            </view>
+            <text class="{{item.tagName}} {{item.attributes.className}}" style="{{item.attributes.styleString}}" wx:elif="{{item.wxTag==='text'}}">
+                <template is="html-view-nodes-8" data="{{nodes:item.children}}"></template>
+            </text>
+            <navigator class="{{item.tagName}} {{item.attributes.className}}" style="{{item.attributes.styleString}}" url="{{item.url}}" wx:elif="{{item.wxTag==='navigator'}}">
+                <template is="html-view-nodes-8" data="{{nodes:item.children}}"></template>
+            </navigator>
+            <image bindtap="lookImg" class="img" data-src="{{item.attributes.src}}" mode="widthFix" src="{{item.attributes.src}}" style="{{item.attributes.styleString}}" wx:if="{{item.wxTag==='image'}}"></image>
+            <video class="video" initialTime="0.01" objectFit="cover" src="{{item.attributes.src}}" wx:elif="{{item.wxTag==='video'}}"></video>
+            <wxc-audio show="{{item.wxTag==='audio'}}" src="{{item.attributes.src}}" wx:elif="{{item.wxTag==='audio'}}"></wxc-audio>
+        </block>
+    </block>
+</template>
+<template name="html-view-nodes-6">
+    <block wx:for="{{nodes}}" wx:key="index">
+        <block wx:if="{{item.type==='Text'}}">{{item.content}}</block>
+        <block wx:elif="{{item.type==='Element'}}">
+            <view class="{{item.tagName}} {{item.attributes.className}}" style="{{item.attributes.styleString}}" wx:if="{{item.wxTag==='view'}}">
+                <template is="html-view-nodes-7" data="{{nodes:item.children}}"></template>
+            </view>
+            <text class="{{item.tagName}} {{item.attributes.className}}" style="{{item.attributes.styleString}}" wx:elif="{{item.wxTag==='text'}}">
+                <template is="html-view-nodes-7" data="{{nodes:item.children}}"></template>
+            </text>
+            <navigator class="{{item.tagName}} {{item.attributes.className}}" style="{{item.attributes.styleString}}" url="{{item.url}}" wx:elif="{{item.wxTag==='navigator'}}">
+                <template is="html-view-nodes-7" data="{{nodes:item.children}}"></template>
+            </navigator>
+            <image bindtap="lookImg" class="img" data-src="{{item.attributes.src}}" mode="widthFix" src="{{item.attributes.src}}" style="{{item.attributes.styleString}}" wx:if="{{item.wxTag==='image'}}"></image>
+            <video class="video" initialTime="0.01" objectFit="cover" src="{{item.attributes.src}}" wx:elif="{{item.wxTag==='video'}}"></video>
+            <wxc-audio show="{{item.wxTag==='audio'}}" src="{{item.attributes.src}}" wx:elif="{{item.wxTag==='audio'}}"></wxc-audio>
+        </block>
+    </block>
+</template>
+<template name="html-view-nodes-5">
+    <block wx:for="{{nodes}}" wx:key="index">
+        <block wx:if="{{item.type==='Text'}}">{{item.content}}</block>
+        <block wx:elif="{{item.type==='Element'}}">
+            <view class="{{item.tagName}} {{item.attributes.className}}" style="{{item.attributes.styleString}}" wx:if="{{item.wxTag==='view'}}">
+                <template is="html-view-nodes-6" data="{{nodes:item.children}}"></template>
+            </view>
+            <text class="{{item.tagName}} {{item.attributes.className}}" style="{{item.attributes.styleString}}" wx:elif="{{item.wxTag==='text'}}">
+                <template is="html-view-nodes-6" data="{{nodes:item.children}}"></template>
+            </text>
+            <navigator class="{{item.tagName}} {{item.attributes.className}}" style="{{item.attributes.styleString}}" url="{{item.url}}" wx:elif="{{item.wxTag==='navigator'}}">
+                <template is="html-view-nodes-6" data="{{nodes:item.children}}"></template>
+            </navigator>
+            <image bindtap="lookImg" class="img" data-src="{{item.attributes.src}}" mode="widthFix" src="{{item.attributes.src}}" style="{{item.attributes.styleString}}" wx:if="{{item.wxTag==='image'}}"></image>
+            <video class="video" initialTime="0.01" objectFit="cover" src="{{item.attributes.src}}" wx:elif="{{item.wxTag==='video'}}"></video>
+            <wxc-audio show="{{item.wxTag==='audio'}}" src="{{item.attributes.src}}" wx:elif="{{item.wxTag==='audio'}}"></wxc-audio>
+        </block>
+    </block>
+</template>
+<template name="html-view-nodes-4">
+    <block wx:for="{{nodes}}" wx:key="index">
+        <block wx:if="{{item.type==='Text'}}">{{item.content}}</block>
+        <block wx:elif="{{item.type==='Element'}}">
+            <view class="{{item.tagName}} {{item.attributes.className}}" style="{{item.attributes.styleString}}" wx:if="{{item.wxTag==='view'}}">
+                <template is="html-view-nodes-5" data="{{nodes:item.children}}"></template>
+            </view>
+            <text class="{{item.tagName}} {{item.attributes.className}}" style="{{item.attributes.styleString}}" wx:elif="{{item.wxTag==='text'}}">
+                <template is="html-view-nodes-5" data="{{nodes:item.children}}"></template>
+            </text>
+            <navigator class="{{item.tagName}} {{item.attributes.className}}" style="{{item.attributes.styleString}}" url="{{item.url}}" wx:elif="{{item.wxTag==='navigator'}}">
+                <template is="html-view-nodes-5" data="{{nodes:item.children}}"></template>
+            </navigator>
+            <image bindtap="lookImg" class="img" data-src="{{item.attributes.src}}" mode="widthFix" src="{{item.attributes.src}}" style="{{item.attributes.styleString}}" wx:if="{{item.wxTag==='image'}}"></image>
+            <video class="video" initialTime="0.01" objectFit="cover" src="{{item.attributes.src}}" wx:elif="{{item.wxTag==='video'}}"></video>
+            <wxc-audio show="{{item.wxTag==='audio'}}" src="{{item.attributes.src}}" wx:elif="{{item.wxTag==='audio'}}"></wxc-audio>
+        </block>
+    </block>
+</template>
+<template name="html-view-nodes-3">
+    <block wx:for="{{nodes}}" wx:key="index">
+        <block wx:if="{{item.type==='Text'}}">{{item.content}}</block>
+        <block wx:elif="{{item.type==='Element'}}">
+            <view class="{{item.tagName}} {{item.attributes.className}}" style="{{item.attributes.styleString}}" wx:if="{{item.wxTag==='view'}}">
+                <template is="html-view-nodes-4" data="{{nodes:item.children}}"></template>
+            </view>
+            <text class="{{item.tagName}} {{item.attributes.className}}" style="{{item.attributes.styleString}}" wx:elif="{{item.wxTag==='text'}}">
+                <template is="html-view-nodes-4" data="{{nodes:item.children}}"></template>
+            </text>
+            <navigator class="{{item.tagName}} {{item.attributes.className}}" style="{{item.attributes.styleString}}" url="{{item.url}}" wx:elif="{{item.wxTag==='navigator'}}">
+                <template is="html-view-nodes-4" data="{{nodes:item.children}}"></template>
+            </navigator>
+            <image bindtap="lookImg" class="img" data-src="{{item.attributes.src}}" mode="widthFix" src="{{item.attributes.src}}" style="{{item.attributes.styleString}}" wx:if="{{item.wxTag==='image'}}"></image>
+            <video class="video" initialTime="0.01" objectFit="cover" src="{{item.attributes.src}}" wx:elif="{{item.wxTag==='video'}}"></video>
+            <wxc-audio show="{{item.wxTag==='audio'}}" src="{{item.attributes.src}}" wx:elif="{{item.wxTag==='audio'}}"></wxc-audio>
+        </block>
+    </block>
+</template>
+<template name="html-view-nodes-2">
+    <block wx:for="{{nodes}}" wx:key="index">
+        <block wx:if="{{item.type==='Text'}}">{{item.content}}</block>
+        <block wx:elif="{{item.type==='Element'}}">
+            <view class="{{item.tagName}} {{item.attributes.className}}" style="{{item.attributes.styleString}}" wx:if="{{item.wxTag==='view'}}">
+                <template is="html-view-nodes-3" data="{{nodes:item.children}}"></template>
+            </view>
+            <text class="{{item.tagName}} {{item.attributes.className}}" style="{{item.attributes.styleString}}" wx:elif="{{item.wxTag==='text'}}">
+                <template is="html-view-nodes-3" data="{{nodes:item.children}}"></template>
+            </text>
+            <navigator class="{{item.tagName}} {{item.attributes.className}}" style="{{item.attributes.styleString}}" url="{{item.url}}" wx:elif="{{item.wxTag==='navigator'}}">
+                <template is="html-view-nodes-3" data="{{nodes:item.children}}"></template>
+            </navigator>
+            <image bindtap="lookImg" class="img" data-src="{{item.attributes.src}}" mode="widthFix" src="{{item.attributes.src}}" style="{{item.attributes.styleString}}" wx:if="{{item.wxTag==='image'}}"></image>
+            <video class="video" initialTime="0.01" objectFit="cover" src="{{item.attributes.src}}" wx:elif="{{item.wxTag==='video'}}"></video>
+            <wxc-audio show="{{item.wxTag==='audio'}}" src="{{item.attributes.src}}" wx:elif="{{item.wxTag==='audio'}}"></wxc-audio>
+        </block>
+    </block>
+</template>
+<template name="html-view-nodes-1">
+    <block wx:for="{{nodes}}" wx:key="index">
+        <block wx:if="{{item.type==='Text'}}">{{item.content}}</block>
+        <block wx:elif="{{item.type==='Element'}}">
+            <view class="{{item.tagName}} {{item.attributes.className}}" style="{{item.attributes.styleString}}" wx:if="{{item.wxTag==='view'}}">
+                <template is="html-view-nodes-2" data="{{nodes:item.children}}"></template>
+            </view>
+            <text class="{{item.tagName}} {{item.attributes.className}}" style="{{item.attributes.styleString}}" wx:elif="{{item.wxTag==='text'}}">
+                <template is="html-view-nodes-2" data="{{nodes:item.children}}"></template>
+            </text>
+            <navigator class="{{item.tagName}} {{item.attributes.className}}" style="{{item.attributes.styleString}}" url="{{item.url}}" wx:elif="{{item.wxTag==='navigator'}}">
+                <template is="html-view-nodes-2" data="{{nodes:item.children}}"></template>
+            </navigator>
+            <image bindtap="lookImg" class="img" data-src="{{item.attributes.src}}" mode="widthFix" src="{{item.attributes.src}}" style="{{item.attributes.styleString}}" wx:if="{{item.wxTag==='image'}}"></image>
+            <video class="video" initialTime="0.01" objectFit="cover" src="{{item.attributes.src}}" wx:elif="{{item.wxTag==='video'}}"></video>
+            <wxc-audio show="{{item.wxTag==='audio'}}" src="{{item.attributes.src}}" wx:elif="{{item.wxTag==='audio'}}"></wxc-audio>
+        </block>
+    </block>
+</template>
+<template name="html-view-nodes">
+    <block wx:for="{{nodes}}" wx:key="index">
+        <block wx:if="{{item.type==='Text'}}">{{item.content}}</block>
+        <block wx:elif="{{item.type==='Element'}}">
+            <view class="{{item.tagName}} {{item.attributes.className}}" style="{{item.attributes.styleString}}" wx:if="{{item.wxTag==='view'}}">
+                <template is="html-view-nodes-1" data="{{nodes:item.children}}"></template>
+            </view>
+            <text class="{{item.tagName}} {{item.attributes.className}}" style="{{item.attributes.styleString}}" wx:elif="{{item.wxTag==='text'}}">
+                <template is="html-view-nodes-1" data="{{nodes:item.children}}"></template>
+            </text>
+            <navigator class="{{item.tagName}} {{item.attributes.className}}" style="{{item.attributes.styleString}}" url="{{item.url}}" wx:elif="{{item.wxTag==='navigator'}}">
+                <template is="html-view-nodes-1" data="{{nodes:item.children}}"></template>
+            </navigator>
+            <image bindtap="lookImg" class="img" data-src="{{item.attributes.src}}" mode="widthFix" src="{{item.attributes.src}}" style="{{item.attributes.styleString}}" wx:if="{{item.wxTag==='image'}}"></image>
+            <video class="video" initialTime="0.01" objectFit="cover" src="{{item.attributes.src}}" wx:elif="{{item.wxTag==='video'}}"></video>
+            <wxc-audio show="{{item.wxTag==='audio'}}" src="{{item.attributes.src}}" wx:elif="{{item.wxTag==='audio'}}"></wxc-audio>
+        </block>
+    </block>
+</template>

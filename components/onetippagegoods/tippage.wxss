@@ -1,0 +1,32 @@
+.tip-page {
+    overflow: hidden;
+}
+
+.wraper {
+    margin: 0 auto;
+    text-align: center;
+    overflow: hidden;
+    padding-bottom: 100rpx;
+}
+
+.tip-page image {
+    width: 276rpx;
+    height: 322rpx;
+    display: block;
+    margin: 30rpx auto 20rpx;
+}
+
+.tip-page text {
+    font-size: 26rpx;
+    color: #666;
+}
+
+.btn {
+    border: 1px solid red;
+    width: 127rpx;
+    font-size: 26rpx;
+    color: red;
+    border-radius: 20rpx;
+    padding: 4rpx 0rpx;
+    margin: 30rpx auto;
+}

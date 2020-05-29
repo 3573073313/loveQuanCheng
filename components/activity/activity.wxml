@@ -1,0 +1,42 @@
+<view bindtap="toDetail" class="item" data-item="{{item}}" style="{{noIsType==1?'padding: 30rpx 0':''}}" wx:for="{{activityList}}" wx:key="index">
+    <view class="img rel">
+        <image class="slide-image" mode="aspectFill" src="{{noIsType!=1?item.listImg:item.activityImg}}"></image>
+        <view class="isOut" wx:if="{{item.expireNum>0}}">已过期</view>
+        <view class="activityTypeName" wx:if="{{item.activityTypeName||item.typeName}}">{{item.activityTypeName?item.activityTypeName:item.typeName}}</view>
+    </view>
+    <view class="info">
+        <view class="head-inf clamp2">
+            <text class="typeStyle" wx:if="{{item.itemTypeName||item.actTypeName?navToType==1?false:true:false}}">{{item.itemTypeName?item.itemTypeName:item.actTypeName}}</text> {{item.activityName}}
+      <text class="sBtnStyle integralStyle" wx:if="{{item.integral||item.score}}">{{item.integral?item.integral:item.score}}分</text>
+            <text class="sBtnStyle numStyle" wx:if="{{item.number}}">{{item.number}}人参加</text>
+        </view>
+        <view class="time">
+            <view class="time-img">
+                <image mode="widthFix" src="{{staticurl}}iconActiveTime@3x.png"></image>
+            </view>
+            <view>
+        时间：
+        <text class="textColor">{{item.startDate!=item.endDate?item.startDate+'至'+item.endDate:item.startDate}}</text>
+                <text class="textColor" style="margin-left:10rpx;" wx:if="{{item.startTime&&item.endTime}}">{{item.startTime+'-'+item.endTime}}</text>
+            </view>
+        </view>
+        <view class="time" wx:if="{{item.type==2||noIsType==2}}">
+            <view class="time-img">
+                <image mode="widthFix" src="{{staticurl}}iconActiveAddress@3x.png"></image>
+            </view>
+            <view class="addr-detail">组织单位：
+        <text class="textColor">{{item.orgId}}</text>
+            </view>
+        </view>
+        <view class="time" wx:else>
+            <view class="time-img">
+                <image mode="aspectFit" src="{{staticurl}}iconAddressNN.png"></image>
+            </view>
+            <view class="addr-detail">{{item.address}} |
+        <span class="yellow">{{item.juli}}</span>
+            </view>
+        </view>
+    </view>
+</view>
+<modal bindconfirm="confirm" confirmText="前往认证" content="亲爱的市民，您好！参与问卷活动需要实名哦!" show="{{showModal}}"></modal>
+<modal bindconfirm="confirm1" confirmText="前往填写" content="亲爱的市民，您好！为了保证问卷信息的真实准确，请您先如实填写个人信息!我们保证您的个人信息只被用于本次民意征集，且不被泄露或不正当地使用。" show="{{showModal1}}"></modal>

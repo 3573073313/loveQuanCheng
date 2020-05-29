@@ -1,0 +1,340 @@
+.quyu.bgc {
+    background-color: #fff;
+}
+
+.page {
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    overflow: hidden;
+}
+
+.position {
+    position: absolute;
+}
+
+.nav {
+    position: relative;
+    z-index: 99;
+    display: flex;
+    background: #fff;
+    border-radius: 14rpx 14rpx 0 0;
+    margin: 0 12rpx;
+    color: #333;
+}
+
+.nav-son {
+    display: flex;
+    flex: 1;
+    text-align: center;
+    height: 30rpx;
+    align-items: center;
+    justify-content: center;
+    font-size: 26rpx;
+    margin: 20rpx 0;
+}
+
+.borders-right {
+}
+
+.borders-left {
+    border-left: 4rpx solid #BFBFBF;
+}
+
+.borders {
+}
+
+.content {
+    display: inline-block;
+    color: #999;
+}
+
+.icon {
+    display: inline-block;
+    margin-left: 10rpx;
+    width: 23rpx;
+    height: 20rpx;
+    background: url(https://hm.zhuwentec.com/cul-cloud/wxapp/images/arrow.jpg) no-repeat;
+    background-size: cover;
+    margin-top: 10rpx;
+}
+
+.arrow_up {
+    transform: rotate(180deg);
+    margin-top: -8rpx;
+}
+
+.temp {
+    position: relative;
+    z-index: 4;
+    font-size: 14px;
+}
+
+.temp1 {
+    display: flex;
+    width: 100%;
+    height: 600rpx;
+    overflow-y: scroll;
+    background: #e0e0e0;
+    color: #666;
+}
+
+.slidedown {
+    transform: translateY(0%);
+}
+
+.quyu {
+    position: absolute;
+    display: none;
+    z-index: 5;
+    width: 100%;
+    overflow-y: scroll;
+    background-color: rgba(0,0,0,0.2);
+}
+
+.quyu .qy {
+    overflow-y: scroll;
+    float: left;
+    width: 50%;
+    line-height: 80rpx;
+    box-sizing: border-box;
+    font-size: 24rpx;
+}
+
+.qy view {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    padding-left: 15rpx;
+}
+
+.quyu-left {
+    background: #F7F7F7;
+}
+
+.quyu-center {
+    background: #fff;
+}
+
+.quyu-right {
+    background: #fff;
+}
+
+.quyu-right view {
+    border-bottom: 1px solid #c5c5c5;
+}
+
+.current {
+    background: #fff;
+}
+
+.current2 {
+    background: #fff;
+    color: #fa871e;
+}
+
+.fullbg {
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    background: rgb(1,1,1);
+    transition: all 2s;
+    opacity: 0;
+}
+
+.fullopacity {
+    opacity: 0.2;
+}
+
+.nav-son.active .content {
+    color: #000;
+}
+
+.nav-son.active .icon {
+    border-top: 0;
+}
+
+@-webkit-keyframes slidown {
+    from {
+        transform: translateY(-100%);
+    }
+
+    to {
+        transform: translateY(0%);
+    }
+}
+
+@keyframes slidown {
+    from {
+        transform: translateY(-100%);
+    }
+
+    to {
+        transform: translateY(0%);
+    }
+}
+
+.slidown {
+    display: block;
+    animation: slidown 0.2s ease-in both;
+}
+
+@-webkit-keyframes slidup {
+    from {
+        transform: translateY(0%);
+    }
+
+    to {
+        transform: translateY(-100%);
+    }
+}
+
+@keyframes slidup {
+    from {
+        transform: translateY(0%);
+    }
+
+    to {
+        transform: translateY(-100%);
+    }
+}
+
+.tempheight {
+    overflow-y: scroll;
+    background: #fff;
+}
+
+.slidup {
+    display: block;
+    animation: slidup 0.2s ease-in both;
+}
+
+.disappear {
+    display: none;
+}
+
+.show {
+    display: block;
+}
+
+.slidowntop {
+    display: flex;
+    flex-direction: row;
+    padding: 20rpx 24rpx 10rpx 24rpx;
+}
+
+.emptyall {
+    margin-left: 475rpx;
+    color: #fa871e;
+}
+
+.emptyallright {
+    width: 80rpx;
+    text-align: center;
+}
+
+.endselect {
+    width: 350rpx;
+    text-align: left;
+}
+
+.return {
+    margin-left: 200rpx;
+    color: #fa871e;
+}
+
+.slidowncenter {
+    margin-top: 20rpx;
+    padding-top: 20rpx;
+    padding-left: 24rpx;
+    display: flex;
+    flex-direction: row;
+    align-content: space-between;
+    border-top: solid #d1d3d4 1rpx;
+}
+
+.slidownbottom {
+    margin-top: 10rpx;
+    padding: 10rpx;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.sdbitem {
+    width: 119rpx;
+    text-align: center;
+    border: solid #ccc 1rpx;
+    margin: 12rpx;
+    justify-content: space-between;
+    padding: 12rpx 19rpx 12rpx 19rpx;
+}
+
+.emptyendcitys {
+    padding-left: 12rpx;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.emptyendcitysitem {
+    width: 120rpx;
+    text-align: center;
+    border: solid #ccc 1rpx;
+    margin: 10rpx;
+    justify-content: space-between;
+    padding: 12rpx 18rpx 12rpx 18rpx;
+}
+
+.queding {
+    width: 100%;
+    height: 100rpx;
+    background-color: #fa871e;
+    color: #fff;
+    text-align: center;
+}
+
+.queding {
+    font-size: 18px;
+    line-height: 100rpx;
+}
+
+.temp2 {
+    width: 100%;
+    height: 600rpx;
+    overflow-y: scroll;
+    background: #fff;
+    color: #666;
+}
+
+.commanders {
+    padding: 10rpx;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.sdbitem.active {
+    color: #fa871e;
+    background-color: #F1E6B8;
+}
+
+.sortitem {
+    border-bottom: solid #F7F7F7 1rpx;
+    justify-content: space-between;
+    padding: 20rpx 30rpx;
+    font-size: 24rpx;
+}
+
+.sortitem.active {
+    color: #fa871e;
+}
+
+.temp3 {
+    width: 100%;
+    position: absolute;
+    overflow-y: scroll;
+    background-color: rgba(0,0,0,0.5);
+}

@@ -1,0 +1,52 @@
+<import src="../../../../html-view/index.wxml"></import>
+<view class="news-wrapper">
+    <view class="section">
+        <block wx:if="{{!infoTitle}}">
+            <view class="titleWrap">请选择{{isAddGoodthings?'好事':'随手拍'}}类型</view>
+            <view class="typeWrap" style="height:{{isShowMore?'auto':'200rpx'}}">
+                <view bindtap="{{item.integralInterval?'setType':'showMore'}}" class="typeItem {{index==i&&item.integralInterval?'showType':''}}" data-index="{{i}}" data-item="{{item}}" wx:for="{{typeList}}" wx:for-index="i" wx:key="unique">
+                    <view class="iconView" style="background:{{index==i?'#ED3C44':'#E0E0E0'}};border-radius:20rpx;" wx:if="{{item.integralInterval}}">
+                        <image mode="widthFix" src="{{item.icon}}"></image>
+                    </view>
+                    <image mode="widthFix" src="{{item.icon}}" style="width:80rpx;height:80rpx;margin-bottom: -11rpx;" wx:else></image>
+                    <view>{{!item.integralInterval&&isShowMore?'收起':item.name}}</view>
+                    <view class="integral" wx:if="{{item.integralInterval}}">{{item.integralInterval}}</view>
+                </view>
+            </view>
+        </block>
+        <view wx:else>
+            <view class="titleWrap">{{infoTitle}}
+        <text class="redBgBtn">{{score}}分</text>
+            </view>
+            <view class="joinInfo">
+                <template is="html-view" data="{{data:info}}" wx:if="{{info}}"></template>
+            </view>
+        </view>
+        <view class="titleWrap">{{isAddGoodthings?'请记录做的好事':contribute?'请上传投稿内容':'请上传随手拍内容'}}</view>
+    </view>
+    <view class="release-news-wrap">
+        <view class="release-news-infos">
+            <textarea autoHeight="true" bindinput="bindTextAreaBlur" class="cont" maxlength="-1" name="content" placeholder="{{isAddGoodthings?'说说您做的好事吧！说清楚时间、地点和做的好事简要情况！':contribute?'请广大市民朋友如实上传投稿内容！':'请广大市民朋友如实上传随手拍内容，用镜头记录大爱济南。'}}" value="{{subobj.content}}" wx:if="{{showModal==1}}"></textarea>
+            <view class="cont" wx:else>{{subobj.content}}</view>
+            <view class="add-imgs">
+                <view class="info4-imgs" wx:for="{{pictures}}" wx:key="index">
+                    <image bindtap="previewImg" data-index="{{index}}" data-src="{{item}}" mode="aspectFill" src="{{item}}"></image>
+                    <text bindtap="deleteImg" class="del" data-index="{{index}}" data-src="{{item}}">×</text>
+                </view>
+                <image bindtap="showmodal" class="{{isAdd&&!isUnloading?'show':'hidden'}} index-top-tx" src="{{staticurl}}mine_imgadd.png"></image>
+                <view class="unload {{isUnloading?'show':'hidden'}}">上传中...</view>
+                <view class="info4-imgs" src="{{videoUrl}}" wx:if="{{videoUrl!=''}}">
+                    <video mode="aspectFill" src="{{videoUrl}}" style="height:300rpx;width:180rpx;margin-bottom:30rpx;"></video>
+                    <view bindtap="deleteVideo" class="del">×</view>
+                </view>
+            </view>
+            <view bindtap="{{isUnloading?'isShowToast':'openMap'}}" class="goodthings-addr">
+                <address isChoose="{{true}}" item="{{subobj}}" staticurl="{{staticurl}}"></address>
+            </view>
+        </view>
+    </view>
+</view>
+<view bindtap="{{!isSubmit?'clickSubmit':''}}" class="goodthings-tab0-btn redBack">
+  确认提交
+</view>
+<modal bindconfirm="clickCancle" confirmText="好的，知道了！" content="{{isAddGoodthings?'您做的好事':contribute?'您的投稿':'您的随手拍'}}已提交！谢谢！" isRed="{{true}}" show="{{showModal==0}}" showCancel="{{false}}" title="亲爱的市民"></modal>

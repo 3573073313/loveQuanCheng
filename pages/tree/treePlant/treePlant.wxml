@@ -1,0 +1,33 @@
+<view class="page" style="height:{{height}}px">
+    <navigator class="navGoHome" hoverClass="other-navigator-hover" openType="switchTab" style="top:{{top}}px" url="/pages/index/index">
+        <image class="goHome" src="/image/index.png"></image>
+    </navigator>
+    <view class="light">
+        <image mode="widthFix" src="{{staticurl}}light.png"></image>
+    </view>
+    <view class="topNav">
+        <view class="titleImg">
+            <image mode="widthFix" src="{{staticurl}}title.png"></image>
+        </view>
+        <view class="joinCount">已有
+            <text class="countStyle">{{usersTreesNum}}</text>人参与植树</view>
+    </view>
+    <view class="bot">
+        <image class="botBg" mode="widthFix" src="{{staticurl}}treeIndexBot.png"></image>
+        <view class="botContent">
+            <image bindtap="isUserHasTree" class="treeBtn" mode="widthFix" src="{{staticurl}}treePlantBtn.png" style="transform:scale({{toTreeing}})"></image>
+            <view bindtap="isShowModal" class="detail">查看活动规则</view>
+        </view>
+    </view>
+    <view class="modal" wx:if="{{isShowDetail}}">
+        <image class="centerImg {{isShowDetail?'show':'hidden'}}" mode="widthFix" src="{{staticurl}}email.png"></image>
+        <image bindtap="isShowModal" class="iconClose" src="{{staticurl}}iconClose.png"></image>
+        <view class="modalTitle">共植文明树活动规则</view>
+        <view class="modalDetail">
+            <text class="ol">*</text>共植文明树活动是由济南广播电视台发起的在线公益活动；</view>
+        <view class="modalDetail">
+            <text class="ol">*</text>活动期间，每位用户可以参与一次，成功参与的用户可获赠10个文明积分；</view>
+        <view class="modalDetail">
+            <text class="ol">*</text>活动过程分为选树、植树和浇水三个步骤，三个步骤完成者计为成功参与用户，否则不赠送文明积分。</view>
+    </view>
+</view>

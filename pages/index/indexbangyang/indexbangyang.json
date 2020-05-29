@@ -1,0 +1,10 @@
+{
+    "navigationBarTitleText": "好人榜",
+    "enablePullDownRefresh": true,
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTextStyle": "black",
+    "usingComponents": {
+        "tippage": "../../../components/onetippagecont/tippage",
+        "tippageloading": "../../../components/onetippageloading/tippage"
+    }
+}

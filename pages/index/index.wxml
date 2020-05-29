@@ -1,0 +1,209 @@
+<view class="container" wx:if="{{login}}">
+    <wxc-dialog bindcancel="onCancel" bindconfirm="onConfirm" class="wxc-dialog" show="{{login}}"></wxc-dialog>
+</view>
+<view class="index-top-news" wx:if="{{isDefault}}">
+    <view bindtap="handleLogin" style="display:flex;">
+        <image class="index-top-tx" src="{{staticurl}}logo.png"></image>
+        <view>
+            <view class="index-top-inf">{{greetings}} 请登录</view>
+            <view class="index-top-inf-greet">{{ana}}</view>
+        </view>
+    </view>
+    <view class="index-top-news-right">
+        <image bindtap="clickSearch" src="{{staticurl}}quanyi_search.png" style="margin-right:36rpx;"></image>
+    </view>
+</view>
+<view class="index-top-news" wx:if="{{!isDefault}}">
+    <view style="display:flex;width:80%;">
+        <image class="index-top-tx" src="{{member.face}}"></image>
+        <view style="width:80%;">
+            <view class="index-top-inf">{{greetings}} {{member.nickname}}
+        <image src="{{scoreInfo.levelLogo}}" style="width:110rpx;height:40rpx;margin-left:20rpx;"></image>
+            </view>
+            <view class="index-top-inf-greet" wx:if="{{ana}}">{{ana}}</view>
+            <view class="index-top-inf-greet" wx:else>伟人之所以伟大，是因为他与别人共处逆境时</view>
+        </view>
+    </view>
+    <view class="index-top-news-right">
+        <image bindtap="clickSearch" src="{{staticurl}}quanyi_search.png" style="margin-right:36rpx;"></image>
+    </view>
+</view>
+<view class="swiper-wrapper">
+    <swiper autoplay="{{autoplay}}" circular="{{true}}" duration="{{duration}}" indicatorActiveColor="{{activeColor}}" indicatorDots="{{indicatorDots}}" interval="{{interval}}">
+        <view bindtap="linkExternal" data-url="{{item.url}}" hoverClass="none" wx:for="{{advList}}" wx:key="id">
+            <swiper-item>
+                <image class="slide-image" mode="aspectFill" src="{{item.attachment}}"></image>
+            </swiper-item>
+        </view>
+    </swiper>
+</view>
+<view class="index-headlines">
+    <view class="msg_img">
+        <image src="{{staticurl}}indexIconActive@3x.png"></image>
+    </view>
+    <swiper autoplay="true" circular="true" class="swiper_container msg_box" interval="4000" vertical="true">
+        <swiper-item wx:for="{{headlinesList}}" wx:key="index">
+            <view class="swiper_item">
+                <view bindtap="{{detailItem.type=='1'?'toNews':''}}" data-id="{{detailItem.id}}" wx:for="{{item}}" wx:for-index="detailIndex" wx:for-item="detailItem" wx:key="unique">
+                    <text class="detailItemTitle" style="border-color:{{detailItem.color}};color:{{detailItem.color}}">{{detailItem.title}}</text>{{detailItem.detail}}</view>
+            </view>
+        </swiper-item>
+    </swiper>
+</view>
+<view bindtap="toDetail" class="toQuestion" data-url="/pages/index/questionnaireList/questionnaireList">
+    <image mode="widthFix" src="{{staticurl}}shortBanner.jpg" style="width: 100%;height:100rpx"></image>
+</view>
+<view class="modalTabWrap">
+    <view bindtap="toDetail" class="tabItem" data-type="{{item.type}}" data-url="{{item.url}}" wx:for="{{modalTabList}}" wx:key="unique">
+        <image mode="widthFix" src="{{staticurl+item.icon}}"></image>
+        <view>{{item.name}}</view>
+    </view>
+</view>
+<view class="modalTabWrap modalBotTabWrap">
+    <view bindtap="toDetail" class="tabItem botTabItem" data-key="{{item.key}}" data-type="{{item.type}}" data-url="{{item.url}}" data-value="{{item.value}}" wx:for="{{modalBotTabList}}" wx:key="unique">
+        <image mode="aspectFit" src="{{staticurl+item.icon}}"></image>
+        <image class="hotIndexIcon" mode="aspectFit" src="{{staticurl}}hotIndexIcon.png" wx:if="{{index==3}}"></image>
+        <view>{{item.name}}</view>
+    </view>
+</view>
+<view class="index-tasks" style="margin-top:25rpx">
+    <view class="index-tasks-tit">
+        <view class="index-tasks-titl">今日任务</view>
+        <view bindtap="toDetail" class="more" data-type="navigate" data-url="/pages/zhuanfen/zhuanfentask/zhuanfentask?currentTabTask={{currentTabTask}}">更多</view>
+    </view>
+    <view class="swiper-tab-task">
+        <view bindtap="clickTabTask" class="swiper-tab-item-task {{currentTabTask==item.value?'active':''}}" data-current="{{item.value}}" wx:for="{{taskTypeList}}" wx:key="index">{{item.label}}</view>
+    </view>
+    <view class="zf-tasks">
+        <view class="zf-task" wx:for="{{taskList}}" wx:key="index">
+            <image mode="aspectFit" src="{{item.taskIcon}}"></image>
+            <view class="zf-taskc2">
+                <view class="zf-taskctop zf-taskctop2">
+                    <view class="zf-taskctop-name">{{item.taskName}}</view>
+                    <view class="zf-taskctop-score">
+                        <view class="zf-taskctop-score-content">
+                            <span>{{item.finishScore}}</span>分</view>
+                        <view class="zf-taskctop-score-bg"></view>
+                    </view>
+                </view>
+                <view class="zf-taskcbot">{{item.taskDesc}}</view>
+            </view>
+            <view class="zf-taskr" wx:if="{{currentTabTask==1||currentTabTask==2}}">
+                <view bindtap="{{item.isSubmit?'':'showModal1'}}" class="zf-taskrb" data-index="{{index}}" data-item="{{item}}" wx:if="{{item.num<1}}">打卡</view>
+                <view class="zf-taskrb" style="background-color: #AAAAAA;color: #fff;border-color: #AAAAAA;" wx:else>已完成</view>
+            </view>
+            <view class="zf-taskr" style="width:19%;" wx:if="{{currentTabTask==3||currentTabTask==4}}">
+                <view class="zf-taskrb" style="background-color: #AAAAAA;color: #fff;border-color: #AAAAAA;" wx:if="{{item.num>0}}">已完成</view>
+                <view bindtap="toLook" class="zf-taskrb" data-item="{{item}}" wx:else>{{currentTabTask==4&&item.isAnswer=='1'?'去答题':'去看看'}}</view>
+            </view>
+        </view>
+    </view>
+    <view class="tips" wx:if="{{currentTabTask==1||currentTabTask==2}}">请广大市民朋友根据自身完成情况认领已完成任务，并可获得相应积分。</view>
+</view>
+<view class="index-tasks" style="padding-bottom:10rpx">
+    <view class="index-tasks-tit">
+        <view class="index-tasks-titl">身边好事</view>
+        <view bindtap="clickMoreAct" class="more">更多</view>
+    </view>
+    <view class="activeList">
+        <activity activityList="{{activityList}}" show="{{true}}" staticurl="{{staticurl}}"></activity>
+    </view>
+</view>
+<view class="index-tasks indexsnap" wx:if="{{isGoodThingsShow}}">
+    <view class="index-tasks-tit">
+        <view class="index-tasks-titl">精选随手拍</view>
+        <view bindtap="clickMoreThing" class="more">更多</view>
+    </view>
+    <view class="content content0" data-num="{{index}}" wx:if="{{item.member}}" wx:for="{{goodthings}}" wx:key="index">
+        <view class="item">
+            <view class="head">
+                <view class="flex" style="width:70%;">
+                    <view class="headimg">
+                        <image src="{{item.member.face}}"></image>
+                    </view>
+                    <view style="line-height: 40rpx;margin-top: 5rpx;">
+                        <view class="headinfo">
+                            <view class="headinfo_name">{{item.name}}</view>
+                        </view>
+                        <view class="headinfo_time" style="font-size: 24rpx;color: #999;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;width:100%;">{{item.member.sign}}</view>
+                    </view>
+                </view>
+                <view class="ygz">{{item.createDate}}</view>
+            </view>
+            <view class="context">
+                <view>
+                    <text bindtap="toDetail" class="topic" data-type="navigate" data-url="/pages/zhuanfen/zhuanfenorder/zhuanfenorder?id={{item.activityId}}&type=2" style="color:#FF676E" wx:if="{{item.activityId}}">#{{item.activityName}}#</text>{{item.content}}</view>
+                <view wx:if="{{item.videos!=null&&item.videos!=''}}">
+                    <video class="vid" controls="controls" objectFit="cover" src="{{item.videos}}" style="margin-top:25rpx;width:100%;border-radius:12rpx;" wx:if="{{item.videos!=null&&item.videos!=''}}"></video>
+                </view>
+                <view class="preimg" wx:elif="{{item.pictures[0]!=''&&item.pictures.length>1}}">
+                    <view class="gzimgs-area" wx:for="{{item.pictures}}" wx:for-index="idx" wx:for-item="img" wx:key="img">
+                        <image bindtap="imgPreview" data-index="{{idx}}" data-item="{{item}}" mode="aspectFill" src="{{img}}"></image>
+                    </view>
+                </view>
+                <view class="preimg" wx:elif="{{item.pictures[0]!=''&&item.pictures.length==1}}">
+                    <image bindtap="imgPreview" data-index="{{idx}}" data-item="{{item}}" mode="widthFix" src="{{img}}" style="width:400rpx;" wx:for="{{item.pictures}}" wx:for-index="idx" wx:for-item="img" wx:key="img"></image>
+                </view>
+            </view>
+            <view class="tools">
+                <view class="addressBotWay">
+                    <address item="{{item}}" staticurl="{{staticurl}}"></address>
+                </view>
+                <view class="toolItem">
+                    <view class="toolsc">
+                        <button class="share" data-id="{{item.id}}" data-item="{{item}}" data-type="1" openType="share">
+                            <image mode="widthFix" src="{{staticurl}}iconShareRed@3x.png"></image>{{item.shareNum}}
+            </button>
+                    </view>
+                    <view bindtap="goodMysSnap" class="toolsc" data-id="{{item.id}}" data-index="{{index}}" data-type="2">
+                        <image mode="widthFix" src="{{staticurl}}iconGoodRed{{item.number>0?'Fill':''}}@3x.png" style="{{currentTab==2?'transform: rotate(180deg)':''}}"></image>{{item.dianZanNum}}
+          </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="index-tasks">
+    <view class="index-tasks-tit">
+        <view class="index-tasks-titl">爱心好礼</view>
+        <view bindtap="clickMoreQy" class="more">更多</view>
+    </view>
+    <scroll-view class="swiper-tab-task" scrollX="true">
+        <view bindtap="clickTab" class="swiper-tab-item-task {{currentTab===index?'active':''}}" data-current="{{index}}" data-id="{{item.id}}" wx:for="{{typeList}}" wx:key="unique">{{item.goodsTypeName}}</view>
+    </scroll-view>
+    <view class="{{!currentTab}}">
+        <scroll-view scrollX class="scroll-header" scrollAnchoring="true" scrollLeft="{{scrollLeft}}">
+            <navigator class="index-tasks-item" url="/pages/quanyi/goodsdetail/goodsdetail?id={{item.id}}&currentTab={{currentTab}}" wx:for="{{goodsList}}" wx:key="index">
+                <image class="index-tasks-itemimg" mode="aspectFill" src="{{item.listImg}}"></image>
+                <view class="nameMiddle">
+                    <view class="index-tasks-itemtit">{{item.goodsName}}</view>
+                </view>
+                <view class="dotFlex">
+                    <view class="index-tasks-score">
+                        <span style="font-size:30rpx;margin-right:5rpx;font-weight:bold">{{item.price}}</span>豆</view>
+                    <view class="index-tasks-count">{{item.saleNum}}次兑换</view>
+                </view>
+            </navigator>
+        </scroll-view>
+    </view>
+</view>
+<view class="modal flexCenter" wx:if="{{!showModal}}">
+    <view class="jftab01-modal-info-wrapper">
+        <view class="taskBg">
+            <image mode="widthFix" src="{{staticurl}}taskBg.png"></image>
+            <view class="taskGoodBgWrap flexCenter">
+                <view class="taskGoodWrap flexCenter">
+                    <image class="taskGoodBg" mode="aspectFill" src="{{staticurl}}taskGoodBg.png"></image>
+                    <image class="taskGood" mode="widthFix" src="{{staticurl}}taskGood.png"></image>
+                </view>
+            </view>
+        </view>
+        <view class="jftab01-modal-info01">恭喜!</view>
+        <view class="jftab01-modal-info02">您已完成
+      <span style="color:#3160D1;">{{item.taskName}}</span>任务打卡</view>
+        <view class="jftab01-modal-info02" style="padding-top:4rpx;padding-bottom:60rpx;">获得
+      <span style="color:#FF0000;">{{item.finishScore}}</span>个文明积分</view>
+        <view bindtap="clickCancel" class="jftab01-modal-info03-btn">知道了</view>
+    </view>
+</view>
+<modal bindconfirm="confirm" confirmText="前往认证" content="亲爱的市民，您好！参与问卷活动需要实名哦!" show="{{showModalAuth}}"></modal>

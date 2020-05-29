@@ -1,0 +1,117 @@
+<view class="top-line"></view>
+<view class="swiper-tab">
+    <view bindtap="clickTab" class="swiper-tab-item {{currentTab==item.value?'active':''}}" data-current="{{item.value}}" wx:for="{{taskTypeList}}" wx:key="index">{{item.label}}</view>
+</view>
+<view class="zf-tasks-wrapper">
+    <view class="{{currentTab=='1'?'show':'hidden'}}">
+        <view class="zf-tasks">
+            <view class="zf-task" wx:for="{{taskList}}" wx:key="index">
+                <image mode="aspectFit" src="{{item.taskIcon}}"></image>
+                <view class="zf-taskc2">
+                    <view class="zf-taskctop zf-taskctop2">
+                        <view class="zf-taskctop-name">{{item.taskName}}</view>
+                        <view class="zf-taskctop-score">
+                            <view class="zf-taskctop-score-content">
+                                <span>{{item.finishScore}}</span>分</view>
+                            <view class="zf-taskctop-score-bg"></view>
+                        </view>
+                    </view>
+                    <view class="zf-taskcbot">{{item.taskDesc}}</view>
+                </view>
+                <view class="zf-taskr">
+                    <view bindtap="showModal" class="zf-taskrb" data-item="{{item}}" wx:if="{{item.num<1}}">打卡</view>
+                    <view class="zf-taskrb" style="background-color: #AAAAAA;color: #fff;border-color: #AAAAAA;" wx:else>已完成</view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="{{currentTab=='2'?'show':'hidden'}}">
+        <view class="zf-tasks">
+            <view class="zf-task" wx:for="{{taskList}}" wx:key="index">
+                <image mode="aspectFit" src="{{item.taskIcon}}"></image>
+                <view class="zf-taskc2">
+                    <view class="zf-taskctop zf-taskctop2">
+                        <view class="zf-taskctop-name">{{item.taskName}}</view>
+                        <view class="zf-taskctop-score">
+                            <view class="zf-taskctop-score-content">
+                                <span>{{item.finishScore}}</span>分</view>
+                            <view class="zf-taskctop-score-bg"></view>
+                        </view>
+                        <view class="zf-taskctop-score" wx:if="{{item.ifRun=='1'}}">
+                            <text style="color: #c70304;margin-left: 20rpx;border: 1px solid #c70304;padding: 0 10rpx;border-radius: 5rpx;height: 27rpx;line-height: 27rpx;display: inline-block;font-size: 20rpx;">{{item.step?item.step:0}}步</text>
+                        </view>
+                    </view>
+                    <view class="zf-taskcbot">{{item.taskDesc}}</view>
+                </view>
+                <view class="zf-taskr">
+                    <view bindtap="showModal" class="zf-taskrb" data-item="{{item}}" wx:if="{{item.num<1}}">打卡</view>
+                    <view class="zf-taskrb" style="background-color: #AAAAAA;color: #fff;border-color: #AAAAAA;" wx:else>已完成</view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="{{currentTab=='3'?'show':'hidden'}}">
+        <view class="zf-tasks">
+            <view class="zf-task" wx:for="{{taskList}}" wx:key="index">
+                <image mode="aspectFit" src="{{item.taskIcon}}"></image>
+                <view class="zf-taskc2">
+                    <view class="zf-taskctop zf-taskctop2">
+                        <view class="zf-taskctop-name">{{item.taskName}}</view>
+                        <view class="zf-taskctop-score">
+                            <view class="zf-taskctop-score-content">
+                                <span>{{item.finishScore}}</span>分</view>
+                            <view class="zf-taskctop-score-bg"></view>
+                        </view>
+                    </view>
+                    <view class="zf-taskcbot">{{item.taskDesc}}</view>
+                </view>
+                <view class="zf-taskr">
+                    <view class="zf-taskrb" style="background-color: #AAAAAA;color: #fff;border-color: #AAAAAA;" wx:if="{{item.num>0}}">已完成</view>
+                    <view bindtap="toLook" class="zf-taskrb" data-item="{{item}}" wx:else>去看看</view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="{{currentTab=='4'?'show':'hidden'}}">
+        <view class="zf-tasks">
+            <view class="zf-task" wx:for="{{taskList}}" wx:key="index">
+                <image mode="aspectFit" src="{{item.taskIcon}}"></image>
+                <view class="zf-taskc2">
+                    <view class="zf-taskctop zf-taskctop2">
+                        <view class="zf-taskctop-name">{{item.taskName}}</view>
+                        <view class="zf-taskctop-score">
+                            <view class="zf-taskctop-score-content">
+                                <span>{{item.finishScore}}</span>分</view>
+                            <view class="zf-taskctop-score-bg"></view>
+                        </view>
+                    </view>
+                    <view class="zf-taskcbot">{{item.taskDesc}}</view>
+                </view>
+                <view class="zf-taskr">
+                    <view bindtap="toLook" class="zf-taskrb" data-item="{{item}}" wx:if="{{item.num<1}}">去答题</view>
+                    <view class="zf-taskrb" style="background-color: #AAAAAA;color: #fff;border-color: #AAAAAA;" wx:else>已完成</view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="tips" wx:if="{{currentTab==1||currentTab==2}}">请广大市民朋友根据自身完成情况认领已完成任务，并可获得相应积分。</view>
+</view>
+<view class="modal flexCenter" wx:if="{{showModal==0}}">
+    <view class="jftab01-modal-info-wrapper">
+        <view class="taskBg">
+            <image mode="widthFix" src="{{staticurl}}taskBg.png"></image>
+            <view class="taskGoodBgWrap flexCenter">
+                <view class="taskGoodWrap flexCenter">
+                    <image class="taskGoodBg" mode="aspectFill" src="{{staticurl}}taskGoodBg.png"></image>
+                    <image class="taskGood" mode="widthFix" src="{{staticurl}}taskGood.png"></image>
+                </view>
+            </view>
+        </view>
+        <view class="jftab01-modal-info01">恭喜!</view>
+        <view class="jftab01-modal-info02">您已完成
+      <span style="color:#3160D1;">{{item.taskName}}</span>任务打卡</view>
+        <view class="jftab01-modal-info02" style="padding-top:4rpx;padding-bottom:60rpx;">获得
+      <span style="color:#FF0000;">{{item.finishScore}}</span>个文明积分</view>
+        <view bindtap="clickCancle" class="jftab01-modal-info03-btn">知道了</view>
+    </view>
+</view>

@@ -1,0 +1,65 @@
+<view class="container" wx:if="{{login}}">
+    <wxc-dialog bindcancel="onCancel" bindconfirm="onConfirm" class="wxc-dialog" show="{{login}}"></wxc-dialog>
+</view>
+<view class="quanyi-top-info">
+    <view class="quanyi-top-inf">
+        <image class="quanyi-top-tx" src="{{staticurl}}logo.png" wx:if="{{isDefault}}"></image>
+        <image class="quanyi-top-tx" src="{{member.face}}" wx:else></image>
+        <view class="quanyi-top-tex">您有
+      <span style="color: #c70304;">{{scoreInfo.yue?scoreInfo.yue:0}}</span>文明豆可使用</view>
+    </view>
+    <view class="quanyi-top-icon">
+        <image bindtap="gotoCart" src="{{staticurl}}iconGoodCar.png"></image>
+        <view class="dot redBack" wx:if="{{isHasDoods}}"></view>
+    </view>
+</view>
+<view class="swiper-wrapper">
+    <swiper autoplay="{{autoplay}}" circular="{{true}}" class="swiper" duration="{{duration}}" indicatorActiveColor="{{activeColor}}" indicatorDots="{{indicatorDots}}" interval="{{interval}}">
+        <view bindtap="linkExternal" data-url="{{item.url}}" hoverClass="none" wx:for="{{swipers}}" wx:key="index">
+            <swiper-item>
+                <image class="slide-image" mode="widthFix" src="{{item.attachment}}"></image>
+            </swiper-item>
+        </view>
+    </swiper>
+</view>
+<scroll-view class="swiper-tab {{isShowTab?'fixed':''}}" scrollX="true">
+    <view bindtap="clickTab" class="swiper-tab-item {{currentTab==0?'active redBorder':''}}" data-current="{{0}}">爱心好礼</view>
+    <view bindtap="toTypeDetail" class="swiper-tab-item" data-id="{{item.id}}" data-is-floor="{{false}}" data-name="{{item.goodsTypeName}}" wx:for="{{typeList}}" wx:for-index="idx" wx:key="index">{{item.goodsTypeName}}</view>
+</scroll-view>
+<view class="index-tasks" wx:for="{{floorList}}" wx:key="unique">
+    <view class="index-tasks-tit">
+        <view class="index-tasks-titl">{{item.floorName}}</view>
+        <view bindtap="toTypeDetail" class="more" data-id="{{item.id}}" data-is-floor="{{true}}" data-name="{{item.floorName}}">更多</view>
+    </view>
+    <image class="index-tasks-topbg" src="{{item.img}}"></image>
+    <view class="index-tasks-items" wx:if="{{item.type=='1'}}">
+        <navigator class="index-tasks-item" url="/pages/quanyi/goodsdetail/goodsdetail?id={{goodsItem.goodsId}}" wx:for="{{item.jnGoodsContentFloors}}" wx:for-index="goodsIndex" wx:for-item="goodsItem" wx:key="unique">
+            <image class="index-tasks-itemimg" src="{{goodsItem.listImg}}"></image>
+            <view class="nameMiddle">
+                <view class="index-tasks-itemtit">{{goodsItem.goodsName}}</view>
+            </view>
+            <view class="dotFlex">
+                <view class="index-tasks-score">
+                    <span style="font-size:30rpx;margin-right:10rpx;font-weight:bold">{{goodsItem.integral}}</span>豆</view>
+                <view class="index-tasks-count">{{goodsItem.saleNum}}次兑换</view>
+            </view>
+        </navigator>
+    </view>
+    <scroll-view scrollX class="index-tasks-scroll" wx:else>
+        <navigator class="index-tasks-item" style="margin-left:{{item.jnGoodsContentFloors.length==2?'10%':'30rpx'}}" url="/pages/quanyi/goodsdetail/goodsdetail?id={{goodsItem.goodsId}}" wx:for="{{item.jnGoodsContentFloors}}" wx:for-index="goodsIndex" wx:for-item="goodsItem" wx:key="unique">
+            <image class="index-tasks-itemimg" src="{{goodsItem.listImg}}"></image>
+            <view class="nameMiddle">
+                <view class="index-tasks-itemtit">{{goodsItem.goodsName}}</view>
+            </view>
+            <view class="index-tasks-score">
+                <span style="font-size:30rpx;margin-right:10rpx;font-weight:bold;color:rgb(195, 27, 42)">{{goodsItem.integral}}</span>豆</view>
+        </navigator>
+    </scroll-view>
+</view>
+<movable-area style="height:{{windowHeight}}px; width:100%; position: fixed;top: 0;left: 0;">
+    <movable-view direction="all" x="{{windowWidth-80}}" y="{{windowHeight-80}}">
+        <view bindtap="openQrCode" class="openQrCode">
+            <image mode="widthFix" src="{{staticurl}}qrCodeNew.png"></image>
+        </view>
+    </movable-view>
+</movable-area>

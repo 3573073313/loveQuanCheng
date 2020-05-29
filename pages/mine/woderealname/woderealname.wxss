@@ -1,0 +1,154 @@
+.body {
+    padding: 0 12rpx 0 12rpx;
+    padding-right: 12rpx;
+    width: 100%;
+    height: 100%;
+}
+
+.order_info {
+    width: 100%;
+    background-color: #fff;
+    margin-top: 12rpx;
+    border-radius: 8rpx;
+    padding: 14rpx 23rpx 0 23rpx;
+}
+
+.order_info.tel {
+    padding-top: 0rpx;
+}
+
+.inf_tel1,.inf_tel2 {
+    height: 100rpx;
+    line-height: 100rpx;
+    padding-left: 14rpx;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.inf_tel1 {
+    border-bottom: 1rpx solid #F3F3F3;
+}
+
+.inf_tel1 .f,.inf_tel2 .f {
+    margin-right: 24rpx;
+    font-size: 26rpx;
+}
+
+.inf_num2 .r {
+    color: red;
+}
+
+.title {
+    min-width: 25%;
+    width: max-content;
+}
+
+.inf_tel1 .r,.inf_tel2 .r,.inf_num1 .r {
+}
+
+.inf_tel1 .r {
+    color: #333;
+}
+
+.order_info .c {
+    width: 160rpx;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.order_info .minus,.order_info .add {
+    width: 34rpx;
+    height: 34rpx;
+    border-radius: 6rpx;
+}
+
+.order_info .add {
+    line-height: 34rpx;
+}
+
+.order_tips {
+    font-size: 21rpx;
+    color: #999;
+    margin-top: 10rpx;
+    text-indent: 30rpx;
+}
+
+.btn {
+    width: 640rpx;
+    height: 93rpx;
+    font-size: 34rpx;
+    color: #fff;
+    text-align: center;
+    line-height: 93rpx;
+    border-radius: 8rpx;
+    position: fixed;
+    bottom: 53rpx;
+    left: 55rpx;
+}
+
+.btn0 {
+    background-color: #C31926;
+}
+
+.btn2,.btn3 {
+    background-color: #C7C7CA;
+}
+
+.modal {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    position: fixed;
+    top: 0rpx;
+    left: 0rpx;
+    z-index: 999;
+}
+
+.modal.show {
+    display: block;
+}
+
+.modal.hidden {
+    display: none;
+}
+
+.modal_inf {
+    width: 530rpx;
+    height: 300rpx;
+    background-color: #fff;
+    border-radius: 16rpx;
+    position: fixed;
+    top: 200rpx;
+    left: 120rpx;
+    padding: 107rpx 70rpx 0 70rpx;
+    text-align: center;
+}
+
+.modal_inf view:nth-child(1),.modal_inf view:nth-child(2) {
+    width: 100%;
+    text-align: center;
+    font-size: 26rpx;
+    color: #333;
+    margin-bottom: 10rpx;
+}
+
+.modal_cross {
+    font-size: 50rpx;
+    font-weight: normal;
+    position: absolute;
+    top: 0rpx;
+    left: 480rpx;
+    z-index: 999;
+}
+
+.btn_phoneNumber {
+    background-color: green;
+    height: 60rpx;
+    color: #fff;
+    font-size: 22rpx;
+    float: right;
+    margin-left: 2rpx;
+    line-height: 60rpx;
+}

@@ -1,0 +1,731 @@
+page {
+    padding: 146rpx 0 20rpx;
+}
+
+.news-wrapper {
+    margin: 0 20rpx;
+}
+
+.fixed {
+    position: fixed;
+    top: 0rpx;
+    left: 0rpx;
+    z-index: 999;
+    width: 100%;
+    padding: 20rpx 20rpx 0;
+    background: #f6f6f6;
+}
+
+.top-line {
+    height: 20rpx;
+    width: 100%;
+    background-color: #f5f5f5;
+}
+
+.swiper-tab {
+    font-size: 30rpx;
+    color: rgb(153,153,153);
+    display: flex;
+    justify-content: space-between;
+    background-color: #fff;
+    width: 100%;
+    height: 126rpx;
+    z-index: 999;
+    padding: 20px 60px 16px;
+    border-radius: 30rpx 30rpx 0rpx 0rpx;
+}
+
+.swiper-tab-item.active {
+    font-size: 34rpx;
+    color: rgb(51,51,51);
+    border-bottom: 2rpx solid rgb(237,60,68);
+    padding-bottom: 10rpx;
+    font-weight: bold;
+}
+
+.titleWrap {
+    height: 80rpx;
+    display: flex;
+    justify-content: space-between;
+    background: #fff;
+    padding: 0 20rpx 10rpx;
+    align-items: center;
+    border-bottom: 1rpx solid #f3f3f3;
+}
+
+.title {
+    font-weight: bold;
+    font-size: 40rpx;
+    color: #333;
+    border-left: 6rpx solid #ed3c44;
+    padding: 0 10rpx;
+    height: 40rpx;
+    line-height: 40rpx;
+}
+
+.index-tasks {
+    margin: 20rpx;
+    background-color: #fff;
+    border-radius: 10rpx;
+}
+
+.index-tasks-tit {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 20rpx;
+    padding-right: 20rpx;
+}
+
+.index-tasks-titl {
+    font-size: 40rpx;
+    color: rgba(0,0,0,0.9);
+    font-weight: bold;
+}
+
+.activeList {
+    width: 100%;
+    background-color: #fff;
+    margin-top: 5%;
+    border-radius: 0 0 12rpx 12rpx;
+}
+
+.activeList .item {
+    margin: 2% 0 2% 0;
+    background-color: #fff;
+    border-bottom: 2px solid #f0f0f0;
+    padding-left: 2%;
+    height: 285rpx;
+    padding-bottom: 20rpx;
+    position: relative;
+    display: flex;
+}
+
+.activeList .item:last-child {
+    border-bottom: none;
+    border-radius: 0 0 12rpx 12rpx;
+}
+
+.activeList .item .img {
+    width: 210rpx;
+    height: 285rpx;
+    background-color: #fff;
+    border-radius: 5%;
+    float: left;
+}
+
+.activeList .item .img image {
+    width: 100%;
+    height: 100%;
+    border-radius: 5%;
+}
+
+.activeList .item .info {
+    width: 69%;
+    background-color: #fff;
+    padding-left: 20rpx;
+    position: relative;
+}
+
+.head-inf {
+    padding-left: 0;
+    font-weight: bold;
+    margin-top: 4rpx;
+    font-size: 30rpx;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    margin-bottom: 16rpx;
+    width: 97%;
+    height: 80rpx;
+    color: #333;
+    word-wrap: break-word;
+}
+
+.activeList .item .info .time {
+    font-size: 24rpx;
+    color: #666;
+    font-weight: normal;
+    margin-bottom: 25rpx;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.time-img {
+    width: 40rpx;
+    height: 30rpx;
+    padding-right: 10rpx;
+}
+
+.time-img image {
+    width: 100%;
+    height: 100%;
+}
+
+.activeList .item .info .time text {
+    line-height: 36rpx;
+}
+
+.activeList .item .info .addr {
+    font-size: 24rpx;
+    color: #666;
+    font-weight: normal;
+    margin-top: 10rpx;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.addr-img {
+    width: 22rpx;
+    height: 30rpx;
+    margin-right: 16rpx;
+    margin-left: 4rpx;
+}
+
+.addr-img image {
+    width: 100%;
+    height: 100%;
+}
+
+.addr-detail {
+    width: 88%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.options {
+    width: 69%;
+    height: 50rpx;
+    position: absolute;
+    bottom: 17rpx;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 14rpx;
+}
+
+.options .head {
+    height: 30rpx;
+    line-height: 50rpx;
+}
+
+.options .head text {
+    background-color: #f3f3f3;
+    color: #333;
+    font-size: 20rpx;
+    height: 30rpx;
+    line-height: 30rpx;
+    padding: 2rpx 15rpx;
+    border-radius: 5rpx;
+    margin-left: 15rpx;
+}
+
+.options .head text:nth-of-type(2) {
+    background-color: #feab17;
+    color: #fff;
+}
+
+.options .price {
+    float: left;
+    width: 110rpx;
+    height: 50rpx;
+    line-height: 46rpx;
+    background-color: rgb(255,255,255);
+    color: #c31926;
+    font-size: 28rpx;
+    border-radius: 20rpx 0rpx 0rpx 20rpx;
+    padding-left: 20rpx;
+    padding-right: 10rpx;
+    border: 1px solid rgb(235,235,235);
+    text-align: center;
+    border-right: none;
+    margin-right: 4rpx;
+}
+
+.sel-wrapper {
+    padding: 30rpx 20rpx 0rpx;
+    font-size: 30rpx;
+    color: #333;
+    display: flex;
+    font-weight: bold;
+    justify-content: space-around;
+}
+
+.sel-item {
+    width: 33.33%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sel-item image {
+    width: 20rpx;
+    height: 10rpx;
+    margin-left: 10rpx;
+}
+
+.joinBtn {
+    background: #feab17;
+    color: #fff;
+    border-radius: 5rpx;
+    padding: 5rpx 10rpx;
+    width: max-content;
+    margin-right: 10rpx;
+    font-size: 28rpx;
+}
+
+.textColor {
+    color: #999;
+}
+
+.sBtnStyle {
+    font-size: 20rpx;
+    padding: 2rpx 10rpx;
+    border-radius: 5rpx;
+    height: 22rpx;
+    display: inline-block;
+    line-height: 22rpx;
+    margin-left: 20rpx;
+    font-weight: normal;
+}
+
+.integralStyle {
+    color: #ed3c44;
+    background: #ffd3d5;
+}
+
+.numStyle {
+    color: #999;
+    background: #f3f3f3;
+}
+
+.hotWrap {
+    padding: 20rpx 20rpx 10rpx;
+    background: #fff;
+}
+
+.hotItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 27rpx;
+    height: 60rpx;
+}
+
+.hotItemTitle {
+    display: flex;
+    align-items: center;
+    color: #666;
+}
+
+.iconHot {
+    width: 30rpx;
+    height: 30rpx;
+    margin-right: 10rpx;
+}
+
+.hotLabel {
+    font-size: 28rpx;
+    color: #ff676e;
+    display: flex;
+}
+
+.hotLabel text {
+    display: inline-block;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    max-width: 300rpx;
+    white-space: nowrap;
+}
+
+.joinBtn {
+    height: 40rpx;
+    padding: 0 20rpx;
+    background: #feab17;
+    border-radius: 5rpx;
+    line-height: 40rpx;
+    font-size: 28rpx;
+    color: #fff;
+}
+
+.isJoining {
+    background: #f3f3f3;
+    color: #999;
+}
+
+.more {
+    height: 30rpx;
+    line-height: 25rpx;
+}
+
+.content .context view {
+    color: #333;
+    font-size: 30rpx;
+    word-break: break-word;
+}
+
+.content .context .preimg {
+    width: 100%;
+    margin-top: 25rpx;
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.gzimgs-area {
+    width: 200rpx;
+    height: 200rpx;
+    margin-right: 14rpx;
+    overflow: hidden;
+}
+
+.content .context .preimg image {
+    width: 100%;
+    height: 100%;
+    border-radius: 12rpx;
+}
+
+.oneImg {
+    width: 400rpx;
+}
+
+.gzimgs-area {
+    width: 31%;
+    height: 200rpx;
+    margin: 0 14rpx 14rpx 0;
+    overflow: hidden;
+    border-radius: 12rpx;
+}
+
+.tools {
+    font-size: 24rpx;
+    color: rgb(128,128,128);
+    display: flex;
+    padding-bottom: 30rpx;
+    padding-top: 20rpx;
+}
+
+.toolsl {
+    display: flex;
+    align-items: center;
+}
+
+.toolsl image {
+    width: 24rpx;
+    height: 29rpx;
+    margin-right: 10rpx;
+}
+
+.toolsc image {
+    width: 35rpx;
+    height: 35rpx;
+    margin-right: 10rpx;
+}
+
+.toolsr {
+    width: 22%;
+    justify-content: flex-end;
+    display: flex;
+    align-items: center;
+}
+
+.toolsr image {
+    width: 30rpx;
+    height: 30rpx;
+    margin-right: 10rpx;
+}
+
+.camera {
+    width: 100rpx;
+    height: 100rpx;
+}
+
+.index_snap_camera {
+    width: 100%;
+    height: 100%;
+}
+
+.cameraGoodthing {
+    width: 100rpx;
+    height: 100rpx;
+    border-radius: 50%;
+    background: #3688f7;
+    color: #fff;
+    font-size: 22rpx;
+    text-align: center;
+    padding: 20rpx;
+}
+
+.cameraGoodthing .index_snap_camera {
+    width: 40rpx;
+    height: 40rpx;
+    margin-top: 18rpx;
+}
+
+.addr {
+    font-size: 24rpx;
+    color: #808080;
+    padding-bottom: 16rpx;
+    border-bottom: 2rpx solid #f0f0f0;
+    display: flex;
+}
+
+.addr image {
+    width: 24rpx;
+    height: 29rpx;
+    margin-right: 10rpx;
+}
+
+.content .context.minsnap {
+    padding-bottom: 12rpx;
+}
+
+.headinfo_r {
+    font-size: 22rpx;
+    display: flex;
+}
+
+.headinfo_r1 {
+    background-color: #ff7f00;
+    color: #fff;
+    text-align: center;
+    font-size: 22rpx;
+    padding: 4rpx 8rpx;
+    height: 36rpx;
+    line-height: 32rpx;
+    border-radius: 4rpx;
+    margin-right: 14rpx;
+}
+
+.headinfo_r2 {
+    border: 1px solid #d5d5d5;
+    border-radius: 4rpx;
+    display: flex;
+    padding: 4rpx 8rpx;
+}
+
+.botWay {
+    display: flex;
+    justify-content: space-between;
+    height: 80rpx;
+    align-items: center;
+}
+
+.myBotWay {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 80rpx;
+    padding: 0 20rpx;
+    align-items: center;
+    border-top: 1rpx solid #f6f6f6;
+}
+
+.botRightWay {
+    display: flex;
+    justify-content: space-around;
+}
+
+.rightState {
+    display: flex;
+    right: 20rpx;
+    position: absolute;
+}
+
+.rightState>view {
+    width: max-content;
+    height: 40rpx;
+    line-height: 40rpx;
+    border-radius: 10rpx;
+    padding: 0 10rpx;
+    font-size: 28rpx;
+    text-align: center;
+}
+
+.typeStyle {
+    color: #fff;
+    padding: 0 10rpx;
+    border-radius: 10rpx;
+}
+
+.rightStateStyle {
+    display: flex;
+    height: 18px;
+    line-height: 18px;
+    justify-content: flex-end;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: max-content;
+}
+
+.rightState .integral {
+    border-radius: 10rpx;
+    color: #fff;
+    line-height: 38rpx!important;
+    min-width: 70rpx;
+    background: #ed3c44;
+}
+
+.stateStyle {
+    color: #9a9a9a;
+}
+
+.topic {
+    color: #67b9ff;
+}
+
+.radius {
+    border-radius: 5rpx 5rpx 30rpx 30rpx;
+    overflow: hidden;
+}
+
+.typeWrap {
+    padding: 20rpx 0 0;
+    display: flex;
+    font-size: 33rpx;
+    text-align: center;
+    flex-wrap: wrap;
+    overflow: hidden;
+    background: #fff;
+}
+
+.typeWrap .integral {
+    font-size: 25rpx;
+    background: #f3f3f3;
+    height: 30rpx;
+    line-height: 30rpx;
+    margin: 10rpx auto 0;
+    overflow: hidden;
+}
+
+.showType {
+    color: #333;
+}
+
+.showType .integral {
+    color: #ed3c44;
+    background: #ffd9db;
+}
+
+.typeItem {
+    padding: 5rpx 10rpx;
+    width: max-content;
+    color: #999;
+    margin-left: 10rpx;
+    font-size: 28rpx;
+    border-bottom: 5rpx solid #fff;
+    line-height: 45rpx;
+    min-width: 132rpx;
+    height: 200rpx;
+}
+
+.iconView {
+    width: 80rpx;
+    height: 80rpx;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.iconView>image {
+    width: 50rpx;
+    height: 50rpx;
+}
+
+.myGoodthingTop {
+    padding: 30rpx 0 20rpx;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: #fff;
+}
+
+.myGoodthingIconWrap {
+    display: flex;
+}
+
+.myGoodthingIcon {
+    width: 80rpx;
+    height: 80rpx;
+    margin-right: 10rpx;
+}
+
+.iconText {
+    font-size: 28rpx;
+    color: #333;
+    line-height: 40rpx;
+}
+
+.iconTextType {
+    color: #999;
+}
+
+.integralGoodthings {
+    border-radius: 5rpx;
+    color: #fff;
+    line-height: 36rpx!important;
+    background: #ed3c44;
+    font-size: 24rpx;
+    padding: 0 10rpx;
+    margin-left: 20rpx;
+}
+
+.goodthings-tab1-reply-wrapper {
+    padding: 10rpx 30rpx;
+    background-color: #f6f6f6;
+    margin: 20rpx 0;
+    border-radius: 10rpx;
+}
+
+.goodthings-tab1-reply-cont {
+    font-size: 28rpx;
+    margin-bottom: 10rpx;
+    color: #666;
+}
+
+.goodthings-tab1-reply-info {
+    color: #b3b3b3;
+    font-size: 22rpx;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.goodthings-tab1-reply-infol {
+    display: flex;
+    align-items: center;
+    margin-right: 20rpx;
+}
+
+.goodthings-tab1-reply-infol image {
+    width: 24rpx;
+    height: 28rpx;
+    margin-right: 14rpx;
+}
+
+.indexsnap .gzimgs-area {
+    width: 31%;
+    height: 194rpx;
+}
+
+.indexsnap .ygz {
+    height: 80rpx;
+    line-height: 132rpx;
+    text-align: right;
+}
+
+.indexsnap .addressBotWay {
+    max-width: 60%;
+}
+
+.indexsnap .toolItem {
+    display: flex;
+    justify-content: flex-end;
+}

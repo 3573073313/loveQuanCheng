@@ -1,0 +1,36 @@
+.index-mess-wrapper {
+    margin: 20rpx;
+    padding: 0.5px 10px;
+    background-color: #fff;
+    border-radius: 10rpx;
+}
+
+.index-mess-item {
+    display: flex;
+    padding: 22rpx;
+    border-bottom: 1px solid #f6f6f6;
+}
+
+.index-mess-item image {
+    width: 86rpx;
+    height: 86rpx;
+    border-radius: 50%;
+    margin-right: 16rpx;
+}
+
+.index-mess-item-name {
+    font-size: 32rpx;
+    color: #333;
+    margin-bottom: 10rpx;
+}
+
+.index-mess-item-cont {
+    font-size: 26rpx;
+    color: #666666;
+}
+
+.index-mess-item-time {
+    font-size: 32rpx;
+    color: #333;
+    margin-top: 26rpx;
+}

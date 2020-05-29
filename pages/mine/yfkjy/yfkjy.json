@@ -1,0 +1,10 @@
+{
+    "navigationBarTitleText": "已反馈建议",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh": true,
+    "usingComponents": {
+        "tippage": "../../../components/onetippagecont/tippage",
+        "tippageloading": "../../../components/onetippageloading/tippage"
+    }
+}

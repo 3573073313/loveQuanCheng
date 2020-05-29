@@ -1,0 +1,10 @@
+<view class="index-mess-wrapper">
+    <navigator class="index-mess-item" url="/pages/index/indexmessage/indexnotice/indexnotice" wx:for="{{messageList}}">
+        <image src="{{item.face}}"></image>
+        <view style="width:62%;">
+            <view class="index-mess-item-name">{{item.name}}</view>
+            <view class="index-mess-item-cont">{{item.cont}}</view>
+        </view>
+        <view class="index-mess-item-time">{{item.time}}</view>
+    </navigator>
+</view>

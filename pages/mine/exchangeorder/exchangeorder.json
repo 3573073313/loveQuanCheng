@@ -1,0 +1,11 @@
+{
+    "navigationBarTitleText": "兑换订单",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh": true,
+    "usingComponents": {
+        "tippage": "../../../components/onetippageorder/tippage",
+        "tippageloading": "../../../components/onetippageloading/tippage",
+        "modal": "../../../components/modal/modal"
+    }
+}

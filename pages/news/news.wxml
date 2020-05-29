@@ -1,0 +1,193 @@
+<view class="container" wx:if="{{login}}">
+    <wxc-dialog bindcancel="onCancel" bindconfirm="onConfirm" class="wxc-dialog" show="{{login}}"></wxc-dialog>
+</view>
+<view class="top-line"></view>
+<view class="tabWrap" wx:if="{{!login}}">
+    <view class="swiper-tab" style="justify-content: space-around" wx:if="{{isSuccess&&!newsTypeList.length}}">
+        <view bindtap="clickTab" class="swiper-tab-item {{currentTab==0?'active redBorder':''}}" data-current="0">文明新闻</view>
+    </view>
+    <scroll-view scrollX class="swiper-tab" scrollLeft="{{scrollLeft}}" wx:if="{{isSuccess&&newsTypeList.length}}">
+        <view bindtap="clickTab" class="swiper-tab-item {{!obj0.contentType?'active redBorder':''}}" data-current="0">文明新闻</view>
+        <view bindtap="clickNewTab" class="swiper-tab-item {{obj0.contentType==item.typeId?'active redBorder':''}}" data-current="{{index}}" data-id="{{item.typeId}}" id="scrollTab{{index}}" wx:for="{{newsTypeList}}" wx:key="unique">{{item.name}}</view>
+    </scroll-view>
+</view>
+<view class="news-wrapper">
+    <view class="{{currentTab!==1?'show':'hidden'}}">
+        <navigator class="index-culture" data-item="{{item}}" url="/pages/news/detail/detail?id={{item.id}}{{item.video?'&video='+item.video:''}}" wx:for="{{culturelists}}" wx:for-index="idx" wx:key="idx">
+            <view class="info1" wx:if="{{(item.video==null||item.video=='')&&item.listImg.length==0}}">
+                <text class="title">{{item.contentName}}</text>
+                <view class="from" wx:if="{{item.isTop==0}}">
+                    <view class="origin">{{item.publisher}}</view>
+                    <view class="time">{{item.releaseDate}}</view>
+                </view>
+                <view class="from" wx:if="{{item.isTop==1}}">
+                    <view class="from-top">
+                        <view class="uptop red">置顶</view>
+                        <view class="origin">{{item.publisher}}</view>
+                    </view>
+                    <view class="time">{{item.releaseDate}}</view>
+                </view>
+            </view>
+            <view class="info2" wx:if="{{(item.video==null||item.video=='')&&item.listImg.length==1}}">
+                <view>
+                    <view class="left">
+                        <text class="title">{{item.contentName}}</text>
+                    </view>
+                    <view class="info2-img">
+                        <image src="{{item.listImg[0]}}" style="border:2rpx solid #eee;background:url(/image/logoLoading.png) 20rpx;background-size:75%"></image>
+                    </view>
+                </view>
+                <view class="from" wx:if="{{item.isTop==0}}">
+                    <view class="origin">{{item.publisher}}</view>
+                    <view class="time">{{item.releaseDate}}</view>
+                </view>
+                <view class="from" wx:if="{{item.isTop==1}}">
+                    <view class="from-top">
+                        <view class="uptop">置顶</view>
+                        <view class="origin">{{item.publisher}}</view>
+                    </view>
+                    <view class="time">{{item.releaseDate}}</view>
+                </view>
+            </view>
+            <view class="info3" wx:if="{{(item.video==null||item.video=='')&&item.listImg.length>1}}">
+                <text class="title">{{item.contentName}}</text>
+                <view class="wrapper">
+                    <image mode="aspectFill" src="{{img}}" style="border:2rpx solid #eee;" wx:if="{{index<=2}}" wx:for="{{item.listImg}}" wx:for-item="img" wx:key="index"></image>
+                </view>
+                <view class="from" wx:if="{{item.isTop==0}}">
+                    <view class="origin">{{item.publisher}}</view>
+                    <view class="time">{{item.releaseDate}}</view>
+                </view>
+                <view class="from" wx:if="{{item.isTop==1}}">
+                    <view class="from-top">
+                        <view class="uptop">置顶</view>
+                        <view class="origin">{{item.publisher}}</view>
+                    </view>
+                    <view class="time">{{item.releaseDate}}</view>
+                </view>
+            </view>
+            <view class="info4" wx:if="{{item.video}}">
+                <view class="title">{{item.contentName}}</view>
+                <view class="wrapper" style="position:relative">
+                    <image mode="aspectFill" src="{{item.listImg?item.listImg[0]:item.videoImg?item.videoImg:''}}"></image>
+                    <view class="playIcon">
+                        <view class="playStyle">▶</view>
+                    </view>
+                </view>
+                <view class="from" wx:if="{{item.isTop==0}}">
+                    <view class="origin">{{item.publisher}}</view>
+                    <view class="time">{{item.releaseDate}}</view>
+                </view>
+                <view class="from" wx:if="{{item.isTop==1}}">
+                    <view class="from-top">
+                        <view class="uptop">置顶</view>
+                        <view class="origin">{{item.publisher}}</view>
+                    </view>
+                    <view class="time">{{item.releaseDate}}</view>
+                </view>
+            </view>
+        </navigator>
+    </view>
+    <view class="{{currentTab==1?'show':'hidden'}} indexsnap" style="padding: 20rpx 20rpx 0">
+        <view class="content content0" data-num="{{index}}" wx:if="{{false}}" wx:for="{{powerList}}" wx:key="index">
+            <view class="item">
+                <view class="head">
+                    <view class="headimg">
+                        <image src="{{item.member.face}}"></image>
+                    </view>
+                    <view style="float:left;width:79.5%;">
+                        <view class="headinfo">
+                            <view class="headinfo_name">{{item.fromName}}</view>
+                        </view>
+                        <view class="headinfo_time" style="font-size:24rpx;color:rgb(153,153,153);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;width:100%;">{{item.member.sign}}</view>
+                    </view>
+                </view>
+                <view class="context">
+                    <text style="color:#666">{{item.content}}</text>
+                    <view style="position:relative" wx:if="{{item.videos!=null&&item.videos!=''}}">
+                        <video controls objectFit="cover" src="{{item.videos}}" style="width:100%;margin-top:25rpx;border-radius:12rpx;"></video>
+                    </view>
+                    <view class="preimg" wx:elif="{{item.pictures[0]!=''&&item.pictures.length>1}}">
+                        <view class="gzimgs-area" style="float:left;" wx:for="{{item.pictures}}" wx:for-index="idx" wx:for-item="img" wx:key="img">
+                            <image bindtap="imgPreview" data-index="{{idx}}" data-item="{{item}}" mode="aspectFill" src="{{img}}" style=""></image>
+                        </view>
+                    </view>
+                    <view class="preimg" wx:elif="{{item.pictures[0]!=''&&item.pictures.length==1}}">
+                        <image bindtap="imgPreview" data-index="{{idx}}" data-item="{{item}}" mode="widthFix" src="{{img}}" style="width:400rpx;" wx:for="{{item.pictures}}" wx:for-index="idx" wx:for-item="img" wx:key="img"></image>
+                    </view>
+                </view>
+                <view class="addressBotWay">
+                    <view bindtap="openMap" class="address" data-item="{{item}}">
+                        <image mode="widthFix" src="{{staticurl}}address.png" style="width:7%;height:100%"></image>
+                        <view class="addressText">{{item.address}}</view>
+                    </view>
+                </view>
+                <view style="display:flex;justify-content: space-between;">
+                    <view class="ygz">{{item.createDate}}</view>
+                    <view class="tools">
+                        <view class="toolsc">
+                            <button class="share" data-id="{{item.id}}" data-item="{{item}}" data-type="1" openType="share">
+                                <image mode="widthFix" src="{{staticurl}}iconShareNew.png"></image>{{item.shareNum}}
+              </button>
+                        </view>
+                        <view bindtap="goodMysSnap" class="toolsc" data-id="{{item.id}}" data-index="{{index}}" data-type="2">
+                            <image mode="widthFix" src="{{staticurl}}iconGoodNew{{item.number>0?'Fill':''}}.png" style="{{currentTab==2?'transform: rotate(180deg)':''}}"></image>{{item.dianZanNum}}
+            </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="content content0" data-num="{{index}}" wx:if="{{item.member}}" wx:for="{{powerList}}" wx:key="index">
+            <view class="item">
+                <view class="head">
+                    <view class="flex" style="width:70%;">
+                        <view class="headimg">
+                            <image src="{{item.member.face}}"></image>
+                        </view>
+                        <view style="line-height: 40rpx;margin-top: 5rpx;">
+                            <view class="headinfo">
+                                <view class="headinfo_name">{{item.fromName}}</view>
+                            </view>
+                            <view class="headinfo_time" style="font-size: 24rpx;color: #999;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;width:100%;">{{item.member.sign}}</view>
+                        </view>
+                    </view>
+                    <view class="ygz">{{item.createDate}}</view>
+                </view>
+                <view class="context">
+                    <view>
+                        <text bindtap="toDetail" class="topic" data-type="navigate" data-url="/pages/zhuanfen/zhuanfenorder/zhuanfenorder?id={{item.activityId}}&type=2" style="color:#FF676E" wx:if="{{item.activityName}}">#{{item.activityName}}#</text>{{item.content}}</view>
+                    <view wx:if="{{item.videos!=null&&item.videos!=''}}">
+                        <video class="vid" controls="controls" objectFit="cover" src="{{item.videos}}" style="margin-top:25rpx;width:100%;border-radius:12rpx;" wx:if="{{item.videos!=null&&item.videos!=''}}"></video>
+                    </view>
+                    <view class="preimg" wx:elif="{{item.pictures[0]!=''&&item.pictures.length>1}}">
+                        <view class="gzimgs-area" wx:for="{{item.pictures}}" wx:for-index="idx" wx:for-item="img" wx:key="img">
+                            <image bindtap="imgPreview" data-index="{{idx}}" data-item="{{item}}" mode="aspectFill" src="{{img}}"></image>
+                        </view>
+                    </view>
+                    <view class="preimg" wx:elif="{{item.pictures[0]!=''&&item.pictures.length==1}}">
+                        <image bindtap="imgPreview" data-index="{{idx}}" data-item="{{item}}" mode="widthFix" src="{{img}}" style="width:400rpx;" wx:for="{{item.pictures}}" wx:for-index="idx" wx:for-item="img" wx:key="img"></image>
+                    </view>
+                </view>
+                <view class="tools">
+                    <view class="addressBotWay">
+                        <view bindtap="openMap" class="address" data-item="{{item}}">
+                            <image mode="aspectFit" src="{{staticurl}}iconBigAdd@3x.png" style="width:24rpx;height:28rpx"></image>
+                            <view class="addressText">{{item.address}}</view>
+                        </view>
+                    </view>
+                    <view class="toolItem">
+                        <view class="toolsc">
+                            <button class="share" data-id="{{item.id}}" data-item="{{item}}" data-type="1" openType="share">
+                                <image mode="widthFix" src="{{staticurl}}iconShareRed@3x.png"></image>{{item.shareNum}}
+              </button>
+                        </view>
+                        <view bindtap="goodMysSnap" class="toolsc" data-id="{{item.id}}" data-index="{{index}}" data-type="2">
+                            <image mode="widthFix" src="{{staticurl}}iconGoodRed{{item.number>0?'Fill':''}}@3x.png" style="{{currentTab==2?'transform: rotate(180deg)':''}}"></image>{{item.dianZanNum}}
+            </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <tippage listlen="{{!culturelists.length&&!powerList.length}}"></tippage>
+</view>

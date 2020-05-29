@@ -1,0 +1,19 @@
+<view class="dialog_mask" wx:if="{{show}}">
+    <view class="dialog_container">
+        <view class="dialog__title" style="color: {{titleColor}}">请先登录再进行操作</view>
+        <view class="dialog__content">
+            <view class="log_wrap">
+                <view class="log_wrap--log" style="background-image:url('{{staticUrl}}logo.png')"></view>
+                <view class="log_wrap--text">我爱泉城</view>
+            </view>
+            <view style="font-size:24rpx;padding:0 30rpx;">亲爱的济南市民，登录后可以做好事，赚积分，兑好礼。</view>
+            <view style="font-size:24rpx;padding:12rpx 30rpx;">本应用承诺获取用户信息后，妥善安全的保存用户信息，用户信息仅限于本应用内部使用不用作第三方。</view>
+            <navigator class="dialog__content--text" style="color: {{contentColor}}" url="/pages/loginagreement/loginagreement">登录即代表您已阅读并同意<text style="color:#0099ee;">《我爱泉城小程序注册协议》</text>
+            </navigator>
+        </view>
+        <view class="dialog__btns">
+            <view bindtap="cancelCallback" class="dialog__btns--cancel">暂不登录</view>
+            <button bindgetuserinfo="onGotUserInfo" class="getUserInfo_btn" lang="zh_CN" openType="getUserInfo">立即登录</button>
+        </view>
+    </view>
+</view>

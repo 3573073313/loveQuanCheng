@@ -1,0 +1,6 @@
+{
+    "component": true,
+    "usingComponents": {
+        "commentIconList": "../commentIconList/commentIconList"
+    }
+}

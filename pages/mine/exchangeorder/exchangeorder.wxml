@@ -1,0 +1,58 @@
+<view class="exchange-wrapper" wx:if="{{orderstatedict.length}}">
+    <scroll-view class="swiper-tab" scrollX="true">
+        <view bindtap="clickTab" class="swiper-tab-item {{!currentTab?'active':''}}" data-current="{{0}}" style="margin-left:20rpx;">全部
+      <text wx:if="{{orderStatusList[0]>0}}">({{orderStatusList[0]}})</text>
+        </view>
+        <view bindtap="clickTab" class="swiper-tab-item {{currentTab==item.value?'active':''}}" data-current="{{item.value}}" wx:for="{{orderstatedict}}" wx:key="index">{{item.label}}
+      <text wx:if="{{orderStatusList[index+1]>0}}">({{orderStatusList[index+1]}})</text>
+        </view>
+    </scroll-view>
+    <tippage listlen="{{isGetList&&!orderList.length}}"></tippage>
+    <view class="exchange-item" wx:for="{{orderList}}" wx:key="index">
+        <view class="headerTitle">
+            <view class="exchange-item-num">编号：{{item.orderNo}}</view>
+            <view class="exchange-item-status">{{item.stateString}}</view>
+        </view>
+        <navigator class="qy-online-goods-wrapper" url="/pages/quanyi/goodsdetail/goodsdetail?id={{goodsItem.goodsId}}" wx:for="{{item.orderDetailsList}}" wx:for-index="goodsIndex" wx:for-item="goodsItem" wx:key="unique">
+            <image src="{{goodsItem.listImg}}"></image>
+            <view class="qy-online-goods">
+                <view class="qy-online-goods-name">{{goodsItem.goodsName}}</view>
+                <view class="qy-online-goods-size">规格： {{goodsItem.specName}}</view>
+            </view>
+            <view class="countPrice">
+                <view class="qy-online-goods-integral">{{goodsItem.integral}}
+          <text class="integral">积分</text>
+                </view>
+                <view class="qy-online-goods-size">×{{goodsItem.num}}</view>
+            </view>
+        </navigator>
+        <view class="totalWrap">
+            <view class="freight" wx:if="{{item.postage}}">运费：{{item.postage}}积分</view>
+            <view class="totalPrice">共{{item.orderDetailsList.length}}件商品 合计：
+        <text class="payPoints">{{item.payPoints}}</text>
+                <text class="integral">积分</text>
+            </view>
+        </view>
+        <view class="mine-exchange-bot">
+            <view class="mine-exchange-bottime">{{item.updateDate}}</view>
+            <view class="mine-exchange-botbtns" style="display:flex;">
+                <view bindtap="showModal" class="mine-exchange-botbtns0" data-id="{{item.orderDetailsList[0].orderId}}" wx:if="{{item.isCancleShow}}">取消</view>
+                <view bindtap="logisticsDetail" class="mine-exchange-botbtns1" data-id="{{item.orderDetailsList[0].orderId}}" wx:if="{{item.orderStatus=='2'}}">查看物流</view>
+                <view bindtap="getGoods" class="mine-exchange-botbtns1" data-id="{{item.id}}" data-order-status="4" wx:if="{{item.orderStatus=='2'}}">收货</view>
+                <view bindtap="getQrCode" class="mine-exchange-botbtns1" data-item="{{item}}" wx:if="{{item.orderStatus=='3'}}">取货</view>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="{{isShowQrCode?'show':'hidden'}}">
+    <view class="showQrCode">
+        <view class="modal_inf_code">
+            <canvas canvasId="myQrcode" class="canvas-code" style="background:#fff;width: 200px;height: 200px;"></canvas>
+            <view class="nums">提货码：{{showItem.pickCode}}</view>
+        </view>
+        <view bindtap="getQrCode" class="ques-cancel-code">
+            <view>×</view>
+        </view>
+    </view>
+</view>
+<modal bindconfirm="clickDel" cancelText="暂不取消" confirmText="确认取消" content="您即将取消订单，请确认是否继续取消?" isRed="{{true}}" show="{{showModal==0}}" title="尊敬的用户"></modal>

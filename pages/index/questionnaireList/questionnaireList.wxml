@@ -1,0 +1,9 @@
+<view class="wrap">
+    <view class="banner">
+        <image class="bannerImg" mode="widthFix" src="{{staticUrl}}questionBannerNew.png"></image>
+    </view>
+    <view class="activeList" wx:if="{{activityList.length}}">
+        <activity activityList="{{activityList}}" navToType="1" noIsType="2" show="{{true}}" staticurl="{{staticUrl}}"></activity>
+    </view>
+    <tippage listlen="{{!activityList.length}}"></tippage>
+</view>

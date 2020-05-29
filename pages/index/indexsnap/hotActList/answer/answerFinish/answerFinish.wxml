@@ -1,0 +1,40 @@
+<block wx:if="{{canvasHidden}}">
+    <view class="page" wx:if="{{staticUrl}}answerBg.png">
+        <view class="wrap">
+            <view class="contentWrap" style="background-image:url({{staticUrl}}answerBg.png)">
+                <view class="topWrap">
+                    <view class="user">
+                        <image class="userFace" mode="aspectFill" src="{{member.face}}"></image>
+                        <view class="userName">{{member.nickname}}</view>
+                    </view>
+                    <button bindtap="{{isImgSuccess?isSaveShare?'saveImg':'saveImageToPhotosAlbum':''}}" class="clearBtn" openType="{{isImgSuccess?'':'share'}}" wx:if="{{!isFromShare&&remark}}">
+                        <image class="shareIcon" src="{{staticUrl}}bigShare.png"></image>
+                    </button>
+                </view>
+                <view class="botWrap">
+                    <view class="calendar">
+                        <view class="calendarTop">您已完成“{{testData.detail}}”答题活动</view>
+                        <view class="calendarBot">
+                            <view class="calendarTitle">您的成绩</view>
+                            <view class="calendarCon">{{resultNum}}</view>
+                        </view>
+                    </view>
+                    <view class="remark {{remark?'showR':'hiddenR'}}">
+                        <image mode="widthFix" src="{{staticUrl}}answerTopName.png"></image>
+                        <view class="remarkText">{{remark}}</view>
+                    </view>
+                    <view class="hearten {{hearten?'showR':'hiddenR'}}">{{hearten}}</view>
+                    <view class="hearten" style="color:#D1652A;margin:0 0 20rpx">您打败了{{resultPersonNum}}%的参与者</view>
+                    <view class="progress">
+                        <view class="progressAct" style="width:{{resultPersonNum}}%"></view>
+                        <view class="progressActText" style="left:{{resultPersonNum>83?83:resultPersonNum<15?15:resultPersonNum}}%">{{resultPersonNum}}%</view>
+                    </view>
+                </view>
+            </view>
+            <view bindtap="toIndex" class="toIndex" wx:if="{{isFromShare}}">去首页了解更多</view>
+        </view>
+    </view>
+</block>
+<view class="canvas">
+    <canvas canvasId="shareCanvas" style="width: 80vw;height: 90vh;border-radius:20rpx;overflow:hidden;margin:5vh auto"></canvas>
+</view>

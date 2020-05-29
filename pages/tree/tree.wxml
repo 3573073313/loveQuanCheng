@@ -1,0 +1,31 @@
+<view class="page">
+    <view class="flowingCloud">
+        <image mode="widthFix" src="{{staticurl}}/tree/cloud1.png" style="width:40%;"></image>
+    </view>
+    <view class="staticCloud">
+        <image mode="widthFix" src="{{staticurl}}/tree/cloud2.png" style="width:50%;"></image>
+    </view>
+    <view class="tree">
+        <image animation="{{animTreeSwingData}}" bindtap="touchTree" mode="widthFix" src="{{treePng}}" style="width:20%;"></image>
+    </view>
+    <view class="waterCan">
+        <image animation="{{animWaterCan}}" bindanimationend="{{animationend}}" bindanimationstart="{{animationstart}}" bindtap="onWaterCanTouched" mode="widthFix" src="{{staticurl}}/tree/water.png" style="width:20%;"></image>
+    </view>
+    <view class=" {{showOrHidden?'waterFallShow':'waterFallHide'}}">
+        <image animation="{{animWaterFall}}" mode="widthFix" src="{{staticurl}}/tree/waterFull.png" style="width:10%;"></image>
+    </view>
+    <view class="userinfo">
+        <image bindgetuserinfo="onGetUserInfo" class="userinfo-avatar" openType="getUserInfo" style="background-image: url({{avatarUrl}})"></image>
+        <view>
+            <button bindtap="onGetOpenid" class="userinfo-nickname">{{localExperence}}
+      </button>
+        </view>
+    </view>
+    <view class="userinfo">
+        <image bindgetuserinfo="onGetUserInfo" class="userinfo-avatar" openType="getUserInfo" src="{{staticurl}}/tree/forest.png"></image>
+        <view>
+            <button bindtap="onGetOpenid" class="userinfo-nickname">{{treesCoount}}
+      </button>
+        </view>
+    </view>
+</view>

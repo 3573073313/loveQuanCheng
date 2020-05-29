@@ -1,0 +1,24 @@
+<view class="page" wx:if="{{order}}">
+    <view class="header" style="margin-top:5rpx">
+        <view class="headerTitle">物流公司：</view>
+        <view class="headerContent">{{order.expName}}</view>
+    </view>
+    <view class="header">
+        <view class="headerTitle">物流编号：</view>
+        <view class="headerContent">{{order.number}}</view>
+    </view>
+    <view class="infoWrap" wx:if="{{order&&order.list.length}}">
+        <view class="infoItem" wx:for="{{order.list}}" wx:key="unique">
+            <view class="leftDot">
+                <view class="dot {{index==0?'activeDot':''}}"></view>
+                <view class="solid" wx:if="{{index!==order.list.length-1}}"></view>
+            </view>
+            <view class="rightInfo">
+                <view class="infoText">{{item.status}}</view>
+                <view class="infoTime">{{item.time}}</view>
+            </view>
+        </view>
+    </view>
+    <tippage listlen="{{!order.list.length}}"></tippage>
+</view>
+<tippage listlen="{{!order}}"></tippage>

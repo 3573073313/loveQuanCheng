@@ -1,0 +1,41 @@
+<view class="commentWrap" wx:if="{{show}}">
+    <view class="commentItem flexBt" wx:for="{{commentList}}" wx:key="unique">
+        <view class="userFace">
+            <image mode="aspectFill" src="{{item.member.face}}"></image>
+        </view>
+        <view class="contentWrap">
+            <view class="flexBt">
+                <view class="userInfo">
+                    <view class="userName">{{item.member.nickname}}</view>
+                    <view>{{item.member.sign}}</view>
+                </view>
+                <view class="goodNumber">
+                    <image mode="heightFix" src="{{staticurl}}iconGood{{!item.num?'RedFill@3x':'NN'}}.png"></image>
+          {{item.dianzanNum}}
+        </view>
+            </view>
+            <view class="commentDetail {{!item.isShowAll&&item.exceedFive?'clamp5':''}}">
+                <text id="contentText{{index}}">{{item.content}}</text>
+                <block wx:if="{{item.exceedFive}}">
+                    <view bindtap="showAll" class="allShow" data-index="{{index}}" wx:if="{{!item.isShowAll}}">...
+            <text class="yellow">全部</text>
+                    </view>
+                    <view bindtap="showAll" class="packUp yellow" data-index="{{index}}" wx:else>收起</view>
+                </block>
+            </view>
+            <view class="flexBtCenter">
+                <view class="date">{{item.creatDate}}</view>
+                <view bindtap="writeComment" class="replyBtn" data-index="{{index}}" wx:if="{{!item.authComment}}">回复</view>
+            </view>
+            <view class="reply" wx:if="{{item.authComment}}">
+                <view class="author">作者回复：</view>
+                <view class="authorReply">{{item.authComment.content}}</view>
+                <view class="flexBt">
+                    <view class="date">{{item.authComment.creatDate}}</view>
+                    <image class="delIcon" src="{{staticurl}}delRed.png"></image>
+                </view>
+            </view>
+        </view>
+        <commentIconList isFromComment="{true}}" item="{{item}}" show="{{true}}" wx:if="{{item.showKeyBoard}}"></commentIconList>
+    </view>
+</view>

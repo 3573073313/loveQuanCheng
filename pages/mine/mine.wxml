@@ -1,0 +1,132 @@
+<view class="container" wx:if="{{login}}">
+    <wxc-dialog bindcancel="onCancel" bindconfirm="onConfirm" class="wxc-dialog" show="{{login}}"></wxc-dialog>
+</view>
+<view bindtap="handleLogin" class="wode-perinfo" style="padding-top:18rpx;" wx:if="{{isDefault}}">
+    <view class="wode-perinfo-tx">
+        <view>
+            <image class="index-top-tx" src="{{staticurl}}logo.png"></image>
+        </view>
+    </view>
+    <view style="width:74%">
+        <view class="wode-perinfo-inf">
+            <view class="wode-perinfo-name">请登录</view>
+        </view>
+        <view class="wode-perinfo-label">人人为我 我为人人</view>
+    </view>
+</view>
+<view class="wode-perinfo" style="padding-top:18rpx;" wx:if="{{!isDefault}}">
+    <view class="wode-perinfo-tx">
+        <navigator url="/pages/mine/wodeinfo/wodeinfo">
+            <image class="index-top-tx" src="{{member.face}}"></image>
+        </navigator>
+    </view>
+    <view style="width:74%">
+        <view class="wode-perinfo-inf">
+            <view class="wode-perinfo-name">{{member.nickname}}</view>
+            <view class="wode-perinfo-score" style="height:36rpx;line-height:24rpx;" wx:if="{{scoreInfo.allScore>0}}">{{scoreInfo.allScore}}分  </view>
+            <view class="wode-perinfo-score" style="background-color:transparent;padding:0rpx;">
+                <image src="{{scoreInfo.levelLogo}}" style="width:110rpx;height:40rpx;margin-left:20rpx;"></image>
+            </view>
+        </view>
+        <view class="wode-perinfo-label" wx:if="{{member.sign==''||member.sign==null||member.sign=='null'}}">请修改个人签名</view>
+        <view class="wode-perinfo-label" wx:else>
+      签名:{{member.sign}}
+    </view>
+    </view>
+</view>
+<view class="index-tasks" style="margin-top:-114rpx;">
+    <view class="index-tasks-tit">
+        <view class="index-tasks-titl">兑换订单</view>
+    </view>
+    <scroll-view class="wode-tasks wode-tasks-orders" scrollX="true" style="white-space:nowrap;">
+        <view bindtap="toDetail" class="wode-task wode-task-order" data-url="exchangeorder/exchangeorder?current={{0}}">
+            <image class="index-top-tx" src="{{staticurl}}my_exange01.png"></image>
+            <view class="wode-task-tex">全部订单</view>
+            <view class="wode-task-smrz countWrap red redBorder {{orderStatusList[0]>99?'isBigStyle':'countStyle'}}" wx:if="{{orderStatusList[0]>0}}">{{orderStatusList[0]>99?'···':orderStatusList[0]}}</view>
+        </view>
+        <view bindtap="toDetail" class="wode-task wode-task-order" data-url="exchangeorder/exchangeorder?current={{index+1}}" wx:for="{{orderstatedict}}" wx:key="unique">
+            <image class="index-top-tx" src="{{item.img}}"></image>
+            <view class="wode-task-tex">{{item.label}}</view>
+            <view class="wode-task-smrz countWrap red redBorder {{index+1==parseInt(item.value)&&orderStatusList[item.value]>99?'isBigStyle':'countStyle'}}" wx:if="{{orderStatusList[item.value]>0}}">{{orderStatusList[item.value]>99?'···':orderStatusList[item.value]}}</view>
+        </view>
+    </scroll-view>
+</view>
+<view class="index-tasks">
+    <view class="index-tasks-tit">
+        <view class="index-tasks-titl">活动订单</view>
+    </view>
+    <scroll-view class="wode-tasks wode-tasks-orders" scrollX="true" style="white-space:nowrap;margin-top:6rpx;">
+        <view bindtap="toDetail" class="wode-task wode-task-order wode-activity-order" data-url="/pages/mine/activityorder/activityorder">
+            <image class="index-top-tx" src="{{staticurl}}my_activity01.png"></image>
+            <view class="content-tip red redBorder" wx:if="{{activityOrderStatusList[0]>0}}">{{activityOrderStatusList[0]}}</view>
+            <view class="wode-task-tex">全部订单</view>
+        </view>
+        <view bindtap="toDetail" class="wode-task wode-task-order wode-activity-order" data-url="/pages/mine/activityorder/activityorder?state={{item.value}}" wx:for="{{actOrderStateDict}}" wx:key="item">
+            <image class="index-top-tx" src="{{item.img}}"></image>
+            <view class="content-tip red redBorder" wx:if="{{activityOrderStatusList[item.value]>0}}">{{activityOrderStatusList[item.value]}}</view>
+            <view class="wode-task-tex">{{item.label}}</view>
+        </view>
+    </scroll-view>
+</view>
+<view class="index-tasks">
+    <view class="index-tasks-tit">
+        <view class="index-tasks-titl">我的服务</view>
+    </view>
+    <view class="wode-tasks" style="margin-top:40rpx">
+        <view bindtap="toDetail" class="wode-task" data-url="/pages/mine/woderealname/woderealname">
+            <image class="index-top-tx" src="{{staticurl}}my_service01.png"></image>
+            <view class="wode-task-tex">实名认证</view>
+            <view class="wode-task-smrz" style="background:{{statusColor}}" wx:if="{{statusText}}">{{statusText}}</view>
+        </view>
+        <view bindtap="clickToMysnap" class="wode-task">
+            <image class="index-top-tx" src="{{staticurl}}my_service02.png"></image>
+            <view class="wode-task-tex">我的随手拍</view>
+        </view>
+        <view bindtap="clickToMygoodthing" class="wode-task">
+            <image class="index-top-tx" src="{{staticurl}}my_service03.png"></image>
+            <view class="wode-task-tex">我做的好事</view>
+        </view>
+    </view>
+    <view class="wode-tasks" style="margin-top:50rpx;">
+        <view class="wode-task">
+            <view bindtap="toDetail" class="wode-task" data-url="/pages/mine/receiveaddr/receiveaddr?isFromMine=true" style="width:160rpx;">
+                <image class="index-top-tx" src="{{staticurl}}my_service07.png"></image>
+                <view class="wode-task-tex">我的收货地址</view>
+            </view>
+        </view>
+        <navigator class="wode-task" openType="switchTab" style="position:relative" url="/pages/quanyi/quanyi">
+            <image class="index-top-tx" src="{{staticurl}}my_service05.png"></image>
+            <view class="wode-task-tex">换好物</view>
+            <view class="wode-task-wmd-num redBack" wx:if="{{scoreInfo.yue>0}}">{{scoreInfo.yue}}豆</view>
+        </navigator>
+        <view bindtap="toDetail" class="wode-task" data-url="/pages/mine/collect/collect">
+            <image class="index-top-tx" src="{{staticurl}}my_service06.png"></image>
+            <view class="wode-task-tex">我的收藏</view>
+        </view>
+    </view>
+    <view class="wode-tasks" style="justify-content:flex-start;padding-left:24rpx;margin-top:50rpx;">
+        <view bindtap="toDetail" class="wode-task" data-url="/pages/index/indexdonate/indexdonate" style="width:160rpx;">
+            <image class="index-top-tx" src="{{staticurl}}my_service05_new.png"></image>
+            <view class="wode-task-tex">捐文明豆</view>
+        </view>
+    </view>
+</view>
+<view class="index-tasks">
+    <view class="index-tasks-tit">
+        <view class="index-tasks-titl">其他</view>
+    </view>
+    <view class="wode-tasks">
+        <navigator class="wode-task" url="/pages/tree/treePlant/treePlant">
+            <image class="index-top-tx" src="{{staticurl}}my_other_tree.png"></image>
+            <view class="wode-task-tex">植树活动</view>
+        </navigator>
+        <view bindtap="toDetail" class="wode-task" data-url="/pages/mine/suggest/suggest">
+            <image class="index-top-tx" src="{{staticurl}}my_other01.png"></image>
+            <view class="wode-task-tex">我要吐槽</view>
+        </view>
+        <navigator class="wode-task" url="/pages/mine/wodeabout/wodeabout">
+            <image class="index-top-tx" src="{{staticurl}}my_other02.png"></image>
+            <view class="wode-task-tex">关于我们</view>
+        </navigator>
+    </view>
+</view>

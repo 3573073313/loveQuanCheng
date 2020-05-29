@@ -1,0 +1,40 @@
+<view class="page">
+    <view class="typeListWrap" wx:if="{{!isNoType}}">
+        <view bindtap="clickTypeAct" class="typeItem" data-id="{{item.id}}" data-type="{{item.type}}" wx:for="{{topTypeList}}" wx:key="unique">
+            <image mode="widthFix" src="{{item.img}}"></image>
+            <view class="typeName">{{item.name}}</view>
+        </view>
+    </view>
+    <view class="index-tasks">
+        <view class="sel-wrapper">
+            <view class="sel-item section" wx:if="{{false}}">
+                <picker bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" mode="multiSelector" range="{{areaList}}" rangeKey="title" value="{{areaIndex}}">
+                    <view class="picker">
+            {{areaList[0][ areaIndex[0] ].title}} {{areaList[1][ areaIndex[1] ].title}}
+          </view>
+                </picker>
+                <image src="https://jn.zhuwentec.com/jn-cultural-cdn/wxapp/zhuanfen_arrow.png"></image>
+            </view>
+            <view class="sel-item section">
+                <picker bindchange="bindTypePickerChange" range="{{typeList}}" rangeKey="name" value="{{typeIndex}}">
+                    <view class="picker">
+            {{typeList[typeIndex].name}}
+          </view>
+                </picker>
+                <image src="https://jn.zhuwentec.com/jn-cultural-cdn/wxapp/zhuanfen_arrow.png"></image>
+            </view>
+            <view class="sel-item">
+                <picker bindchange="bindScorePickerChange" range="{{scoreList}}" value="{{index}}">
+                    <view class="picker">
+            {{scoreList[index]}}
+          </view>
+                </picker>
+                <image src="https://jn.zhuwentec.com/jn-cultural-cdn/wxapp/zhuanfen_arrow.png"></image>
+            </view>
+        </view>
+        <view class="activeList">
+            <activity activityList="{{activityList}}" noIsType="{{isNoType?'1':''}}" show="{{true}}" staticurl="{{staticurl}}"></activity>
+        </view>
+        <tippage listlen="{{!activityList.length}}"></tippage>
+    </view>
+</view>

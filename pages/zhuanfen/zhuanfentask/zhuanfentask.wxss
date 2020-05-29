@@ -1,0 +1,297 @@
+.zf-tasks-wrapper {
+    margin: 20rpx;
+    background-color: #fff;
+    border-radius: 12rpx;
+    padding-top: 110rpx;
+}
+
+.swiper-tab {
+    font-size: 30rpx;
+    color: rgb(153,153,153);
+    display: flex;
+    justify-content: space-between;
+    background-color: #fff;
+    position: fixed;
+    top: 20rpx;
+    left: 20rpx;
+    width: 94.6%;
+    z-index: 999;
+    padding: 40rpx 50rpx 32rpx;
+    border-radius: 10rpx 10rpx 0rpx 0rpx;
+}
+
+.swiper-tab-item.active {
+    font-size: 34rpx;
+    color: rgb(51,51,51);
+    border-bottom: 2rpx solid rgb(237,60,68);
+    padding-bottom: 10rpx;
+    font-weight: bold;
+}
+
+.show {
+    display: block;
+}
+
+.hidden {
+    display: none;
+}
+
+.top-line {
+    height: 20rpx;
+    width: 100%;
+    background-color: #f5f5f5;
+    position: fixed;
+    top: 0rpx;
+    left: 0rpx;
+    z-index: 999;
+}
+
+.tips {
+    font-size: 26rpx;
+    padding: 20rpx;
+    color: #666;
+}
+
+.modal {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    position: fixed;
+    top: 0rpx;
+    left: 0rpx;
+    z-index: 9999999;
+}
+
+.jftab01-modal-info-wrapper {
+    width: 580rpx;
+    height: 660rpx;
+    background: #fff;
+    border-radius: 10rpx;
+    background-size: 100%;
+    text-align: center;
+}
+
+.jftab01-modal-info01 {
+    font-size: 50rpx;
+    color: #f00;
+}
+
+.jftab01-modal-info02 {
+    font-size: 30rpx;
+    color: #666;
+    padding-top: 26rpx;
+    letter-spacing: 2rpx;
+}
+
+.jftab01-modal-info03-btn {
+    background-color: #3160d1;
+    color: #fff;
+    height: 70rpx;
+    line-height: 70rpx;
+    letter-spacing: 4rpx;
+    width: 316rpx;
+    margin: 0 auto;
+    border-radius: 30rpx;
+}
+
+.taskBg {
+    position: relative;
+    width: 100%;
+    height: 300rpx;
+    overflow: hidden;
+}
+
+.taskBg>image {
+    width: 100%;
+    height: 200rpx;
+}
+
+.taskGoodBgWrap {
+    position: absolute;
+    top: -10%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.taskGoodWrap {
+    width: 120rpx;
+    height: 120rpx;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+}
+
+.taskGoodBg {
+    width: 120rpx;
+    height: 120rpx;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.taskGood {
+    width: 50%;
+    height: 50%;
+    z-index: 999;
+    transform: scale(0);
+    opacity: 0;
+    animation: taskGood 1s forwards;
+}
+
+@-webkit-keyframes taskGood {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+
+    60% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    70% {
+        transform: rotateZ(-30deg);
+    }
+
+    80% {
+        transform: rotateZ(30deg);
+    }
+
+    100% {
+        transform: rotateZ(0deg);
+        opacity: 1;
+    }
+}
+
+@keyframes taskGood {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+
+    60% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    70% {
+        transform: rotateZ(-30deg);
+    }
+
+    80% {
+        transform: rotateZ(30deg);
+    }
+
+    100% {
+        transform: rotateZ(0deg);
+        opacity: 1;
+    }
+}
+
+.zf-tasks {
+    padding: 0rpx 18rpx 1rpx;
+}
+
+.zf-task {
+    display: flex;
+    height: 154rpx;
+    align-items: center;
+    background: #f6f6f6;
+    margin-bottom: 30rpx;
+    border-radius: 10rpx;
+}
+
+.zf-task image {
+    width: 100rpx;
+    height: 70rpx;
+    border-radius: 12rpx;
+    margin: 0 20rpx;
+    max-height: 100rpx;
+}
+
+.zf-taskctop {
+    display: flex;
+    align-items: center;
+}
+
+.zf-taskctop-name {
+    font-size: 31rpx;
+    color: #222;
+    margin-right: 30rpx;
+    letter-spacing: 2rpx;
+}
+
+.zf-taskctop-score {
+    font-size: 22rpx;
+    border-radius: 7rpx;
+    position: relative;
+    color: #fff;
+}
+
+.zf-taskctop-score-bg {
+    border: 21rpx solid #c70304;
+    border-top-width: 37rpx;
+    border-bottom: 10rpx solid #f6f6f6;
+}
+
+.zf-taskctop-score-content {
+    position: absolute;
+    top: 5rpx;
+    left: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.zf-taskcbot {
+    font-size: 20rpx;
+    color: #666;
+}
+
+.zf-taskrt {
+    font-size: 22rpx;
+    color: #000;
+    padding-bottom: 12rpx;
+}
+
+.zf-taskrb {
+    height: 60rpx;
+    background-color: #fff;
+    color: #c70304;
+    font-size: 30rpx;
+    line-height: 60rpx;
+    text-align: center;
+    border-radius: 30rpx;
+    border: 1px solid #c70304;
+    width: 145rpx;
+}
+
+.zf-taskcbottip {
+    font-size: 22rpx;
+    color: #c51a2a;
+    border: 1px solid #c51a2a;
+    border-radius: 10rpx;
+    padding: 2rpx 0rpx;
+    width: 108rpx;
+    text-align: center;
+}
+
+.zf-taskc {
+    width: 57%;
+    height: 125rpx;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.zf-taskc2 {
+    width: 53%;
+    height: 125rpx;
+    display: flex;
+    flex-direction: column;
+}
+
+.zf-taskc2 .zf-taskctop.zf-taskctop2 {
+    padding-top: 16rpx;
+    padding-bottom: 12rpx;
+}

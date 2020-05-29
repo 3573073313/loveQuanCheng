@@ -1,0 +1,86 @@
+<view class="container" wx:if="{{login}}">
+    <wxc-dialog bindcancel="onCancel" bindconfirm="onConfirm" class="wxc-dialog" show="{{login}}"></wxc-dialog>
+</view>
+<view class="zhuanfen-top">
+    <view class="zhuanfen-top-perinfo">
+        <view class="zhuanfen-top-perinfol">
+            <view class="zhuanfen-top-perinfolImg">
+                <image mode="aspectFill" src="{{staticurl}}logo.png" wx:if="{{isDefault}}"></image>
+                <image mode="aspectFill" src="{{member.face}}" wx:else></image>
+            </view>
+            <view class="zhuanfen-top-perinfo-name" wx:if="{{isDefault}}">济南市民</view>
+            <view class="zhuanfen-top-perinfo-name" wx:else>{{member.nickname}}</view>
+        </view>
+    </view>
+    <view class="echart_panel" style="height:260rpx;" wx:if="{{finish}}">
+        <ec-canvas canvasId="mychart-bar" ec="{{ec}}" id="mychart-dom-bar" style="height:260rpx;"></ec-canvas>
+    </view>
+</view>
+<view class="zhuanfen-top-tabs">
+    <navigator class="zhuanfen-top-tab" url="/pages/zhuanfen/zhuanfenearn/zhuanfenearn">
+        <view class="zhuanfen-top-tabscore">累计赚领积分</view>
+        <view class="zhuanfen-top-tabunit">
+            <span class="zhuanfen-top-tabnum red">{{scoreInfo.allScore}}</span>分
+    </view>
+    </navigator>
+    <navigator class="zhuanfen-top-tab" url="/pages/zhuanfen/zhuanfenuse/zhuanfenuse">
+        <view class="zhuanfen-top-tabscore">累计使用文明豆</view>
+        <view class="zhuanfen-top-tabunit">
+            <span class="zhuanfen-top-tabnum red">{{scoreInfo.allUse}}</span>分
+    </view>
+    </navigator>
+    <navigator class="zhuanfen-top-tab" url="/pages/zhuanfen/zhuanfenearnmonth/zhuanfenearnmonth">
+        <view class="zhuanfen-top-tabscore">本月赚领积分</view>
+        <view class="zhuanfen-top-tabunit">
+            <span class="zhuanfen-top-tabnum red">{{scoreInfo.curMouth}}</span>分
+    </view>
+    </navigator>
+</view>
+<view class="zhuanfen-swiper-wrapper" style="margin:0rpx 20rpx 0rpx;border-top:20rpx solid #f5f5f5;">
+    <view class="zhuanfen-swiper-tabs">
+        <view class="zhuanfen-swiper-tab">
+            <view bindtap="toDetail" data-url="/pages/index/indexsnap/indexsnap?type=1">
+                <image class="zhuanfen-swiper-tabimg" mode="aspectFit" src="{{staticurl}}iconSecond1.png"></image>
+                <view class="zhuanfen-swiper-tabtex">做好事赚分</view>
+            </view>
+        </view>
+        <view bindtap="toDetail" class="zhuanfen-swiper-tab" data-url="/pages/index/indexsnap/indexsnap?type=1&currentTab=2">
+            <image class="zhuanfen-swiper-tabimg" mode="aspectFit" src="{{staticurl}}iconSecondN2.png"></image>
+            <view class="zhuanfen-swiper-tabtex">记录赚分</view>
+        </view>
+        <view class="zhuanfen-swiper-tab">
+            <view bindtap="toDetail" data-url="/pages/index/indexsnap/indexsnap">
+                <image class="zhuanfen-swiper-tabimg" mode="aspectFit" src="{{staticurl}}iconSecond3.png"></image>
+                <view class="zhuanfen-swiper-tabtex">随手拍赚分</view>
+            </view>
+        </view>
+        <view bindtap="toDetail" class="zhuanfen-swiper-tab" data-url="/pages/zhuanfen/zhuanfentask/zhuanfentask?currentTabTask=1">
+            <image class="zhuanfen-swiper-tabimg" mode="aspectFit" src="{{staticurl}}iconSecond4.png"></image>
+            <view class="zhuanfen-swiper-tabtex">任务赚分</view>
+        </view>
+    </view>
+</view>
+<view class="index-tasks">
+    <view class="sel-wrapper">
+        <view class="sel-item section">
+            <picker bindchange="bindTypePickerChange" range="{{typeList}}" rangeKey="name" value="{{typeIndex}}">
+                <view class="picker">
+          {{typeList[typeIndex].name}}
+        </view>
+            </picker>
+            <image src="https://jn.zhuwentec.com/jn-cultural-cdn/wxapp/zhuanfen_arrow.png"></image>
+        </view>
+        <view class="sel-item">
+            <picker bindchange="bindScorePickerChange" range="{{scoreList}}" value="{{index}}">
+                <view class="picker">
+          {{scoreList[index]}}
+        </view>
+            </picker>
+            <image src="https://jn.zhuwentec.com/jn-cultural-cdn/wxapp/zhuanfen_arrow.png"></image>
+        </view>
+    </view>
+    <view class="activeList">
+        <activity activityList="{{activityList}}" show="{{true}}" staticurl="{{staticurl}}"></activity>
+    </view>
+    <tippage listlen="{{!activityList.length}}"></tippage>
+</view>

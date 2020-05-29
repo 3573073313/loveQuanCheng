@@ -1,0 +1,10 @@
+page {
+    background-color: #fff;
+}
+
+.service_tex {
+    text-indent: 20rpx;
+    font-size: 24rpx;
+    color: #333;
+    margin: 30rpx 20rpx 0 20rpx;
+}

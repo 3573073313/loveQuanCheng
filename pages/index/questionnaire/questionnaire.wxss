@@ -1,0 +1,167 @@
+view,text {
+    word-break: break-word;
+}
+
+.wrap {
+    margin: 30rpx 30rpx 100rpx;
+    border-radius: 25rpx;
+    background: #fff;
+}
+
+.topHint {
+    padding: 30rpx;
+    color: #666;
+    font-size: 34rpx;
+    border-bottom: 1px solid #f6f6f6;
+    line-height: 60rpx;
+}
+
+.topHintTitle {
+    color: #333;
+    font-weight: bold;
+    font-size: 33rpx;
+}
+
+.topHintDetail {
+    color: #999;
+    font-size: 26rpx;
+}
+
+.topic {
+    padding: 30rpx;
+}
+
+.topicItem {
+}
+
+.topicTitle {
+    color: #333;
+    font-size: 34rpx;
+    font-weight: bold;
+    margin: 20rpx 0 0;
+    line-height: 60rpx;
+    position: relative;
+    overflow: hidden;
+}
+
+.required::before {
+    content: '*';
+    color: #c70304;
+}
+
+.topicType {
+    color: #999;
+    border: 1px solid #999;
+    height: 32rpx;
+    line-height: 32rpx;
+    text-align: center;
+    display: inline-block;
+    font-weight: normal;
+    font-size: 25rpx;
+    border-radius: 3rpx;
+    padding: 0 8rpx;
+}
+
+.answer {
+    padding: 15rpx 0;
+    font-size: 30rpx;
+}
+
+.radio {
+    display: flex;
+    margin-right: 15rpx;
+    justify-content: space-between;
+    padding: 15rpx 20rpx;
+}
+
+.checkbox {
+    margin-top: 45rpx;
+    padding: 0 20rpx;
+}
+
+.checkbox icon {
+    padding: 6rpx;
+    border-radius: 10rpx;
+    border: 1px solid #999;
+    width: 22rpx;
+    height: 22rpx;
+}
+
+.checkbox:nth-child(1),.radio:nth-child(1) {
+    margin-top: 0;
+}
+
+.radioShow,icon {
+    width: 34rpx;
+    height: 34rpx;
+    margin-top: 3rpx;
+}
+
+icon.checked {
+    background: #c70304;
+    border: none;
+}
+
+.optionLabel {
+    margin-left: 15rpx;
+    width: 90%;
+}
+
+.input {
+    width: 100%;
+    border: 1px solid #dcdcdc;
+    padding: 10rpx;
+    height: 45rpx;
+    border-radius: 10rpx;
+}
+
+.textarea {
+    width: 100%;
+    border: 1px solid #dcdcdc;
+    padding: 10rpx;
+    border-radius: 10rpx;
+}
+
+.submitBtn {
+    background: #c70304;
+    color: #fff;
+    font-size: 34rpx;
+    height: 80rpx;
+    line-height: 80rpx;
+    margin: 20rpx auto 0;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    z-index: 100;
+}
+
+.title {
+    padding: 30rpx;
+    font-weight: bold;
+    font-size: 35rpx;
+    border-bottom: 1px solid #f6f6f6;
+}
+
+.borderLeft {
+    width: 4px;
+    height: 35rpx;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 9px;
+    margin-top: 8rpx;
+}
+
+.allShow {
+    position: absolute;
+    background: #fff;
+    bottom: 0;
+    right: 0;
+    letter-spacing: 6rpx;
+    padding: 0 10rpx;
+}
+
+.packUp {
+    text-align: right;
+}

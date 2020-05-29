@@ -1,0 +1,54 @@
+<view class="page" wx:if="{{isShow&&testList.length}}">
+    <view class="timeWrap">
+        <image class="timeIcon" mode="widthFix" src="{{staticUrl}}timeBlue.png"></image>
+        <view class="progressWrap">
+            <view class="progress">
+                <view class="progressAct" style="width:{{percent}}%"></view>
+            </view>
+            <view class="progressText" style="left:{{percent}}%">{{timeText}}</view>
+        </view>
+        <view class="totalTime">{{testData.times}}分钟</view>
+    </view>
+    <view class="testWrap">
+        <view class="testItem">
+            <view class="testContent">
+                <view class="testHead">
+                    <view class="headLeft testCurrent" style="{{testList[current].titleType==2?'color:#3275ff':''}}">{{testList[current].tempTitleTypeName}}</view>
+                    <view>
+                        <text class="testCurrent">{{current+1}}</text>/{{testList.length}}</view>
+                </view>
+                <view class="testFoot">
+                    <view class="testTitle">{{testList[current].titleName}}</view>
+                    <view class="optionsWrap">
+                        <view bindtap="{{testList[current].isFinish?'':'chooseOptions'}}" class="options" data-index="{{index}}" style="background:{{item.backGround}};color:{{item.color}};border-color:{{item.borderColor}}" wx:for="{{testList[current].optionsList}}" wx:key="unique">
+                            <view>{{item.options}}. {{item.optionName}}</view>
+                            <block wx:if="{{testList[current].isFinish&&item.isShow}}">
+                                <icon color="#3275FF" size="20" type="success" wx:if="{{isTrue}}"></icon>
+                                <icon color="#FF3232" size="20" type="clear" wx:else></icon>
+                            </block>
+                        </view>
+                    </view>
+                    <view bindtap="{{testList[current].isFinish?'':'finishClick'}}" class="finishBtn" wx:if="{{!testList[current].isFinish&&isTrue!==false}}">确认</view>
+                    <view bindtap="lookHint" class="hint" wx:if="{{!testList[current].isFinish&&testList[current].remarks!=='-1'}}">查看提示</view>
+                </view>
+            </view>
+            <view class="testContent testResult" wx:if="{{testList[current].isFinish&&!isTrue}}">
+                <view class="testTitle">({{testList[current].tempTitleTypeName}}) {{testList[current].titleName}}</view>
+                <view class="resultText" style="font-size: 24rpx;" wx:if="{{testList[current].remarks!=='-1'}}">
+                    <text style="color:#f00">提示：</text>{{testList[current].remarks}}</view>
+                <view class="resultText">正确答案为</view>
+                <view class="resultText" style="color:#3275FF">
+                    <text style="margin-right: 20rpx;" wx:for="{{testList[current].correctOptions}}" wx:key="unique">{{item.options}}. {{item.optionName}}</text>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view bindtap="{{current==testList.length-1?'toFinish':'nextClick'}}" class="finishBtn nextBtn" wx:if="{{testList[current].isFinish}}">{{current==testList.length-1?'完成':'下一题'}}</view>
+</view>
+<view class="showModalWrap" wx:if="{{isShowHint}}">
+    <view class="showModal">
+        <view class="resultText">
+            <text style="color:#f00">提示：</text>{{testList[current].remarks}}</view>
+        <view bindtap="lookHint" class="finishBtn">确认</view>
+    </view>
+</view>

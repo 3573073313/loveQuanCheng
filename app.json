@@ -1,0 +1,103 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/zhuanfen/zhuanfen",
+    "pages/index/goodthings/goodthings",
+    "pages/mine/mine",
+    "pages/mine/exchangeorder/exchangeorder",
+    "pages/mine/activityorder/activityorder",
+    "pages/mine/woderealname/woderealname",
+    "pages/mine/suggest/suggest",
+    "pages/mine/yfkjy/yfkjy",
+    "pages/mine/collect/collect",
+    "pages/mine/wodeinfo/wodeinfo",
+    "pages/mine/receiveaddr/receiveaddr",
+    "pages/mine/addaddr/addaddr",
+    "pages/mine/wodeabout/wodeabout",
+    "pages/index/indexmessage/indexmessage",
+    "pages/index/indexmessage/indexnotice/indexnotice",
+    "pages/index/indexsearch/indexsearch",
+    "pages/index/indexsearch/searchresult",
+    "pages/index/indexsnap/indexsnap",
+    "pages/index/indexsnap/addsnap/addsnap",
+    "pages/index/indexdonate/indexdonate",
+    "pages/index/indexbangyang/indexbangyang",
+    "pages/index/indexbydetail/indexbydetail",
+    "pages/zhuanfen/zhuanfenearn/zhuanfenearn",
+    "pages/zhuanfen/zhuanfenearnmonth/zhuanfenearnmonth",
+    "pages/zhuanfen/zhuanfenuse/zhuanfenuse",
+    "pages/zhuanfen/zhuanfentask/zhuanfentask",
+    "pages/zhuanfen/zhuanfenorder/zhuanfenorder",
+    "pages/zhuanfen/zhuanfensuborder/zhuanfensuborder",
+    "pages/quanyi/quanyi",
+    "pages/quanyi/onlineservice/onlineservice",
+    "pages/quanyi/goodsdetail/goodsdetail",
+    "pages/quanyi/fillorder/fillorder",
+    "pages/quanyi/cart/cart",
+    "pages/news/news",
+    "pages/news/detail/detail",
+    "pages/loginagreement/loginagreement",
+    "pages/tree/tree",
+    "pages/tree/treeing/treeing",
+    "pages/tree/treePlant/treePlant",
+    "pages/mine/exchangeorder/logisticsDetail/logisticsDetail",
+    "pages/quanyi/goodsTypeDetail/goodsTypeDetail",
+    "pages/mine/activityorder/actorderdetails/wodeactorder",
+    "pages/mine/activityorder/actposition/position",
+    "pages/index/goodthings/addGoodthings/addGoodthings",
+    "pages/index/indexsnap/hotActList/hotActList",
+    "pages/index/indexsnap/hotActList/answer/answer",
+    "pages/index/indexsnap/hotActList/answer/answerFinish/answerFinish",
+    "pages/index/indexsnap/recruitForm/recruitForm",
+    "pages/index/indexsnap/indexsnapDetail/indexsnapDetail",
+    "pages/index/questionnaire/questionnaire",
+    "pages/index/questionnaireList/questionnaireList",
+    "pages/index/banner/banner"
+  ],
+  
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTitleText": "我爱泉城",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#a0a0a0",
+    "backgroundColor": "#ffffff",
+    "selectedColor": "#C70304",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "image/index.png",
+        "selectedIconPath": "image/index1.png"
+      },
+      {
+        "pagePath": "pages/zhuanfen/zhuanfen",
+        "text": "赚分",
+        "iconPath": "image/zhuanfen.png",
+        "selectedIconPath": "image/zhuanfen1.png"
+      },
+      {
+        "pagePath": "pages/quanyi/quanyi",
+        "text": "商城",
+        "iconPath": "image/quanyi.png",
+        "selectedIconPath": "image/quanyi1.png"
+      },
+      {
+        "pagePath": "pages/news/news",
+        "text": "资讯",
+        "iconPath": "image/message.png",
+        "selectedIconPath": "image/message1.png"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "我的",
+        "iconPath": "image/mine.png",
+        "selectedIconPath": "image/mine1.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

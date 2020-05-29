@@ -1,0 +1,218 @@
+.exchange-wrapper {
+    margin: 20rpx;
+    background-color: #fff;
+    border-radius: 10rpx;
+    padding: 20rpx 0rpx;
+    padding-bottom: 0rpx;
+}
+
+.swiper-tab {
+    width: 100%;
+    text-align: center;
+    height: 66rpx;
+    line-height: 60rpx;
+    display: flex;
+    white-space: nowrap;
+    color: #ccc;
+    font-size: 33rpx;
+    background-color: #fff;
+    margin-bottom: 20rpx;
+}
+
+.swiper-tab-item {
+    color: #999;
+    font-size: 26rpx;
+    width: max-content;
+    display: inline-block;
+    padding: 0 10rpx;
+}
+
+.active {
+    color: #C31926;
+    border-bottom: 4rpx solid #C31926;
+    font-size: 30rpx;
+    font-weight: bold;
+    display: inline-block;
+}
+
+.qy-online-goods-wrapper {
+    background-color: #fff;
+    display: flex;
+    border-bottom: 1px solid #f8f8f8;
+    padding-bottom: 24rpx;
+}
+
+.qy-online-goods-wrapper image {
+    width: 164rpx;
+    height: 164rpx;
+    margin-right: 24rpx;
+}
+
+.qy-online-goods {
+    width: 73%;
+    padding-top: 6rpx;
+    margin-bottom: 10rpx;
+}
+
+.qy-online-goods-name {
+    font-size: 32rpx;
+    letter-spacing: 1rpx;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    line-height: 46rpx;
+    padding-bottom: 6rpx;
+    color: #000;
+    margin-bottom: 10rpx;
+}
+
+.qy-online-goods-price {
+    font-size: 22rpx;
+    color: #999;
+}
+
+.qy-online-goods-size {
+    font-size: 22rpx;
+    color: #999;
+    margin-top: 10rpx;
+}
+
+.exchange-item {
+    font-size: 26rpx;
+    color: #666;
+    padding: 0rpx 20rpx;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.exchange-item-num {
+    padding: 24rpx 0rpx;
+}
+
+.mine-exchange-bot {
+    font-size: 32rpx;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 110rpx;
+}
+
+.mine-exchange-bottime {
+    font-size: 32rpx;
+    color: #C71021;
+    padding-left: 8rpx;
+}
+
+.mine-exchange-botbtns0 {
+    background-color: #00BFFF;
+    color: #fff;
+    padding: 10rpx 24rpx;
+    border-radius: 10rpx;
+    margin-right: 16rpx;
+}
+
+.mine-exchange-botbtns1 {
+    background-color: #FEAB17;
+    color: #fff;
+    padding: 10rpx 24rpx;
+    border-radius: 10rpx;
+}
+
+::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    color: transparent;
+}
+
+.modal {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    position: fixed;
+    top: 0rpx;
+    left: 0rpx;
+    z-index: 999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.show {
+    display: block;
+}
+
+.hidden {
+    display: none;
+}
+
+.modal_inf {
+    width: 550rpx;
+    height: 550rpx;
+    background-color: #fff;
+    border-radius: 10rpx;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.modal_inf image {
+    width: 310rpx;
+    height: 310rpx;
+}
+
+.ques-modal-sure {
+    width: 40%;
+    height: 60rpx;
+    line-height: 56rpx;
+    color: #fff;
+    text-align: center;
+    background-color: #c31926;
+    border-radius: 10rpx;
+}
+
+.ques-modal-cancel {
+    width: 40%;
+    height: 60rpx;
+    line-height: 56rpx;
+    color: #fff;
+    text-align: center;
+    background-color: #00BFFF;
+    border-radius: 10rpx;
+}
+
+.modal-btn-wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.ques-cancel {
+    position: absolute;
+    top: -10rpx;
+    right: 0;
+    font-size: 2rem;
+    font-weight: 100;
+}
+
+.ques-cancel-code {
+    position: absolute;
+    bottom: 100rpx;
+    right: 0;
+    font-size: 70rpx;
+    font-weight: 100;
+    width: 100%;
+    height: 150rpx;
+    display: flex;
+    justify-content: center;
+}
+
+.ques-cancel-code view {
+    width: 150rpx;
+    height: 150rpx;
+    background: rgba(255,255,255,0.7);
+    text-align: center;
+    line-height: 150rpx;
+    border-radius: 50%;
+}

@@ -1,0 +1,18 @@
+page {
+    background-color: #fff;
+}
+
+.service_tex {
+    text-indent: 20rpx;
+    font-size: 24rpx;
+    color: #333;
+    margin: 30rpx 20rpx 0 20rpx;
+}
+
+.tex-p {
+    text-indent: 72rpx;
+    line-height: 44rpx;
+    letter-spacing: 2rpx;
+    margin-bottom: 22rpx;
+    color: #666;
+}

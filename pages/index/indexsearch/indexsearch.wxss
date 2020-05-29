@@ -1,0 +1,168 @@
+page {
+    background-color: #F3F3F3;
+}
+
+.search {
+    overflow: auto;
+    background-color: #fff;
+    height: 96rpx;
+    position: relative;
+}
+
+.show {
+    display: block;
+}
+
+.hidden {
+    display: none;
+}
+
+.search_box {
+    margin: 18rpx 20rpx;
+    border-radius: 40rpx;
+    color: #000;
+    background-color: #eee;
+    font-size: 24rpx;
+    height: 60rpx;
+    padding-left: 100rpx;
+    width: 61%;
+    text-align: left;
+    float: left;
+}
+
+.search_sea {
+    width: 28rpx;
+    height: 28rpx;
+    position: absolute;
+    top: 35rpx;
+    left: 80rpx;
+    z-index: 1;
+}
+
+.search_btn {
+    float: left;
+    height: 55rpx;
+    background-color: #C71021;
+    width: 17%;
+    margin-top: 20rpx;
+    color: #fff;
+    line-height: 57rpx;
+    text-align: center;
+    border-radius: 10rpx;
+}
+
+.sear_tex {
+    padding: 30rpx 24rpx 30rpx 24rpx;
+    margin: 20rpx 12rpx 20rpx 12rpx;
+    background-color: #fff;
+    border-radius: 10rpx;
+}
+
+.tex_title {
+    font-size: 22rpx;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tex_cont {
+    padding: 20rpx 0;
+    overflow: hidden;
+}
+
+.tex_cont view {
+    height: 40rpx;
+    text-align: center;
+    line-height: 36rpx;
+    font-size: 22rpx;
+    border: 1rpx solid #999;
+    color: #666;
+    border-radius: 8rpx;
+    float: left;
+    padding: 0rpx 10rpx;
+}
+
+.tex_cont view {
+    margin-right: 50rpx;
+    margin-top: 20rpx;
+}
+
+.sear_tex2 {
+    margin-top: 30rpx;
+}
+
+.tex2_cont view {
+    color: #C31926;
+    border: 1rpx solid #C31926;
+}
+
+.searchItems {
+    margin: 20rpx 12rpx 0 12rpx;
+}
+
+.searchItemWrapper {
+    border-bottom: 4rpx solid #f0f0f0;
+    background-color: #fff;
+}
+
+.searchItem {
+    height: 305rpx;
+    padding: 3% 0 3% 20rpx;
+    position: relative;
+}
+
+.searchItemWrapper:first-child {
+    border-radius: 10rpx 10rpx 0 0;
+}
+
+.searchItemWrapper:last-child {
+    border-radius: 0 0 10rpx 10rpx;
+}
+
+.searchItem-img {
+    width: 30%;
+    height: 260rpx;
+    border-radius: 5%;
+    float: left;
+}
+
+.searchItem-infos {
+    height: 242rpx;
+    float: left;
+    padding-left: 4%;
+    width: 68%;
+}
+
+.searchItem-tit {
+    font-weight: bold;
+    margin-top: 35rpx;
+    font-size: 30rpx;
+}
+
+.searchItem-addr {
+    margin-top: 15rpx;
+    font-size: 26rpx;
+    color: #666;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.searchItem-addrDet {
+    width: 80%;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+}
+
+.searchItem-btn {
+    width: 140rpx;
+    height: 50rpx;
+    text-align: center;
+    line-height: 50rpx;
+    background-color: #E5E5E5;
+    border-radius: 10rpx;
+    position: absolute;
+    bottom: 25rpx;
+    right: 20rpx;
+}

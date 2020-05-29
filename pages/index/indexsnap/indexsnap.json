@@ -1,0 +1,13 @@
+{
+    "navigationBarTitleText": "随手拍",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh": true,
+    "usingComponents": {
+        "tippage": "../../../components/onetippagecont/tippage",
+        "tippageloading": "../../../components/onetippageloading/tippage",
+        "insta-shot": "../../../components/instaShot/instaShot",
+        "address": "../../../components/address/address",
+        "activity": "../../../components/activity/activity"
+    }
+}

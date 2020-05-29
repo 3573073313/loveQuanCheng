@@ -1,0 +1,9 @@
+{
+    "navigationBarTitleText": "搜索结果",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTextStyle": "black",
+    "usingComponents": {
+        "tippage": "../../../components/onetippagesearch/tippage",
+        "tippageloading": "../../../components/onetippageloading/tippage"
+    }
+}

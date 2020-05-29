@@ -1,0 +1,162 @@
+<view class="news-wrapper">
+    <view class="swiper-tab">
+        <view bindtap="clickTab" class="swiper-tab-item {{currentTab==0?'active':''}}" data-current="0">文明活动</view>
+        <view bindtap="clickTab" class="swiper-tab-item {{currentTab==1?'active':''}}" data-current="1">已做好事</view>
+    </view>
+    <view class="index-tasks" wx:if="{{currentTab==0}}">
+        <view class="sel-wrapper">
+            <view class="sel-item section">
+                <picker bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" mode="multiSelector" range="{{areaList}}" rangeKey="title" value="{{areaIndex}}">
+                    <view class="picker">
+          {{areaList[0][ areaIndex[0] ].title}} {{areaList[1][ areaIndex[1] ].title}}
+        </view>
+                </picker>
+                <image src="https://jn.zhuwentec.com/jn-cultural-cdn/wxapp/zhuanfen_arrow.png"></image>
+            </view>
+            <view class="sel-item section">
+                <picker bindchange="bindTypePickerChange" range="{{typeList}}" rangeKey="name" value="{{typeIndex}}">
+                    <view class="picker">
+          {{typeList[typeIndex].name}}
+        </view>
+                </picker>
+                <image src="https://jn.zhuwentec.com/jn-cultural-cdn/wxapp/zhuanfen_arrow.png"></image>
+            </view>
+            <view class="sel-item">
+                <picker bindchange="bindScorePickerChange" range="{{scoreList}}" value="{{index}}">
+                    <view class="picker">
+          {{scoreList[index]}}
+        </view>
+                </picker>
+                <image src="https://jn.zhuwentec.com/jn-cultural-cdn/wxapp/zhuanfen_arrow.png"></image>
+            </view>
+        </view>
+        <view class="activeList">
+            <navigator class="item" url="/pages/zhuanfen/zhuanfenorder/zhuanfenorder?id={{item.id}}" wx:for="{{activityList}}" wx:key="index">
+                <view class="img rel">
+                    <image class="slide-image" mode="aspectFill" src="{{item.activityCover}}"></image>
+                    <view class="isOut" wx:if="{{item.expireNum>0}}">已过期</view>
+                </view>
+                <view class="info">
+                    <view class="head-inf">
+                        <text>{{item.actName}}({{item.actIntegral}}分）</text>
+                    </view>
+                    <view class="time" style="letter-spacing:0rpx;margin-top:0rpx;">
+                        <view class="time-img">
+                            <image src="{{staticurl}}index_icon_time.png"></image>
+                        </view>
+                        <view>
+                            <view wx:if="{{item.starDate!=item.endDate}}">{{item.starDate}}至{{item.endDate}} {{item.starTime}}-{{item.endTime}}</view>
+                            <view wx:if="{{item.starDate==item.endDate}}">{{item.starDate}} {{item.starTime}}-{{item.endTime}}</view>
+                        </view>
+                    </view>
+                    <view class="addr" style="letter-spacing:0rpx;margin-top:12rpx;">
+                        <view class="addr-img">
+                            <image src="{{staticurl}}index_icon_addr.png"></image>
+                        </view>
+                        <view class="addr-detail" style="line-height:32rpx;">{{item.address}} |
+            <span style="color:#FEAB17;">{{item.juli}}</span>
+                        </view>
+                    </view>
+                    <view class="options">
+                        <view class="head">
+                            <text>{{item.actType.name}}</text>
+                        </view>
+                        <view class="price" wx:if="{{item.price==0}}">
+                            <view>免费</view>
+                        </view>
+                        <view class="price" wx:else>
+                            <view>{{item.price}}元</view>
+                        </view>
+                    </view>
+                </view>
+            </navigator>
+        </view>
+    </view>
+    <view wx:if="{{currentTab==1}}">
+        <view class="goodsthings-tab1-toptips" wx:if="{{total}}">您好，您已做了
+      <span style="color: red;">{{total}}</span>件好事啦！感谢一路奉献，一路付出的您！</view>
+        <view class="goodsthings-tab1-toptips" wx:else>您好，您还没有参与过做好事呢!快点加入我们去做好事吧!</view>
+        <tippage listlen="{{!nocultures||!nocultures.length}}"></tippage>
+        <view class="content content0" data-num="{{index}}" wx:for="{{nocultures}}" wx:key="index">
+            <view class="item">
+                <view class="head">
+                    <view class="headimg">
+                        <image src="{{member.face}}"></image>
+                    </view>
+                    <view style="float:left;width:76%;">
+                        <view class="headinfo">
+                            <view class="headinfo_name">{{member.nickname}}</view>
+                            <view class="ygz" wx:if="{{item.typeName=='文明出行'}}">{{item.typeName}}</view>
+                            <view class="ygz" style="background-color:#7CB90F;" wx:if="{{item.typeName=='环境保护'}}">
+                {{item.typeName}}
+              </view>
+                            <view class="ygz" style="background-color:#7CB90F;" wx:else>
+                {{item.typeName}}
+              </view>
+                        </view>
+                        <view class="headinfo_time" style="font-size:24rpx;color:rgb(153,153,153);">{{member.sign}}</view>
+                    </view>
+                </view>
+                <view class="context">
+                    <text>{{item.content}}</text>
+                    <view wx:if="{{item.videos!=null&&item.videos!=''}}">
+                        <video controls="controls" objectFit="cover" src="{{item.videos}}" style="width:100%;margin-top:25rpx;border-radius:12rpx;" wx:if="{{item.videos!=null&&item.videos!=''}}"></video>
+                    </view>
+                    <view class="preimg" wx:elif="{{item.pictures[0]!=''&&item.pictures.length>1}}">
+                        <view class="gzimgs-area" style="float:left;" wx:for="{{item.pictures}}" wx:for-index="idx" wx:for-item="img" wx:key="img">
+                            <image bindtap="imgPreview" data-index="{{idx}}" data-item="{{item}}" mode="widthFix" src="{{img}}" style="margin-left:-50rpx;"></image>
+                        </view>
+                    </view>
+                    <view class="preimg" wx:elif="{{item.pictures[0]!=''&&item.pictures.length==1}}">
+                        <image bindtap="imgPreview" data-index="{{idx}}" data-item="{{item}}" mode="widthFix" src="{{img}}" style="width:400rpx;" wx:for="{{item.pictures}}" wx:for-index="idx" wx:for-item="img" wx:key="img"></image>
+                    </view>
+                </view>
+                <view class="addressBotWay">
+                    <view bindtap="openMap" class="address" data-item="{{item}}">
+                        <image mode="widthFix" src="{{staticurl}}address.png" style="width:7%;height:100%"></image>
+                        <view class="addressText">{{item.address}}</view>
+                    </view>
+                </view>
+                <view class="goodsthings-tab1-botinfo" wx:if="{{currentTab==1}}">
+                    <view bindtap="delType" class="goodsthings-tab1-botinfol" data-id="{{item.id}}" wx:if="{{item.state=='1'||item.state=='3'}}">
+                        <image src="{{staticurl}}index_goodthing_del.png"></image>
+            删除
+          </view>
+                    <view class="goodsthings-tab1-botinfor" wx:if="{{item.state=='1'}}">
+                        <image src="{{staticurl}}index_auth_wait.png"></image>
+            待认证
+          </view>
+                    <view class="goodsthings-tab1-botinfor" style="color:#FF610E;" wx:if="{{item.state=='2'}}">
+                        <image src="{{staticurl}}index_auth_no.png"></image>
+            已通过
+          </view>
+                    <view class="goodsthings-tab1-botinfor" style="color:#7CB90F;" wx:if="{{item.state=='3'}}">
+                        <image src="{{staticurl}}index_auth_yes.png"></image>
+            未通过
+          </view>
+                    <view class="goodsthings-tab1-botinfor" style="margin-right:20rpx;">
+            {{item.createDate}}
+          </view>
+                </view>
+                <view class="goodthings-tab1-reply-wrapper" wx:if="{{item.approvalOpinion&&item.approvalOpinion!=''&&item.approvalOpinion!=null}}">
+                    <view class="goodthings-tab1-reply-cont">{{item.approvalOpinion}}</view>
+                    <view class="goodthings-tab1-reply-info">
+                        <view class="goodthings-tab1-reply-infol">
+                            <image src="{{staticurl}}index_goodthing_admin.png"></image>
+              我爱济南管理员
+            </view>
+                        <view class="goodthings-tab1-reply-infor">{{item.updateDate}}</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+<movable-area style="height:{{windowHeight}}px; width:100%; position: fixed;top: 0;left: 0;" wx:if="{{currentTab==1}}">
+    <movable-view direction="all" x="{{windowWidth-100}}" y="{{windowHeight-100}}">
+        <navigator class="camera" url="addGoodthings/addGoodthings">
+            <image class="index_snap_camera" mode="widthFix" src="{{staticurl}}addGoodNews.png"></image>
+            <view class="textAdd">记录</view>
+        </navigator>
+    </movable-view>
+</movable-area>

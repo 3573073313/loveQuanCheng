@@ -1,0 +1,44 @@
+<view style="padding:30rpx 20rpx;background: #fff;">
+    <form bindsubmit="clickSubmit">
+        <view class="section">
+            <picker bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" mode="multiSelector" range="{{projectList}}" rangeKey="name" value="{{projectListIndex}}">
+                <view class="picker" style="display:flex;align-items:center;">
+                    <view class="sel-pic-bor">
+              好事类型:{{projectList[0][ projectListIndex[0] ].name}}
+              <image class="sel-img-itm" src="https://jn.zhuwentec.com/jn-cultural-cdn/wxapp/zhuanfen_arrow.png"></image>
+                    </view>
+                    <span class="goodsthings-tab0-topl">至少赚
+              <span style="font-size:40rpx;color: red;" wx:if="projectList[0].length>0">{{projectList[0][ projectListIndex[0] ].integralMinValue}}</span>
+                        <span style="font-size:40rpx;color: red;" wx:else>{{projectList[1][ projectListIndex[1] ].integralMinValue}}</span>分
+            </span>
+                </view>
+            </picker>
+        </view>
+        <view class="goodsthings-tab0-tips">不同的类型的好事可以赚不同的积分，请选择正确！</view>
+        <view class="release-news-wrap">
+            <view class="release-news-infos">
+                <textarea autoHeight="true" bindinput="bindinput" class="cont" maxlength="-1" name="content" placeholder="说说您做的好事吧！说清楚时间、地点和做的好事简要情况！" value="{{goodThing.content}}"></textarea>
+                <view class="add-imgs">
+                    <view class="info4-imgs" wx:for="{{pictures}}" wx:key="index">
+                        <image bindtap="previewImg" data-index="{{index}}" data-src="{{item}}" mode="aspectFill" src="{{item}}"></image>
+                        <text bindtap="deleteImg" class="del" data-index="{{index}}" data-src="{{item}}">×</text>
+                    </view>
+                    <image bindtap="showmodal" class="{{isAdd&&!isUnloading?'show':'hidden'}} index-top-tx" src="{{staticurl}}mine_imgadd.png"></image>
+                    <view class="unload {{isUnloading?'show':'hidden'}}">上传中...</view>
+                    <view class="info4-imgs" src="{{videoUrl}}" style="position:relative;" wx:if="{{videoUrl!=''}}">
+                        <video mode="aspectFill" src="{{videoUrl}}" style="height:300rpx;width:180rpx;"></video>
+                        <view bindtap="deleteVideo" class="del" style="right:-25rpx">×</view>
+                    </view>
+                </view>
+                <view bindtap="{{isUnloading?'isShowToast':'openMap'}}" class="goodthings-addr">
+                    <view class="address" style="width:100%">
+                        <image mode="widthFix" src="{{staticurl}}address.png" style="width:7%;height:100%"></image>
+                        <view class="addressText">{{goodThing.address?goodThing.address:'请选择地址'}}</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <button class="goodthings-tab0-btn" formType="submit">确认提交</button>
+    </form>
+    <modal bindconfirm="clickCancle" confirmText="好的，知道了！" content="市民您好！您提交的好人好事管理人员已收到，我们将安排专人尽快认证核实，认证通过将给您一定数额的积分以示感谢！请耐心等待!" isRed="{{true}}" show="{{showModal==0}}"></modal>
+</view>

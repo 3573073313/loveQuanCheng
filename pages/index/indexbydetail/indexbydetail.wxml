@@ -1,0 +1,29 @@
+<import src="../../../html-view/index.wxml"></import>
+<view class="body">
+    <view>
+        <view class="cont_detail">
+            <view class="info_name">{{info.surname}}</view>
+            <view class="detail_inf">
+                <view class="inf">{{info.year_degree}}年度</view>
+                <view class="inf" wx:if="{{info.tab_type==1}}">{{info.type_name}}好人</view>
+                <view class="inf" wx:if="{{info.tab_type==2}}">{{info.type_name}}志愿者</view>
+                <view class="inf">{{info.regionName}}</view>
+            </view>
+            <view class="detail" style="text-align:justify">
+                <template is="html-view" data="{{data:html}}"></template>
+            </view>
+        </view>
+        <view class="cont_read">
+            <view class="cont_readl">
+                <view>阅读</view>
+                <view>1</view>
+            </view>
+            <view class="cont_readr">
+                <view>
+                    <image src="{{staticurl}}index_goodthing_good.png"></image>
+                    <view>0</view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

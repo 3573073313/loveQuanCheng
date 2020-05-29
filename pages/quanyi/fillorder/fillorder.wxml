@@ -1,0 +1,43 @@
+<view class="qy-fillorder-inf-wrapper">
+    <view wx:if="{{addressInfo}}">
+        <view class="qy-fillorder-addr">{{addressInfo.address}}</view>
+        <view class="qy-fillorder-name">收货人：{{addressInfo.name}}</view>
+        <view class="qy-fillorder-tel">联系电话：{{addressInfo.linkManMobile}}</view>
+    </view>
+    <view class="qy-fillorder-recaddr">
+        <view bindtap="bindPickerChange" class="picker">
+      {{addressInfo?'更换收货地址':'添加收货地址'}}
+    </view>
+    </view>
+</view>
+<view class="qy-online-goods-wrapper" wx:for="{{selectCartList}}" wx:key="index">
+    <image src="{{item.listImg}}"></image>
+    <view class="qy-online-goods">
+        <view class="qy-online-goods-name">{{item.goodsName}}</view>
+        <view class="qy-online-goods-price">
+      {{item.goodsAmount*item.integral}}豆
+      <view class="qy-goodsdel-changemodal-botsizeimg" style="display:flex;align-items:center;">
+                <view class="one">{{item.goodsAmount}}</view>
+            </view>
+        </view>
+        <view class="qy-online-goods-size">规格： {{item.specName}}</view>
+    </view>
+</view>
+<view class="qy-goods-wrapper">
+    <view class="qy-goods-num">
+        <view>商品合计</view>
+        <view class="qy-goods-numl">{{totalScore}}分</view>
+    </view>
+    <view class="qy-goods-num">
+        <view>运费</view>
+        <view class="qy-goods-numl">{{totalPostage}}分</view>
+    </view>
+</view>
+<view class="qy-fillorder-btn-wrapper">
+    <view style="width:66%;text-align:right;margin-right:16rpx;">合计:
+    <span style="color:#C71021;">{{totalPrice}}豆</span>
+    </view>
+    <view bindtap="confrim" class="qy-fillorder-btn">提交订单</view>
+</view>
+<modal bindconfirm="commitOrder" content="亲，请再次确认是否兑换，确定后将扣除文明豆!" isRed="{{true}}" show="{{showModal1==0}}"></modal>
+<modal bindconfirm="bindPickerChange" confirmText="前往设置" content="您暂未设置收货地址信息，请您前往设置地址！" isRed="{{true}}" show="{{!addressInfo&&isGetAddressInfo}}" showCancel="{{false}}" title="没有默认地址"></modal>

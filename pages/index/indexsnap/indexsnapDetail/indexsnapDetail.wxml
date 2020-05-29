@@ -1,0 +1,5 @@
+<view class="page">
+    <insta-shot currentTab="{{0}}" isAddGoodthings="{{isAddGoodthings}}" isNoFromShare="{{isNoFromShare}}" itemList="{{itemList}}" memberId="{{memberId}}" show="{{itemList.length}}" staticurl="{{staticurl}}"></insta-shot>
+    <comment commentList="{{commentList}}" show="{{commentList}}" staticurl="{{staticurl}}" wx:if="{{isNoFromShare}}"></comment>
+    <view bindtap="goIndex" class="toIndex" wx:if="{{!isNoFromShare}}">去首页了解更多</view>
+</view>

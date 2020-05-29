@@ -1,0 +1,62 @@
+.zf-usewrapper {
+    margin: 20rpx;
+    background-color: #fff;
+    border-radius: 10rpx;
+}
+
+.zf-usetop {
+    font-size: 32rpx;
+    height: 90rpx;
+    padding: 0rpx 20rpx;
+    border-bottom: 1px solid #f0f0f0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.zf-usetop-det {
+    display: flex;
+}
+
+.zf-use-item {
+    margin: 0rpx 20rpx;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.zf-use-iteml {
+    height: 120rpx;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding-top: 16rpx;
+    padding-bottom: 16rpx;
+}
+
+.zf-use-itemltop {
+    display: flex;
+    align-items: center;
+}
+
+.zf-use-itemltop-type {
+    font-size: 22rpx;
+    height: 36rpx;
+    line-height: 36rpx;
+    padding-left: 4rpx;
+    padding-right: 4rpx;
+    border-radius: 8rpx;
+    margin-right: 20rpx;
+    color: #fff;
+}
+
+.zf-use-iteml-time {
+    color: #999;
+    font-size: 22rpx;
+}
+
+.zf-use-itemr-score {
+    font-size: 22rpx;
+    color: #FF7F00;
+}

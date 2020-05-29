@@ -1,0 +1,165 @@
+<view class="fixed">
+    <view class="swiper-tab">
+        <view bindtap="clickTab" class="swiper-tab-item {{currentTab==0?'active redBorder':''}}" data-current="0">
+      {{isAddGoodthings?'文明活动':'随手拍活动'}}
+    </view>
+        <view bindtap="clickTab" class="swiper-tab-item {{currentTab==2?'active redBorder':''}}" data-current="2">
+      {{isAddGoodthings?'我做的好事':'我的随手拍'}}
+    </view>
+    </view>
+</view>
+<view class="news-wrapper" wx:if="{{currentTab==0&&!isOldGoodthing}}">
+    <block wx:if="{{hotList.length}}">
+        <view class="titleWrap">
+            <view class="title">热门{{isAddGoodthings?'文明':'拍客'}}活动</view>
+            <view bindtap="toMore" class="more">更多</view>
+        </view>
+        <view class="hotWrap">
+            <navigator class="hotItem" url="/pages/zhuanfen/zhuanfenorder/zhuanfenorder?id={{item.id}}&type={{isAddGoodthings?item.type:2}}&expireNum={{item.expireNum}}" wx:for="{{hotList}}" wx:key="unique">
+                <view class="hotItemTitle">
+                    <image class="iconHot" mode="widthFix" src="{{staticurl}}good{{item.ifHot==1?'New':'Hot'}}Icon.png"></image>
+                    <view class="hotLabel">
+            #
+            <text>{{item.activityName}}</text> {{item.score}}分#
+          </view>
+          {{item.number?item.number:0}}人参与
+        </view>
+                <view class="joinBtn {{item.num>0?'isJoining':''}}">{{item.num>0?'已参加':'去参加'}}</view>
+            </navigator>
+        </view>
+    </block>
+    <view class="titleWrap" wx:if="{{isAddGoodthings?typeList.length:true}}">
+        <view class="title">{{isAddGoodthings?'热门好事类型':'精选随手拍'}}</view>
+    </view>
+    <view class="typeWrap" style="height:{{isShowMore?'auto':'200rpx'}}" wx:if="{{isAddGoodthings&&typeList.length}}">
+        <view bindtap="{{item.integralInterval?'toMore':'showMore'}}" class="typeItem" data-handy-name="{{item.name}}" data-id="{{item.id}}" data-index="{{i}}" data-integral="{{item.integralMinValue}}" wx:if="{{item.icon}}" wx:for="{{typeList}}" wx:for-index="i" wx:key="unique">
+            <view class="iconView" style="background:#ED3C44;border-radius:20rpx;" wx:if="{{item.integralInterval}}">
+                <image mode="widthFix" src="{{item.icon}}"></image>
+            </view>
+            <image mode="widthFix" src="{{item.icon}}" style="width:80rpx;height:80rpx;margin-bottom: -11rpx;" wx:else></image>
+            <view>{{!item.integralInterval&&isShowMore?'收起':item.name}}</view>
+            <view class="integral" wx:if="{{item.activityNum||item.activityNum==0}}">
+        {{item.activityNum}}个活动
+      </view>
+        </view>
+    </view>
+</view>
+<view class="news-wrapper" wx:if="{{currentTab==2&&isAddGoodthings}}">
+    <view class="titleWrap">
+        <view class="title">我的行善纪实簿</view>
+    </view>
+    <view class="myGoodthingTop">
+        <view class="myGoodthingIconWrap" wx:for="{{myGoodthingIconList}}" wx:key="unique">
+            <image class="myGoodthingIcon" mode="widthFix" src="{{staticurl}}myIcon{{index+1}}@3x.png"></image>
+            <view class="iconText">
+                <view class="iconTextType">{{item.type}}</view>
+                <view>{{item.count?item.count:0}}</view>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="news-wrapper indexsnap" wx:if="{{isOldGoodthing?currentTab==2:true}}">
+    <view class="content content0 {{index==itemList.length-1?'radius':''}}" data-num="{{index}}" wx:if="{{currentTab!=2?item.member:true}}" wx:for="{{itemList}}" wx:key="index">
+        <view class="item">
+            <view class="head">
+                <view class="flex" style="width:70%;">
+                    <view class="headimg">
+                        <image src="{{currentTab!==2?item.member.face:member.face}}"></image>
+                    </view>
+                    <view style="line-height: 40rpx;margin-top: 5rpx;">
+                        <view class="headinfo">
+                            <view class="headinfo_name">
+                {{currentTab!==2?item.member.nickname:member.nickname}}
+              </view>
+                        </view>
+                        <view class="headinfo_time" style="font-size: 24rpx;color: #999;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;width:100%;">
+              {{item.member.sign}}
+            </view>
+                    </view>
+                </view>
+                <view style="width: 100%;position: relative;">
+                    <view class="rightStateStyle">
+                        <view class="typeStyle" style="background:{{!isAddGoodthings?'#FFD9DB':'#D9F2FF'}};color:{{!isAddGoodthings?'#ED3C44':'#3C8FED'}};font-size: 24rpx;" wx:if="{{item.typeId==='935ae107c3a8476cb1a3bd8b5fe13486'||item.typeName||isAddGoodthings}}">{{item.typeId==='935ae107c3a8476cb1a3bd8b5fe13486'?'正能量':item.typeName?item.typeName:isAddGoodthings?'投稿':''}}</view>
+                        <view class="integralGoodthings" style="background:{{item.state==='2'?'#FFD9DB':item.state==='1'?'#FEAB17':'#D7D7D7'}};color:{{item.state==='2'?'#ED3C44':item.state==='1'?'#ffffff':'#333333'}}" wx:if="{{item.memberId==memberId}}">
+              {{item.state==='2'?'已认证':item.state==='1'?'待认证':'认证不通过'}}
+              <text wx:if="{{item.state=='2'&&item.integral}}">+{{item.integral}}</text>
+                        </view>
+                    </view>
+                    <view class="ygz">{{item.createDate}}</view>
+                </view>
+            </view>
+            <view class="context">
+                <view>
+                    <text bindtap="toActDetail" class="topic" data-item="{{item}}" style="color:{{!isAddGoodthings?'#FF676E':'#67B9FF'}}" wx:if="{{item.activityName}}">#{{item.activityName}}#</text>{{item.content}}
+        </view>
+                <view class="preimg" wx:if="{{item.picturesList}}">
+                    <view bindtap="lookImg" class="{{item.picturesList.length>1?'gzimgs-area':'oneImg'}}" data-img="{{img}}" data-list="{{item.picturesList}}" wx:for="{{item.picturesList}}" wx:for-index="idx" wx:for-item="img" wx:key="idx">
+                        <image bindtap="previewImgGz" mode="{{item.picturesList.length==1?'widthFix':'aspectFill'}}" src="{{img}}"></image>
+                    </view>
+                </view>
+                <view class="preimg" wx:if="{{item.videos}}">
+                    <video mode="aspectFill" objectFit="cover" src="{{item.videos}}" style="width:100%;border-radius:12rpx;"></video>
+                </view>
+            </view>
+            <view class="tools">
+                <view class="addressBotWay" wx:if="{{item.address}}">
+                    <address item="{{item}}" staticurl="{{staticurl}}"></address>
+                </view>
+                <view class="toolItem" style="{{item.address?'width: 40%;':'width:100%'}}">
+                    <view class="toolsc" wx:if="{{item.state=='2'}}">
+                        <button class="share" data-id="{{item.id}}" data-item="{{item}}" data-type="1" openType="share">
+                            <image mode="widthFix" src="{{staticurl}}iconShareRed@3x.png"></image>
+              {{item.shareNum}}
+            </button>
+                    </view>
+                    <view bindtap="goodMysSnap" class="toolsc" data-id="{{item.id}}" data-index="{{index}}" data-type="2" wx:if="{{item.state=='2'}}">
+                        <image mode="widthFix" src="{{staticurl}}iconGoodRed{{item.number>0?'Fill':''}}@3x.png"></image>
+            {{item.dianZanNum}}
+          </view>
+                    <view bindtap="delType" class="toolsc red" data-id="{{item.id}}" wx:if="{{item.memberId==memberId}}">
+            删除
+          </view>
+                </view>
+            </view>
+        </view>
+        <view class="goodthings-tab1-reply-wrapper" wx:if="{{currentTab==2&&item.approvalOpinion&&item.approvalOpinion!=''&&item.approvalOpinion!=null}}">
+            <view class="goodthings-tab1-reply-cont">{{item.approvalOpinion}}</view>
+            <view class="goodthings-tab1-reply-info">
+                <view class="goodthings-tab1-reply-infol">
+                    <image src="{{staticurl}}index_goodthing_admin.png"></image>
+          我爱济南管理员
+        </view>
+                <view class="goodthings-tab1-reply-infor">{{item.updateDate}}</view>
+            </view>
+        </view>
+    </view>
+    <tippage listlen="{{!itemList.length}}"></tippage>
+</view>
+<movable-area style="height:100vh; width:100%; position: fixed;top: 0;left: 0;" wx:if="{{isOldGoodthing?currentTab==2:true}}">
+    <movable-view direction="all" x="{{windowWidth-100}}" y="{{windowHeight-100}}">
+        <navigator class="{{isAddGoodthings?'cameraGoodthing':'camera'}}" url="/pages/index/indexsnap/addsnap/addsnap{{isAddGoodthings?'?addGoodthings=1':''}}">
+            <image class="index_snap_camera" mode="widthFix" src="{{staticurl}}{{isAddGoodthings?'addGoodNews':'indexIcon3@3x'}}.png"></image>
+            <view class="textAdd" wx:if="{{isAddGoodthings}}">记录</view>
+        </navigator>
+    </movable-view>
+</movable-area>
+<view class="index-tasks" wx:if="{{currentTab==0&&isOldGoodthing}}">
+    <view class="sel-wrapper">
+        <view class="sel-item section">
+            <picker bindchange="bindTypePickerChange" range="{{typeListOld}}" rangeKey="name" value="{{typeIndex}}">
+                <view class="picker">{{typeListOld[typeIndex].name}}</view>
+            </picker>
+            <image src="https://jn.zhuwentec.com/jn-cultural-cdn/wxapp/zhuanfen_arrow.png"></image>
+        </view>
+        <view class="sel-item">
+            <picker bindchange="bindScorePickerChange" range="{{scoreList}}" value="{{index}}">
+                <view class="picker">{{scoreList[index]}}</view>
+            </picker>
+            <image src="https://jn.zhuwentec.com/jn-cultural-cdn/wxapp/zhuanfen_arrow.png"></image>
+        </view>
+    </view>
+    <view class="activeList">
+        <activity activityList="{{activityList}}" contribute="{{true}}" show="{{true}}" staticurl="{{staticurl}}"></activity>
+    </view>
+    <tippage listlen="{{!activityList.length}}"></tippage>
+</view>

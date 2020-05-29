@@ -1,0 +1,70 @@
+@import "../../app.wxss";
+
+.typeStyle {
+    color: #fff;
+    padding: 0 10rpx;
+    border-radius: 10rpx;
+}
+
+.rightStateStyle {
+    display: flex;
+    height: 18px;
+    line-height: 18px;
+    justify-content: flex-end;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: max-content;
+}
+
+.integralGoodthings {
+    border-radius: 5rpx;
+    color: #fff;
+    line-height: 36rpx!important;
+    background: #ed3c44;
+    font-size: 24rpx;
+    padding: 0 10rpx;
+    margin-left: 20rpx;
+}
+
+.goodthings-tab1-reply-wrapper {
+    padding: 10rpx 30rpx;
+    background-color: #f6f6f6;
+    margin: 20rpx 0 0;
+    border-radius: 10rpx;
+}
+
+.goodthings-tab1-reply-cont {
+    font-size: 28rpx;
+    margin-bottom: 10rpx;
+    color: #666;
+}
+
+.goodthings-tab1-reply-info {
+    color: #b3b3b3;
+    font-size: 22rpx;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.goodthings-tab1-reply-infol {
+    display: flex;
+    align-items: center;
+    margin-right: 20rpx;
+}
+
+.goodthings-tab1-reply-infol image {
+    width: 24rpx;
+    height: 28rpx;
+    margin-right: 14rpx;
+}
+
+.indexsnap .itemFixed {
+    position: fixed;
+    background: #fff;
+    z-index: 100;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 30rpx 50rpx;
+}

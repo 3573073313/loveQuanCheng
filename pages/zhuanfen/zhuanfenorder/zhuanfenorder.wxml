@@ -1,0 +1,99 @@
+<import src="../../../html-view/index.wxml"></import>
+<view class="container" wx:if="{{login}}">
+    <wxc-dialog bindcancel="onCancel" bindconfirm="onConfirm" class="wxc-dialog" show="{{login}}"></wxc-dialog>
+</view>
+<scroll-view>
+    <view style="position: relative;">
+        <swiper autoplay="{{autoplay}}" circular="{{true}}" duration="{{duration}}" indicatorActiveColor="{{activeColor}}" indicatorDots="{{indicatorDots}}" interval="{{interval}}">
+            <swiper-item bindtap="lookImgSwiper" data-item="{{item}}" wx:for="{{swipers}}" wx:key="index">
+                <image class="slide-image" mode="aspectFill" src="{{item}}"></image>
+            </swiper-item>
+        </swiper>
+        <image bindtap="doFavourite" class="collect" src="{{isFavourite?imgStarselect:imgStar}}"></image>
+        <view class="type" wx:if="{{activity.actType.name||activity.itemTypeName}}">{{activity.actType.name?activity.actType.name:activity.itemTypeName}}</view>
+    </view>
+    <view class="faxian_info">
+        <view style="padding:30rpx 0">
+            <view class="faxian_name">
+      {{activity.actName?activity.actName:activity.activityName?activity.activityName:activity.name}}
+      <text class="redBgBtn" wx:if="{{activity.actIntegral||activity.score}}">{{activity.actIntegral?activity.actIntegral:activity.score}}分</text>
+            </view>
+        </view>
+        <view class="fx_info info5" wx:if="{{!isSnapAct}}">
+            <view>日期:</view>
+      {{activity.starDate?activity.starDate:activity.startDate}} 至 {{activity.endDate}}
+      <image mode="aspectFit" src="{{imgCalendar}}"></image>
+        </view>
+        <view class="fx_info info5" wx:if="{{isSnapAct}}">
+            <view>单位:</view>
+      {{activity.orgId}}
+      <image mode="aspectFit" src="{{imgRoom}}"></image>
+        </view>
+        <view class="fx_info info5">
+            <view>时间:</view>
+            <block wx:if="{{isSnapAct}}">{{activity.startDate}} 至 {{activity.endDate}}</block>
+            <block wx:else>{{activity.starTime?activity.starTime:activity.startTime}} - {{activity.endTime}}</block>
+            <image mode="aspectFit" src="{{imgTime}}"></image>
+        </view>
+        <view bindtap="openmap" class="fx_info info1" style="height:auto;" wx:if="{{!isSnapAct}}">
+            <view style="width:16%;font-weight:bold;margin-right:0rpx;">地址:</view>
+            <view style="padding-top:29rpx;padding-bottom:29rpx;line-height:36rpx;width:84%;">
+        {{activity.address?activity.address:activity.activityAddress}}>
+      </view>
+            <image mode="aspectFit" src="{{imgAddr}}"></image>
+        </view>
+        <view class="fx_info info3" wx:if="{{!isSnapAct&&activity.isLimit=='1'}}">
+            <view>票数　</view>
+      共{{actTotalVotes}}张/余{{surplus}}张
+      <image mode="aspectFit" src="{{imgNum}}"></image>
+        </view>
+        <view class="fx_info info2" wx:if="{{!isSnapAct&&isType!='4'&&isType!='3'}}">
+            <view>联系电话：</view>
+      {{activity.phone}}
+      <image mode="aspectFit" src="{{imgTel}}"></image>
+        </view>
+    </view>
+    <view class="swiper-tab">
+        <view bindtap="clickTab" class="swiper-tab-item {{currentTab==0?'active':''}}" data-current="0">活动详情</view>
+        <view bindtap="clickTab" class="swiper-tab-item {{currentTab==1?'active':''}}" data-current="1">活动须知</view>
+    </view>
+    <view class="{{currentTab==0?'show':'hidden'}}">
+        <view class="detail_wrapper">
+            <view class="tab_detail">
+                <view class="tab_det1">
+                    <template is="html-view" data="{{data:info}}"></template>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="{{currentTab==1?'show':'hidden'}}">
+        <view class="detail_wrapper">
+            <view class="tab_detail">
+                <view class="tab_det1">
+                    <template is="html-view" data="{{data:notice}}"></template>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view wx:if="{{!activity.expireNum||activity.expireNum<=0}}">
+        <view bindtap="{{activity.address||activity.activityAddress||isSnapAct?'reserveActive':''}}" class="order redBack {{activity.address||activity.activityAddress||isSnapAct?'':'disabled'}}">{{isSnapAct?'立即参加':'立即预定'}}</view>
+    </view>
+</scroll-view>
+<view class="modal {{showModal==0?'show':'hidden'}}" wx:if="{{isType==4}}">
+    <view class="modal_inf">
+        <view class="modal_tit">确认预定</view>
+        <view class="modal_tel">
+            <view class="modal_tel1">手机号码</view>
+            <view class="modal_tel2">{{phone}}</view>
+        </view>
+        <view class="modal_code">
+            <view class="modal_code1">
+                <input bindinput="lxrcode" placeholder="输入验证码" style="padding-top:4rpx" type="number"></input>
+            </view>
+            <button bindtap="clickCode" class="modal_code2 " disabled="{{modalCode!=0}}">{{modalCode==0?'获取验证码':modalSecond}}</button>
+        </view>
+        <button bindtap="submitorder" class="modal_btn">确认提交</button>
+        <view bindtap="gbmodal" class="modal_cross">×</view>
+    </view>
+</view>
+<modal bindconfirm="confirm" confirmText="前往认证" content="亲爱的市民，您好！参与问卷活动需要实名哦!" show="{{showModalAuth}}"></modal>

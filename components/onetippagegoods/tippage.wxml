@@ -1,0 +1,7 @@
+<view class="tip-page" wx:if="{{listlen==true}}">
+    <view class="wraper">
+        <image src="https://jn.zhuwentec.com/jn-cultural-cdn/wxapp/blanktipPage/search_goods.png"></image>
+        <text>购物车正在等待您装满哦~</text>
+        <navigator class="btn" openType="switchTab" url="/pages/quanyi/quanyi">去选选</navigator>
+    </view>
+</view>

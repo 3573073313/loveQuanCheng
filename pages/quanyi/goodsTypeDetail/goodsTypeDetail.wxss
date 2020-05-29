@@ -1,0 +1,91 @@
+.page {
+}
+
+.sortPick {
+    background: #fff;
+    padding: 0 30rpx;
+    font-size: 27rpx;
+    height: 100rpx;
+    line-height: 100rpx;
+    margin-top: 1rpx;
+}
+
+.sortIndex {
+    color: rgb(195,27,42);
+}
+
+.index-tasks-item {
+    width: 300rpx;
+    height: 405rpx;
+    background-color: #ffffff;
+    border-radius: 15rpx;
+    border: 1rpx solid #f3f3f3;
+    overflow: hidden;
+    box-shadow: 10rpx 10rpx 20rpx #e3e3e3;
+    margin-bottom: 20rpx;
+}
+
+.index-tasks-itemimg {
+    width: 100%;
+    height: 250rpx;
+    border-radius: 10rpx 10rpx 0rpx 0rpx;
+    border-bottom: 1rpx solid #e3e3e3;
+}
+
+.index-tasks-itemtit {
+    font-size: 28rpx;
+    color: rgb(51,51,51);
+    padding: 0 14rpx;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+}
+
+.nameMiddle {
+    align-items: center;
+    display: flex;
+    height: 80rpx;
+}
+
+.index-tasks-score {
+    font-size: 26rpx;
+    color: rgb(195,27,42);
+}
+
+.index-tasks-count {
+    font-size: 24rpx;
+    color: rgb(153,153,153);
+}
+
+.index-tasks-items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 50rpx;
+}
+
+.index-tasks-scroll .index-tasks-item {
+    display: inline-block;
+    margin-left: 30rpx;
+    width: 250rpx;
+    height: 355rpx;
+    position: relative;
+}
+
+.index-tasks-scroll .index-tasks-score {
+    position: absolute;
+    height: 50rpx;
+    background: rgba(255,255,255,0.7);
+    width: 100%;
+    top: 200rpx;
+    text-align: center;
+    color: #000;
+}
+
+.dotFlex {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20rpx;
+    align-items: center;
+}

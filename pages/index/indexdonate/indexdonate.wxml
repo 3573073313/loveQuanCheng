@@ -1,0 +1,182 @@
+<import src="../../../html-view/index.wxml"></import>
+<view class="news-wrapper">
+    <view class="swiper-tab">
+        <view bindtap="clickTab" class="swiper-tab-item {{currentTab==0?'active redBorder':''}}" data-current="0">我要捐豆</view>
+        <view bindtap="clickTab" class="swiper-tab-item {{currentTab==1?'active redBorder':''}}" data-current="1">捐豆好人榜</view>
+        <view bindtap="clickTab" class="swiper-tab-item {{currentTab==2?'active redBorder':''}}" data-current="2">用途公示</view>
+    </view>
+    <view class="{{currentTab==0?'show':'hidden'}}">
+        <view class="jjf-top-wrapper">
+            <view class="jjf-top-item" style="margin-bottom:20rpx;">
+                <image src="{{staticurl}}index_donate01.png"></image>
+                <view class="jjf-top-iteml">
+                    <view class="jjf-top-iteml-tit">捐豆人次</view>
+                    <view class="jjf-top-iteml-num red">{{allDonate.suname}}次</view>
+                </view>
+            </view>
+            <view class="jjf-top-item" style="border-right:none;margin-bottom:20rpx;padding-left:18rpx;">
+                <image src="{{staticurl}}index_donate02.png"></image>
+                <view class="jjf-top-iteml">
+                    <view class="jjf-top-iteml-tit">累计总额</view>
+                    <view class="jjf-top-iteml-num red">{{allDonate.integral}}豆</view>
+                </view>
+            </view>
+            <view class="jjf-top-item" style="margin-top:20rpx;">
+                <image src="{{staticurl}}index_donate03.png"></image>
+                <view class="jjf-top-iteml">
+                    <view class="jjf-top-iteml-tit">开展公益次数</view>
+                    <view class="jjf-top-iteml-num red">{{allDonateUse.id}}次</view>
+                </view>
+            </view>
+            <view class="jjf-top-item" style="border-right:none;margin-top:20rpx;padding-left:18rpx;">
+                <image src="{{staticurl}}index_donate04.png"></image>
+                <view class="jjf-top-iteml">
+                    <view class="jjf-top-iteml-tit">公益花费</view>
+                    <view class="jjf-top-iteml-num red">{{allDonateUse.integral}}豆</view>
+                </view>
+            </view>
+        </view>
+        <view class="jjf-jfc-wrapper">
+            <view class="jjf-jfc-tit red">捐赠文明豆池（豆）</view>
+            <view class="jjf-jfc-nums red">
+                <view class="jjf-jfc-num" wx:for="{{scorePool}}" wx:key="index">
+                    <span wx:if="{{item=='*'}}"></span>
+                    <span wx:else> {{item}} </span>
+                </view>
+            </view>
+        </view>
+        <view class="index-headlines">
+            <view class="msg_img">
+                <image src="{{staticurl}}index_donate_jf.png"></image>
+            </view>
+            <swiper autoplay="true" circular="true" class="swiper_container msg_box" interval="2000" vertical="true">
+                <navigator hoverClass="none" wx:for="{{rollingList}}" wx:key="index">
+                    <swiper-item>
+                        <view class="swiper_item">
+                            <text class="nameOverflow">{{item.nickName}}</text>{{item.updateDate}}<text>成功捐赠</text>
+                            <text class="yellow">{{item.integral}}豆</text>
+                        </view>
+                    </swiper-item>
+                </navigator>
+            </swiper>
+        </view>
+        <view class="jjf-jzdet-wrapper">
+            <view class="jztit-items">
+                <view class="jztit-item">
+                    <image src="{{staticurl}}index_donate05.png"></image>
+                    <view class="jztit-item-tit">捐豆次数</view>
+                    <view class="jztit-item-num red">{{donateByMember.suname}}次</view>
+                </view>
+                <view class="jztit-item">
+                    <image src="{{staticurl}}index_donate06.png"></image>
+                    <view class="jztit-item-tit">累计捐豆</view>
+                    <view class="jztit-item-num red">{{donateByMember.integral}}豆</view>
+                </view>
+                <view class="jztit-item" style="border-right:none;">
+                    <image src="{{staticurl}}index_donate07.png"></image>
+                    <view class="jztit-item-tit">可捐文明豆</view>
+                    <view class="jztit-item-num red">{{scoreInfo.yue}}豆</view>
+                </view>
+            </view>
+            <view class="jztit-nowjf-wrapper">
+                <view class="jztit-nowjf-tit">本次捐豆</view>
+                <view class="jztit-nowjf-items">
+                    <view bindtap="clickDot" class="jztit-nowjf-item {{isShowDotCurrent==index?'isShowDot':''}}" data-index="{{index}}" data-num="{{item}}" wx:for="{{dotList}}" wx:key="unique">{{item}}豆</view>
+                </view>
+                <view class="jztit-nowjf-other">
+                    <view>其他豆数</view>
+                    <input bindfocus="getFocus" bindinput="getInputNum" type="number" value="{{value}}"></input>
+                    <view>豆</view>
+                </view>
+            </view>
+            <view bindtap="clickDonate" class="jzf-btn redBack">捐献</view>
+        </view>
+    </view>
+    <view class="{{currentTab==1?'show':'hidden'}}">
+        <view class="tabs1-jzinfo-wrapper">
+            <view style="margin-top:8rpx;">我的捐豆信息</view>
+            <view class="jztit-items">
+                <view class="jztit-item">
+                    <image src="{{staticurl}}index_donate05.png"></image>
+                    <view class="jztit-item-tit">捐豆次数</view>
+                    <view class="jztit-item-num red">{{donateByMember.suname}}次</view>
+                </view>
+                <view class="jztit-item">
+                    <image src="{{staticurl}}index_donate08.png"></image>
+                    <view class="jztit-item-tit">排名</view>
+                    <view class="jztit-item-num red">第{{orderDonateByMember.id}}名</view>
+                </view>
+                <view class="jztit-item" style="border-right:none;">
+                    <image src="{{staticurl}}index_donate06.png"></image>
+                    <view class="jztit-item-tit">累计捐豆</view>
+                    <view class="jztit-item-num red">{{donateByMember.integral}}豆</view>
+                </view>
+            </view>
+        </view>
+        <view class="jf-rank-wrapper">
+            <view class="jf-rank-tit">排名前100名捐豆者信息，向榜样学习！</view>
+            <view class="jf-rank-tit-items">
+                <view style="width:8%;text-align:left;">名次</view>
+                <view style="width:45%;">姓名</view>
+                <view style="width:27%;">捐豆次数</view>
+                <view style="width:20%;">累计数额</view>
+            </view>
+            <view class="jf-rank-item" wx:for="{{orderDonate}}" wx:key="index">
+                <image class="jf-rank-item-medal" src="{{staticurl}}index_jfmedal01.png" wx:if="{{index==0}}"></image>
+                <image class="jf-rank-item-medal" src="{{staticurl}}index_jfmedal02.png" wx:elif="{{index==1}}"></image>
+                <image class="jf-rank-item-medal" src="{{staticurl}}index_jfmedal03.png" wx:elif="{{index==2}}"></image>
+                <view style="width:8%;" wx:else>{{item.id}}</view>
+                <view class="jf-rank-item-nameinfo">
+                    <view class="imgHead">
+                        <image mode="aspectFill" src="{{item.idCard?item.idCard:'/image/mine.png'}}"></image>
+                    </view>
+                    <view style="width:70%">
+                        <view class="jf-rank-item-nameinfo-name">{{item.isReturn?item.isReturn:'已重置'}}</view>
+                        <view class="jf-rank-item-nameinfo-tip">{{item.remarks}}</view>
+                    </view>
+                </view>
+                <view class="jf-rank-item-timeinfo">{{item.suname}}次</view>
+                <view class="jf-rank-item-numinfo">{{item.integral}}豆</view>
+            </view>
+        </view>
+    </view>
+    <view class="{{currentTab==2?'show':'hidden'}}">
+        <view class="tabs1-jzinfo-wrapper">
+            <view style="margin-top:8rpx;">捐赠文明豆用途总括</view>
+            <view class="jztit-items">
+                <view class="jztit-item">
+                    <image src="{{staticurl}}index_donate03.png"></image>
+                    <view class="jztit-item-tit">开展公益次数</view>
+                    <view class="jztit-item-num red">{{allDonateUse.id}}次</view>
+                </view>
+                <view class="jztit-item">
+                    <image src="{{staticurl}}index_donate09.png"></image>
+                    <view class="jztit-item-tit">累计花费文明豆</view>
+                    <view class="jztit-item-num red">{{allDonateUse.integral}}豆</view>
+                </view>
+                <view class="jztit-item" style="border-right:none;">
+                    <image src="{{staticurl}}index_donate10.png"></image>
+                    <view class="jztit-item-tit">受益人次</view>
+                    <view class="jztit-item-num red">{{allDonateUse.remainingPoints}}次</view>
+                </view>
+            </view>
+        </view>
+        <view class="jf-public-wrapper">
+            <view class="jf-public-tit">所捐文明豆用途去向信息公示</view>
+            <view class="jf-public-item" wx:for="{{donateUseList}}" wx:key="index">
+                <view class="jf-public-item-top">
+                    <view class="jf-public-item-name">{{item.useProject}}</view>
+                    <view class="jf-public-item-time">{{item.createDate}}</view>
+                </view>
+                <view class="jf-public-item-bottom">
+                    <view class="jf-public-item-cont">
+                        <template is="html-view" data="{{data:item.projectInstruction}}"></template>
+                    </view>
+                    <view class="jf-public-item-score">{{item.integral}}豆</view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+<modal bindconfirm="clickSure" cancelText="我再想想" confirmText="确认捐赠" content="您即将捐出文明豆，献出自己的爱心，我爱泉城项目组再次提醒您，文明豆捐赠后不能退还！请确认是否继续本次捐赠。" isRed="{{true}}" show="{{!showModal}}" title="亲爱的市民"></modal>
+<modal bindconfirm="toAuthentication" cancelText="以后再说" confirmText="去认证" content="使用此功能需要先完成实名认证。" isRed="{{true}}" show="{{isShowModal3}}" title="亲爱的市民"></modal>

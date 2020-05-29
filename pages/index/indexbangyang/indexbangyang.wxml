@@ -1,0 +1,37 @@
+<view style="margin-bottom:20rpx;">
+    <swiper autoplay="{{autoplay}}" circular="{{true}}" duration="{{duration}}" indicatorActiveColor="{{activeColor}}" indicatorDots="{{indicatorDots}}" interval="{{interval}}">
+        <navigator hoverClass="none" openType="navigate" url="/pages/index/indexbydetail/indexbydetail?id={{item.id}}&title={{item.surname}}" wx:for="{{advList}}" wx:key="index">
+            <swiper-item>
+                <image class="slide-image" src="{{item.url}}"></image>
+            </swiper-item>
+        </navigator>
+    </swiper>
+</view>
+<tippage listlen="{{activesLen}}"></tippage>
+<view class="activeSelect">
+    <navigator class="activeList" url="/pages/index/indexbydetail/indexbydetail?id={{item.id}}&title={{item.surname}}" wx:for="{{hrList}}" wx:key="index">
+        <view class="item">
+            <view class="img">
+                <image src="{{item.list_img}}"></image>
+            </view>
+            <view class="info">
+                <view class="head-inf">
+                    <view class="name">{{item.surname}}</view>
+                </view>
+                <view class="time" style="display:flex;">
+                    <view class="sex" style="margin-right:20rpx">{{item.sexName}}</view>
+                    <view class="age" style="margin-right:20rpx;">{{item.age}}</view>
+                    <text class="area-name" style="width:70%;">{{item.cityName}}{{item.regionName}}人</text>
+                </view>
+                <view class="addr">
+                    <view>{{item.brief}}</view>
+                </view>
+                <view class="options">
+                    <view class="head">
+                        <text>{{item.type_name}}</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </navigator>
+</view>

@@ -1,0 +1,29 @@
+<view bindtap="clickAddAddr" class="add-addr">添加新地址</view>
+<tippage listlen="{{activesLen}}"></tippage>
+<view class="wode-collect-wrapper" wx:if="{{!isFromMine}}">
+    <view class="collect-item" wx:for="{{addrList}}" wx:key="index">
+        <view bindtap="selectAddress" class="collect-iteml" data-itemid="{{item.id}}" style="width:90%;">
+            <view class="collect-item-tit">
+                <view class="name">{{item.name}}</view>
+                <view class="tel">{{item.linkManMobile}}</view>
+            </view>
+            <view class="collect-time">{{item.address}}</view>
+            <view class="remarks" wx:if="{{item.remarks&&item.remarks!=''}}">备注：{{item.remarks}}</view>
+        </view>
+        <image bindtap="showModal" data-itemid="{{item.id}}" src="{{staticurl}}mine_del.png"></image>
+    </view>
+</view>
+<view class="wode-collect-wrapper" wx:if="{{isFromMine}}">
+    <view class="collect-item" wx:for="{{addrList}}" wx:key="index">
+        <view class="collect-iteml" data-itemid="{{item.id}}" style="width:90%;">
+            <view class="collect-item-tit">
+                <view class="name">{{item.name}}</view>
+                <view class="tel">{{item.linkManMobile}}</view>
+            </view>
+            <view class="collect-time">{{item.address}}</view>
+            <view class="remarks" wx:if="{{item.remarks&&item.remarks!=''}}">备注：{{item.remarks}}</view>
+        </view>
+        <image bindtap="showModal" data-itemid="{{item.id}}" src="{{staticurl}}mine_del.png"></image>
+    </view>
+</view>
+<modal bindconfirm="delAddr" confirmText="删除" content="市民您好！确定删除该收货地址吗？" isRed="{{true}}" show="{{showModal==0}}"></modal>

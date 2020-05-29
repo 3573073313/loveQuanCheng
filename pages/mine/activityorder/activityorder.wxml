@@ -1,0 +1,45 @@
+<view class="exchange-wrapper">
+    <scroll-view class="swiper-tab" scrollX="true">
+        <view bindtap="clickTab" class="swiper-tab-item {{!currentTab?'active':''}}" data-current="">全部({{activityOrderStatusList[0]}})</view>
+        <view bindtap="clickTab" class="swiper-tab-item {{currentTab==item.value?'active':''}}" data-current="{{item.value}}" wx:for="{{orderstatedict}}" wx:key="index">{{item.label}}
+      <span wx:if="{{activityOrderStatusList[item.value]>0}}">({{activityOrderStatusList[item.value]}})</span>
+        </view>
+    </scroll-view>
+    <tippage listlen="{{!orderlist.length}}"></tippage>
+    <view class="exchange-item" wx:if="{{item.activityType==1?item.orderDetail:true}}" wx:for="{{orderlist}}" wx:key="item">
+        <view class="exchange-item-num">编号：{{item.orderSn}}</view>
+        <view bindtap="toOrderDetail" class="qy-online-goods-wrapper" data-item="{{item}}">
+            <image mode="aspectFill" src="{{item.listImg}}"></image>
+            <view class="qy-online-goods">
+                <view class="qy-online-goods-name">{{item.activityName}}</view>
+                <view class="qy-online-goods-price">下单时间：{{item.createDate}}</view>
+                <view class="qy-online-goods-size">地址： {{item.address}}</view>
+            </view>
+        </view>
+        <view class="mine-exchange-bot">
+            <view class="mine-exchange-bottime" wx:if="{{item.orderMoney>0}}">¥{{item.orderMoney}}</view>
+            <view class="mine-exchange-bottime" wx:else>免费</view>
+            <view class="mine-exchange-botbtns" style="display:flex;">
+                <view bindtap="showModalHd" class="mine-exchange-botbtns0" data-item="{{item}}" wx:if="{{item.orderState==1}}">取消订单</view>
+                <view class="mine-exchange-botbtns0 grayBack" wx:if="{{item.orderState=='1'}}">待审核</view>
+                <view bindtap="clickUsed" class="mine-exchange-botbtns1 yellowBack" data-orderdetails="{{item}}" wx:if="{{item.orderState==2||item.orderState==3}}">{{item.orderState==2?'待签到':'待签退'}}
+        </view>
+                <view class="mine-exchange-botbtns0 grayBack" wx:if="{{item.orderState=='4'}}">已过期</view>
+                <view class="mine-exchange-botbtns0 grayBack" wx:if="{{item.orderState=='5'}}">已取消</view>
+                <view class="mine-exchange-botbtns0 grayBack" wx:if="{{item.orderState=='6'}}">已完成</view>
+                <view class="mine-exchange-botbtns0 grayBack" wx:if="{{item.orderState=='-1'}}">打回</view>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="{{showModalWF==0?'show':'hidden'}}">
+    <view class="modal">
+        <view class="modal_inf">
+            <canvas canvasId="myQrcode" class="canvas-code" style="background:#fff;width: 200px;height: 200px;"></canvas>
+            <view class="nums">核销码:{{orderDetails.code}}</view>
+        </view>
+        <view bindtap="gbmodalHd" class="ques-cancel-code">
+            <view>×</view>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,313 @@
+.body {
+    padding: 0 12rpx 0 12rpx;
+    padding-right: 12rpx;
+    width: 100%;
+    height: 100%;
+}
+
+.top image {
+    width: 128rpx;
+    height: 128rpx;
+    float: left;
+    margin-right: 12rpx;
+    border-radius: 10rpx;
+}
+
+.ord_top_name {
+    line-height: 40rpx;
+    font-size: 30rpx;
+    color: #333;
+    font-weight: bold;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+}
+
+.ord_top_place {
+    line-height: 50rpx;
+    font-size: 26rpx;
+    color: #989898;
+    margin-top: 20rpx;
+}
+
+.order_info {
+    width: 100%;
+    background-color: #fff;
+    margin-top: 12rpx;
+    border-radius: 8rpx;
+    padding: 20rpx;
+}
+
+.order_info.date,.order_info.num,.order_info.tel {
+}
+
+.inf_date {
+    height: 75rpx;
+    line-height: 75rpx;
+    padding-left: 58rpx;
+    position: relative;
+    font-size: 26rpx;
+}
+
+.inf_date:first-child {
+    border-bottom: 1rpx solid #F3F3F3;
+}
+
+.inf_date .l1,.picker .l1 {
+    height: 75rpx;
+    float: left;
+    margin-right: 24rpx;
+}
+
+.inf_date .l2 {
+    float: left;
+}
+
+.inf_date image {
+    width: 30rpx;
+    height: 30rpx;
+    position: absolute;
+    top: 23rpx;
+    left: 15rpx;
+}
+
+.inf_num1,.inf_num2,.inf_tel1,.inf_tel2 {
+    height: 75rpx;
+    line-height: 75rpx;
+    padding-left: 14rpx;
+    position: relative;
+}
+
+.inf_num1,.inf_tel1 {
+    border-bottom: 1rpx solid #F3F3F3;
+}
+
+.inf_num1 .f,.inf_num2 .f,.inf_tel1 .f,.inf_tel2 .f {
+    float: left;
+    margin-right: 24rpx;
+    font-size: 26rpx;
+}
+
+.inf_num2 .r {
+    color: red;
+}
+
+.inf_tel1 .r,.inf_tel2 .r,.inf_num1 .r {
+    color: #ADADAD;
+}
+
+.order_info .c {
+    width: 160rpx;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.order_info .minus,.order_info .add {
+    width: 34rpx;
+    height: 34rpx;
+    border-radius: 6rpx;
+}
+
+.order_info .add {
+    line-height: 34rpx;
+}
+
+.btn {
+    width: 100%;
+    height: 100rpx;
+    background-image: linear-gradient(#C71B28,#FD2631);
+    font-size: 32rpx;
+    color: #fff;
+    text-align: center;
+    line-height: 100rpx;
+    position: fixed;
+    bottom: 0rpx;
+    left: 0rpx;
+    font-weight: bold;
+}
+
+.modal {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    position: fixed;
+    top: 0rpx;
+    left: 0rpx;
+    z-index: 9999999;
+}
+
+.modal.show {
+    display: block;
+}
+
+.modal.hidden {
+    display: none;
+}
+
+.modal_inf {
+    width: 530rpx;
+    height: 370rpx;
+    background-color: #fff;
+    border-radius: 16rpx;
+    position: fixed;
+    top: 200rpx;
+    left: 120rpx;
+    padding: 0 70rpx;
+    text-align: center;
+}
+
+.modal_tit {
+    color: #333;
+    font-size: 34rpx;
+    font-weight: bold;
+    margin-top: 36rpx;
+    margin-bottom: 40rpx;
+}
+
+.modal_tel {
+    padding-left: 27rpx;
+    overflow: hidden;
+    height: 68rpx;
+}
+
+.modal_tel1 {
+    float: left;
+    margin-right: 20rpx;
+}
+
+.modal_tel2 {
+    float: left;
+    line-height: 44rpx;
+}
+
+.modal_code {
+    overflow: hidden;
+    margin-bottom: 39rpx;
+    display: flex;
+}
+
+.modal_code1 {
+    width: 84px;
+    background-color: #eee;
+    border-radius: 10rpx;
+    font-size: 22rpx;
+    float: left;
+    height: 56rpx;
+}
+
+.modal_code2 {
+    float: left;
+    font-size: 22rpx;
+    color: #fff;
+    background-color: #C31926;
+    height: 56rpx;
+    line-height: 56rpx;
+    border-radius: 10rpx;
+}
+
+.modal_btn {
+    height: 56rpx;
+    background-color: #C31926;
+    color: #fff;
+    line-height: 56rpx;
+    border-radius: 10rpx;
+    width: 100%;
+    display: inline-block;
+}
+
+.modal_cross {
+    font-size: 50rpx;
+    font-weight: normal;
+    position: absolute;
+    top: 0rpx;
+    left: 480rpx;
+    width: 50rpx;
+    height: 50rpx;
+}
+
+.modal_inf {
+    width: 530rpx;
+    height: 370rpx;
+    background-color: #fff;
+    border-radius: 16rpx;
+    position: fixed;
+    top: 200rpx;
+    left: 120rpx;
+    padding: 0 70rpx;
+    text-align: center;
+}
+
+.modal_tit {
+    color: #333;
+    font-size: 34rpx;
+    font-weight: bold;
+    margin-top: 36rpx;
+    margin-bottom: 40rpx;
+}
+
+.modal_tel {
+    padding-left: 27rpx;
+    overflow: hidden;
+    height: 68rpx;
+    font-size: 26rpx;
+    display: flex;
+    align-items: center;
+}
+
+.modal_tel1 {
+    float: left;
+    margin-right: 20rpx;
+}
+
+.modal_tel2 {
+    float: left;
+    line-height: 44rpx;
+}
+
+.modal_code {
+    overflow: hidden;
+    margin-bottom: 39rpx;
+    display: flex;
+}
+
+.modal_code1 {
+    width: 84px;
+    background-color: #eee;
+    border-radius: 10rpx;
+    font-size: 22rpx;
+    float: left;
+    height: 56rpx;
+}
+
+.modal_code2 {
+    float: left;
+    font-size: 22rpx;
+    color: #fff;
+    background-color: #C31926;
+    height: 56rpx;
+    line-height: 56rpx;
+    border-radius: 10rpx;
+}
+
+.modal_btn {
+    height: 56rpx;
+    background-color: #C31926;
+    color: #fff;
+    line-height: 56rpx;
+    border-radius: 10rpx;
+    width: 100%;
+    display: inline-block;
+    font-size: 28rpx;
+}
+
+.modal_cross {
+    font-size: 50rpx;
+    font-weight: normal;
+    position: absolute;
+    top: 0rpx;
+    left: 480rpx;
+    width: 50rpx;
+    height: 50rpx;
+}

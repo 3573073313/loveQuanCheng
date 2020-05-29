@@ -1,0 +1,182 @@
+.body {
+    padding: 12rpx 12rpx 0 12rpx;
+}
+
+.cont_detail {
+    padding: 30rpx 20rpx;
+    background-color: #fff;
+    border-radius: 15rpx;
+    margin-bottom: 5rpx;
+}
+
+.detail_tit {
+    font-size: 35rpx;
+    font-weight: bold;
+}
+
+.detail_inf {
+    overflow: hidden;
+    padding-right: 50rpx;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 27rpx;
+}
+
+.detail_inf .inf {
+    font-size: 26rpx;
+    color: #999;
+}
+
+.cont_detail image {
+    height: 310rpx;
+    border-radius: 8rpx;
+    width: 100%;
+    margin-bottom: 26rpx;
+}
+
+.cont_detail .det_img01 {
+    margin-bottom: 30rpx;
+}
+
+.cont_detail .det_img02 {
+    margin-top: 52rpx;
+    margin-bottom: 22rpx;
+}
+
+.det_tex {
+    line-height: 39rpx;
+    text-indent: 60rpx;
+    font-size: 26rpx;
+}
+
+.cont_read {
+    height: 70rpx;
+    padding: 0 32rpx;
+    background-color: #fff;
+    border-radius: 0 0 15rpx 15rpx;
+    overflow: hidden;
+}
+
+.cont_readl {
+    color: #656565;
+    font-size: 26rpx;
+    line-height: 70rpx;
+    float: left;
+}
+
+.cont_readl view {
+    display: inline-block;
+}
+
+.cont_readl view:first-child {
+    margin-right: 18rpx;
+}
+
+.cont_readr {
+    font-size: 26rpx;
+    width: 103rpx;
+    padding-left: 45rpx;
+    float: right;
+    position: relative;
+    line-height: 66rpx;
+}
+
+.cont_readr image {
+    width: 28rpx;
+    height: 28rpx;
+    position: absolute;
+    top: 18rpx;
+    left: 0rpx;
+}
+
+.v_btop {
+    font-size: 32rpx;
+    font-weight: bold;
+}
+
+.v_bbottom {
+    height: 50rpx;
+    padding-right: 30rpx;
+}
+
+.v_bbottom .good {
+    height: 30rpx;
+    padding-left: 36rpx;
+    position: relative;
+    float: right;
+    font-size: 26rpx;
+    margin-left: 70rpx;
+}
+
+.v_bbottom .good image {
+    width: 31rpx;
+    height: 36rpx;
+    position: absolute;
+    top: -5rpx;
+    left: -9rpx;
+}
+
+.v_bbottom .eye {
+    height: 54rpx;
+    padding-left: 40rpx;
+    position: relative;
+    float: right;
+    font-size: 26rpx;
+}
+
+.v_bbottom .eye image {
+    width: 31rpx;
+    height: 30rpx;
+    position: absolute;
+    top: -1rpx;
+    left: -5rpx;
+}
+
+.v_content {
+    margin-top: 14rpx;
+    background-color: #fff;
+    border-radius: 15rpx;
+    padding: 0 34rpx 26rpx 34rpx;
+}
+
+.v_content .title {
+    height: 66rpx;
+    line-height: 66rpx;
+    font-size: 26rpx;
+    font-weight: bold;
+}
+
+.v_content .detail {
+    color: #616161;
+    font-size: 22rpx;
+}
+
+.cont {
+    font-size: 28rpx;
+    color: #555;
+    padding-bottom: 120rpx;
+}
+
+.info_name {
+    font-size: 35rpx;
+    font-weight: bold;
+    margin-bottom: 10rpx;
+}
+
+.wxParse-video-video {
+    width: 100%;
+    border-radius: 14rpx;
+}
+
+.wxParse-p {
+    padding-bottom: 46rpx;
+}
+
+.wxParse-p image {
+    width: 100%!important;
+}
+
+.html-view .p {
+    margin: 0em;
+    padding: 1em 0;
+}

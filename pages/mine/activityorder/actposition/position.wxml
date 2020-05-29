@@ -1,0 +1,8 @@
+<view class="page-body">
+    <view class="page-section page-section-gap">
+        <map showLocation bindmarkertap="markertap" circles="{{circles}}" id="qqMap" latitude="{{latitude}}" longitude="{{longitude}}" markers="{{markers}}" style="width: 100%; height:{{tempWindowHeightFlag}}px;"></map>
+    </view>
+    <view class="btn-area">
+        <button bindtap="goCheckIn" class="page-body-button search_btn" type="primary">去{{orderInfo.orderState==2?'签到':'签退'}}</button>
+    </view>
+</view>

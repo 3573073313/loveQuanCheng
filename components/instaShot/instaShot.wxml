@@ -1,0 +1,62 @@
+<view class="{{isList?'mX20':''}} indexsnap" style="{{isList?'':'padding:0'}}" wx:if="{{show}}">
+    <view bindtap="{{isList?'commentList':''}}" class="content content0" data-item="{{item}}" data-num="{{index}}" style="{{isList?'':'padding-bottom:20rpx'}}" wx:if="{{currentTab!==2?item.member:itemList.length}}" wx:for="{{itemList}}" wx:key="unique">
+        <view class="item">
+            <view class="head">
+                <view class="flex" style="width:70%;">
+                    <view class="headimg">
+                        <image src="{{currentTab!==2?item.member.face:member.face}}"></image>
+                    </view>
+                    <view style="line-height: 40rpx;margin-top: 5rpx;">
+                        <view class="headinfo">
+                            <view class="headinfo_name">
+                {{currentTab!==2?item.member.nickname:member.nickname}}
+              </view>
+                        </view>
+                        <view class="headinfo_time" style="font-size: 24rpx;color: #999;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;width:100%;">
+              {{item.member.sign}}
+            </view>
+                    </view>
+                </view>
+                <view style="width: 100%;position: relative;">
+                    <view class="rightStateStyle">
+                        <view class="typeStyle" style="background:{{!isAddGoodthings?'#FFD9DB':'#D9F2FF'}};color:{{!isAddGoodthings?'#ED3C44':'#3C8FED'}};font-size: 24rpx;" wx:if="{{item.typeId==='935ae107c3a8476cb1a3bd8b5fe13486'||item.typeName||isAddGoodthings}}">{{item.typeId==='935ae107c3a8476cb1a3bd8b5fe13486'?'正能量':item.typeName?item.typeName:isAddGoodthings?'投稿':''}}</view>
+                        <view class="integralGoodthings" style="background:{{item.state==='2'?'#FFD9DB':item.state==='1'?'#FEAB17':'#D7D7D7'}};color:{{item.state==='2'?'#ED3C44':item.state==='1'?'#ffffff':'#333333'}}" wx:if="{{isAddGoodthings&&item.memberId==memberId}}">
+              {{item.state==='2'?'已认证':item.state==='1'?'待认证':'认证不通过'}}
+              <text wx:if="{{item.state=='2'&&item.integral}}">+{{item.integral}}</text>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="context">
+                <view>
+                    <text catchtap="{{isNoFromShare?'toActDetail':'toIndexModal'}}" class="topic" data-id="{{item.activityId}}" style="color:{{!isAddGoodthings?'#FF676E':'#67B9FF'}}" wx:if="{{item.activityName}}">#{{item.activityName}}#</text>{{item.content}}
+        </view>
+                <view class="preimg" wx:if="{{item.picturesList}}">
+                    <view catchtap="lookImg" class="{{item.picturesList.length>1?'gzimgs-area':'oneImg'}}" data-img="{{img}}" data-list="{{item.picturesList}}" wx:for="{{item.picturesList}}" wx:for-index="idx" wx:for-item="img" wx:key="unique">
+                        <image mode="{{item.picturesList.length==1?'widthFix':'aspectFill'}}" src="{{img}}"></image>
+                    </view>
+                </view>
+                <view class="preimg" wx:if="{{item.videos}}">
+                    <video mode="aspectFill" objectFit="cover" src="{{item.videos}}" style="width:100%;border-radius:12rpx;"></video>
+                </view>
+            </view>
+            <view class="tools">
+                <view class="addressBotWay">
+                    <address item="{{item}}" staticurl="{{staticurl}}"></address>
+                </view>
+                <view class="ygz">{{item.createDate}}</view>
+            </view>
+            <view class="goodthings-tab1-reply-wrapper" wx:if="{{item.memberId==memberId&&item.approvalOpinion}}">
+                <view class="goodthings-tab1-reply-cont">{{item.approvalOpinion}}</view>
+                <view class="goodthings-tab1-reply-info">
+                    <view class="goodthings-tab1-reply-infol">
+                        <image src="{{staticurl}}index_goodthing_admin.png"></image>
+            我爱济南管理员
+          </view>
+                    <view class="goodthings-tab1-reply-infor">{{item.updateDate}}</view>
+                </view>
+            </view>
+            <commentIconList currentTab="{{currentTab}}" isAddGoodthings="{{isAddGoodthings}}" isList="{{isList}}" item="{{item}}" itemList="{{itemList}}" memberId="{{memberId}}" show="{{show}}" showKeyBoard="{{showKeyBoard}}" staticurl="{{staticurl}}" wx:if="{{isNoFromShare}}"></commentIconList>
+        </view>
+    </view>
+</view>

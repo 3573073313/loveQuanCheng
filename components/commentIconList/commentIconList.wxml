@@ -1,0 +1,38 @@
+<view wx:if="{{show}}">
+    <view class="indexsnap {{isList?'':'itemFixed'}}" wx:if="{{!item.showKeyBoard}}">
+        <view class="toolItem {{isList?'toolItemNoFixed':''}} {{item.state=='2'?'flexBtCenter':'flexEndCenter'}}">
+            <view catchtap="{{isList?'commentList':''}}" class="toolsc" data-item="{{item}}" wx:if="{{item.state=='2'}}">
+                <image mode="heightFix" src="{{staticurl}}iconComment.png"></image>
+        13
+      </view>
+            <view class="toolsc" wx:if="{{item.state=='2'}}">
+                <button class="share" data-id="{{item.id}}" data-item="{{item}}" data-type="1" openType="share">
+                    <image mode="heightFix" src="{{staticurl}}iconShareNN.png"></image>
+          {{item.shareNum}}
+        </button>
+            </view>
+            <view catchtap="goodMysSnap" class="toolsc" data-id="{{item.id}}" data-index="{{index}}" data-type="2" wx:if="{{item.state=='2'}}">
+                <image mode="heightFix" src="{{staticurl}}iconGood{{item.number>0?'RedFill@3x':'NN'}}.png"></image>
+        {{item.dianZanNum}}
+      </view>
+            <view catchtap="writeComment" class="toolsc" data-item="{{item}}" style="color:#FEAB17" wx:if="{{item.memberId!=memberId}}">
+                <image mode="heightFix" src="{{staticurl}}iconWriteComment.png"></image>
+        去评论
+      </view>
+            <view catchtap="delType" class="toolsc" data-id="{{item.id}}" style="color:#ED3C44;" wx:else>
+        删除
+      </view>
+        </view>
+    </view>
+    <view bindtap="writeComment" class="showKeyBoard" data-item="{{item}}" data-submit="1" wx:else>
+        <view class="textContent">
+            <view class="textarea">
+                <textarea fixed cursorSpacing="170" focus="{{true}}" placeholder="请输入你的评论" showConfirmBar="{{false}}"></textarea>
+            </view>
+            <view class="flexBtCenter textBtn">
+                <view catchtap="writeComment" class="cancel" data-item="{{item}}" data-submit="1">取消</view>
+                <view catchtap="writeComment" class="submit" data-item="{{item}}" data-submit="2">发布</view>
+            </view>
+        </view>
+    </view>
+</view>

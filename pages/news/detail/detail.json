@@ -1,0 +1,8 @@
+{
+    "navigationBarTitleText": "资讯详情页面",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTextStyle": "black",
+    "usingComponents": {
+        "wxc-audio": "/components/audio/audio"
+    }
+}

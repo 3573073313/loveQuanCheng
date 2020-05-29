@@ -1,0 +1,58 @@
+@import "../../app.wxss";
+
+.audio {
+    height: 150rpx;
+    margin: 20rpx;
+    border: 1px solid #e3e3e3;
+    background: #fff;
+    border-radius: 90rpx;
+    overflow: hidden;
+    position: relative;
+}
+
+.audioImgLeft {
+    position: relative;
+}
+
+.audioImgLeft>image {
+    width: 150rpx;
+    height: 150rpx;
+}
+
+.isPlay {
+    position: absolute;
+    top: 45rpx;
+    left: 45rpx;
+    font-size: 30rpx;
+    color: #fff;
+    width: 60rpx;
+    height: 60rpx;
+    border-radius: 50%;
+    background: rgba(0,0,0,0.4);
+    text-align: center;
+    line-height: 53rpx;
+    border: 1px solid #fff;
+}
+
+.audioRight {
+    position: absolute;
+    background: rgba(0,0,0,0.3);
+    height: 50rpx;
+    width: 72%;
+    top: 50rpx;
+    right: 40rpx;
+    border-radius: 30rpx;
+    justify-content: space-between;
+    line-height: 50rpx;
+    padding: 0 10px;
+}
+
+slider {
+    margin-top: 8rpx;
+    width: 80%;
+}
+
+.audioTime {
+    color: #fff;
+    font-size: 25rpx;
+}

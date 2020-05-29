@@ -1,0 +1,75 @@
+.page {
+}
+
+.header {
+    height: 100rpx;
+    line-height: 100rpx;
+    display: flex;
+    padding: 0 20rpx;
+    border-bottom: 1rpx solid #F0F0F0;
+    background: #ffffff;
+    font-size: 30rpx;
+}
+
+.headerTitle {
+    min-width: 15%;
+    font-weight: bold;
+}
+
+.headerContent {
+    margin-left: 3%;
+}
+
+.infoWrap {
+    margin-top: 5rpx;
+    padding: 35rpx;
+    background: #ffffff;
+}
+
+.infoItem {
+    display: flex;
+}
+
+.leftDot {
+    width: 5%;
+    margin-right: 2%;
+    position: relative;
+}
+
+.dot {
+    width: 20rpx;
+    height: 20rpx;
+    background: #e3e3e3;
+    border: 5rpx solid #e3e3e3;
+    border-radius: 50%;
+}
+
+.activeDot {
+    background: #00B4FF;
+    border: 5rpx solid #A6E5FF;
+}
+
+.solid {
+    position: absolute;
+    top: 20rpx;
+    left: 10rpx;
+    width: 3rpx;
+    height: 100%;
+    background: #e3e3e3;
+}
+
+.rightInfo {
+    width: 93%;
+    padding-bottom: 50rpx;
+}
+
+.infoText {
+    font-size: 27rpx;
+    margin-bottom: 10rpx;
+    color: #333333;
+}
+
+.infoTime {
+    font-size: 25rpx;
+    color: #aaaaaa;
+}

@@ -1,0 +1,364 @@
+@import "../../../html-view/index.wxss";
+
+page {
+    background-color: #f3f3f3;
+}
+
+.swiper-item {
+    display: block;
+    margin-top: 30rpx;
+}
+
+.slide-image {
+    width: 100%;
+    height: 100%;
+}
+
+swiper {
+    width: 100%;
+    height: 340rpx;
+}
+
+.type {
+    font-size: 22rpx;
+    color: #eee;
+    text-align: center;
+    background-color: rgba(0,0,0,0.3);
+    position: absolute;
+    bottom: 20rpx;
+    left: 20rpx;
+    border-radius: 5rpx;
+    padding: 5rpx 10rpx;
+}
+
+.joinNum {
+    right: 20rpx;
+    left: auto;
+}
+
+.swiper-collect {
+    width: 50rpx;
+    height: 50rpx;
+    position: absolute;
+    top: 27rpx;
+    right: 25rpx;
+}
+
+.faxian_info {
+    margin: 10rpx 12rpx 10rpx 12rpx;
+    padding: 0 23rpx;
+    background-color: #fff;
+    border-radius: 8rpx;
+}
+
+.faxian_name {
+    font-size: 33rpx;
+    color: #333333;
+    font-weight: bold;
+    border-left: 3px solid #C70304;
+    padding-left: 20rpx;
+    word-break: break-word;
+}
+
+.fx_info {
+    padding-left: 62rpx;
+    height: 92rpx;
+    line-height: 92rpx;
+    border-top: 1rpx solid #f7f7f7;
+    font-size: 26rpx;
+    position: relative;
+    color: #000;
+    display: flex;
+}
+
+.fx_info image {
+    width: 29rpx;
+    height: 30rpx;
+    position: absolute;
+    top: 31rpx;
+    left: 10rpx;
+}
+
+.fx_info view:nth-child(1) {
+    float: left;
+    margin-right: 15rpx;
+    color: #666666;
+}
+
+.fx_info.info5 view:nth-child(2) {
+    float: left;
+    color: #f50002;
+}
+
+.swiper-tab {
+    text-align: center;
+    height: 92rpx;
+    line-height: 92rpx;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    color: #ccc;
+    font-size: 28rpx;
+    background-color: #fff;
+    margin: 0 12rpx;
+    border-radius: 8rpx 8rpx 0 0;
+    border-bottom: 2rpx solid #f3f3f3;
+}
+
+.swiper-tab-item {
+    color: #999;
+    font-size: 30rpx;
+    width: 49%;
+}
+
+.swiper-tab-item:first-child {
+    border-right: 1rpx solid #f3f3f3;
+}
+
+.active {
+    color: #c31926;
+    font-size: 30rpx;
+    font-weight: bold;
+    width: 49%;
+}
+
+.show {
+    display: block;
+}
+
+.hidden {
+    display: none;
+}
+
+.detail_wrapper {
+    margin: 0 12rpx;
+    background-color: #fff;
+    padding-bottom: 80rpx;
+}
+
+.tab_detail {
+    padding: 30rpx 23rpx 20rpx 23rpx;
+}
+
+.tab_det1 {
+    background-color: #fff;
+    font-size: 26rpx;
+    line-height: 38rpx;
+    color: #666;
+}
+
+.tab_det2_title {
+    height: 48rpx;
+    font-size: 26rpx;
+    color: #333;
+    font-weight: bold;
+}
+
+.tab_det2_tex {
+    font-size: 24rpx;
+    line-height: 38rpx;
+    color: #666;
+    text-indent: 60rpx;
+}
+
+.order {
+    width: 100%;
+    height: 100rpx;
+    background-image: linear-gradient(#c71b28,#fd2631);
+    font-size: 32rpx;
+    color: #fff;
+    text-align: center;
+    line-height: 100rpx;
+    font-weight: bold;
+    position: fixed;
+    bottom: 0rpx;
+    left: 0rpx;
+}
+
+.disabled {
+    background: #aaa;
+}
+
+.modal {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    position: fixed;
+    top: 0rpx;
+    left: 0rpx;
+    z-index: 9999999;
+}
+
+.modal.show {
+    display: block;
+}
+
+.modal.hidden {
+    display: none;
+}
+
+.modal_inf {
+    width: 530rpx;
+    height: 370rpx;
+    background-color: #fff;
+    border-radius: 16rpx;
+    position: fixed;
+    top: 200rpx;
+    left: 120rpx;
+    padding: 0 70rpx;
+    text-align: center;
+}
+
+.modal_tit {
+    color: #333;
+    font-size: 34rpx;
+    font-weight: bold;
+    margin-top: 36rpx;
+    margin-bottom: 40rpx;
+}
+
+.modal_tel {
+    padding-left: 27rpx;
+    overflow: hidden;
+    height: 68rpx;
+}
+
+.modal_tel1 {
+    float: left;
+    margin-right: 20rpx;
+}
+
+.modal_tel2 {
+    float: left;
+    line-height: 44rpx;
+}
+
+.modal_code {
+    overflow: hidden;
+    margin-bottom: 39rpx;
+    display: flex;
+}
+
+.modal_code1 {
+    width: 84px;
+    background-color: #eee;
+    border-radius: 10rpx;
+    font-size: 22rpx;
+    float: left;
+    height: 56rpx;
+}
+
+.modal_code2 {
+    float: left;
+    font-size: 22rpx;
+    color: #fff;
+    background-color: #C31926;
+    height: 56rpx;
+    line-height: 56rpx;
+    border-radius: 10rpx;
+}
+
+.modal_btn {
+    height: 56rpx;
+    background-color: #C31926;
+    color: #fff;
+    line-height: 56rpx;
+    border-radius: 10rpx;
+    width: 100%;
+    display: inline-block;
+}
+
+.modal_cross {
+    font-size: 50rpx;
+    font-weight: normal;
+    position: absolute;
+    top: 0rpx;
+    left: 480rpx;
+    width: 50rpx;
+    height: 50rpx;
+}
+
+.modal_inf {
+    width: 530rpx;
+    height: 370rpx;
+    background-color: #fff;
+    border-radius: 16rpx;
+    position: fixed;
+    top: 200rpx;
+    left: 120rpx;
+    padding: 0 70rpx;
+    text-align: center;
+}
+
+.modal_tit {
+    color: #333;
+    font-size: 34rpx;
+    font-weight: bold;
+    margin-top: 36rpx;
+    margin-bottom: 40rpx;
+}
+
+.modal_tel {
+    padding-left: 27rpx;
+    overflow: hidden;
+    height: 68rpx;
+    font-size: 26rpx;
+    display: flex;
+    align-items: center;
+}
+
+.modal_tel1 {
+    float: left;
+    margin-right: 20rpx;
+}
+
+.modal_tel2 {
+    float: left;
+    line-height: 44rpx;
+}
+
+.modal_code {
+    overflow: hidden;
+    margin-bottom: 39rpx;
+    display: flex;
+}
+
+.modal_code1 {
+    width: 84px;
+    background-color: #eee;
+    border-radius: 10rpx;
+    font-size: 22rpx;
+    float: left;
+    height: 56rpx;
+}
+
+.modal_code2 {
+    float: left;
+    font-size: 22rpx;
+    color: #fff;
+    background-color: #C31926;
+    height: 56rpx;
+    line-height: 56rpx;
+    border-radius: 10rpx;
+}
+
+.modal_btn {
+    height: 56rpx;
+    background-color: #C31926;
+    color: #fff;
+    line-height: 56rpx;
+    border-radius: 10rpx;
+    width: 100%;
+    display: inline-block;
+    font-size: 28rpx;
+}
+
+.modal_cross {
+    font-size: 50rpx;
+    font-weight: normal;
+    position: absolute;
+    top: 0rpx;
+    left: 480rpx;
+    width: 50rpx;
+    height: 50rpx;
+}

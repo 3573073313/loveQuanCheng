@@ -1,0 +1,53 @@
+<import src="../../../html-view/index.wxml"></import>
+<view class="wrap" wx:if="{{id?topicData.name&&topicData.questionList.length:true}}">
+    <block wx:if="{{topicData.name}}">
+        <view class="title flex">
+            <view class="borderLeft redBack"></view>
+            <view>
+                <text space="nbsp">{{topicData.name}}</text>
+                <text class="scoreStyle">{{topicData.score}}分</text>
+            </view>
+        </view>
+        <view class="topHint" wx:if="{{topicData.remarks}}">
+            <view class="mY20 textSpace2">
+                <template is="html-view" data="{{data:info}}"></template>
+            </view>
+        </view>
+    </block>
+    <view class="topic">
+        <view class="topicItem" id="topicItem{{index}}" wx:for="{{topicData.questionList}}" wx:key="unique">
+            <view class="topicTitle normal" wx:if="{{item.problemCategories}}">{{item.problemCategories}}</view>
+            <view class="topicTitle normal" id="contentText{{index}}" style=" {{!item.isShowAll&&item.flod?'max-height:180rpx':''}}" wx:if="{{item.questionRemark}}">
+                <template is="html-view" data="{{data:item.questionRemarkInfo}}"></template>
+                <block wx:if="{{item.flod}}">
+                    <view bindtap="showAll" class="allShow" data-index="{{index}}" wx:if="{{!item.isShowAll}}">...
+            <text class="yellow">更多</text>
+                    </view>
+                    <view bindtap="showAll" class="packUp yellow" data-index="{{index}}" wx:else>收起</view>
+                </block>
+            </view>
+            <view class="topicTitle {{item.isRequired==1?'required':''}}">{{item.questionName}}
+        <text class="topicType" style="color:{{item.questionType==2?'#FFAB17':'#999999'}};border-color:{{item.questionType==2?'#FFAB17':'#999999'}}">{{item.questionTypeName}}</text>
+            </view>
+            <view class="answer" wx:if="{{item.questionType==1||item.questionType==2?item.optionList.length:true}}">
+                <block wx:if="{{item.questionType==1}}">
+                    <view bindtap="chooseRadio" class="radio" data-i="{{optionIndex}}" data-index="{{index}}" wx:for="{{item.optionList}}" wx:for-index="optionIndex" wx:for-item="optionItem" wx:key="unique">
+                        <icon color="{{optionItem.show?'#C70304':'#ffffff'}}" size="{{optionItem.show?'17':'15'}}" type="success" wx:if="{{optionItem.show}}"></icon>
+                        <image class="radioShow" src="{{staticUrl}}noRadio.png" wx:else></image>
+                        <view class="optionLabel" style="color:{{optionItem.show?'#C70304':'#999999'}}">{{optionItem.optionName}}</view>
+                    </view>
+                </block>
+                <block wx:if="{{item.questionType==2}}">
+                    <view bindtap="chooseCheckBox" class="radio checkbox" data-i="{{optionIndex}}" data-index="{{index}}" wx:for="{{item.optionList}}" wx:for-index="optionIndex" wx:for-item="optionItem" wx:key="unique">
+                        <icon class="{{optionItem.show?'checked':''}}" color="#ffffff" size="{{optionItem.show?'10':'8'}}" type="success_no_circle"></icon>
+                        <view class="optionLabel" style="color:{{optionItem.show?'#C70304':'#999999'}}">{{optionItem.optionName}}</view>
+                    </view>
+                </block>
+                <input bindinput="bindinput" class="input" data-index="{{index}}" placeholder="请认真填写" type="{{item.type}}" value="{{item.value}}" wx:if="{{item.questionType==3}}"></input>
+                <textarea bindinput="bindinput" class="textarea" data-index="{{index}}" placeholder="请认真填写" type="{{item.type}}" value="{{item.value}}" wx:if="{{item.questionType==4}}"></textarea>
+            </view>
+        </view>
+    </view>
+    <cover-view bindtap="{{isSubmit?'':'submit'}}" class="submitBtn">确认提交</cover-view>
+</view>
+<modal bindconfirm="confirm" content="{{content}}" isRed="{{isSubmit}}" show="{{showModal}}" showCancel="{{false}}"></modal>

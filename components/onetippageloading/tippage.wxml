@@ -1,0 +1,5 @@
+<view class="tip-page" wx:if="{{list==false}}">
+    <view class="wraper" style="padding-top:160rpx;">
+        <text>内容加载中，请稍等...</text>
+    </view>
+</view>

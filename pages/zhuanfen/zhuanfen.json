@@ -1,0 +1,12 @@
+{
+    "navigationBarTitleText": "我爱泉城",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTextStyle": "black",
+    "component": true,
+    "usingComponents": {
+        "dropdownmenu": "../../components/dropdownmenu/dropdownmenu",
+        "ec-canvas": "../../ec-canvas/ec-canvas",
+        "wxc-dialog": "../../components/dialog/dialog",
+        "activity": "../../components/activity/activity"
+    }
+}

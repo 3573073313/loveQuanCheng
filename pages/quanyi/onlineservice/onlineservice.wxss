@@ -1,0 +1,125 @@
+.qy-online-goods-wrapper {
+    margin: 20rpx;
+    background-color: #fff;
+    display: flex;
+    border-bottom: 1px solid #f0f0f0;
+    padding: 20rpx;
+    border-radius: 10rpx;
+}
+
+.qy-online-goods-wrapper image {
+    width: 164rpx;
+    height: 164rpx;
+    margin-right: 24rpx;
+}
+
+.qy-online-goods {
+    width: 73%;
+    padding-top: 6rpx;
+}
+
+.qy-online-goods-name {
+    font-size: 32rpx;
+    letter-spacing: 1rpx;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    line-height: 46rpx;
+    padding-bottom: 6rpx;
+}
+
+.qy-online-goods-price {
+    font-size: 36rpx;
+    color: #C71021;
+}
+
+.qy-online-goods-size {
+    font-size: 26rpx;
+    color: #666;
+    margin-top: 10rpx;
+}
+
+.qy-online-items-wrapper {
+    margin: 0rpx 20rpx;
+    background-color: #fff;
+    border-radius: 10rpx;
+}
+
+.qy-online-items {
+    padding: 0 20rpx;
+}
+
+.qy-online-item {
+    display: flex;
+    padding: 20rpx 0rpx;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.qy-online-item image {
+    width: 86rpx;
+    height: 86rpx;
+    border-radius: 50%;
+    margin-right: 20rpx;
+}
+
+.qy-online-item-info {
+    width: 84%;
+}
+
+.qy-online-item-infot {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 10rpx;
+    margin-top: 4rpx;
+}
+
+.qy-online-item-time {
+    font-size: 22rpx;
+    color: #B3B3B3;
+}
+
+.qy-online-item-cont {
+    font-size: 26rpx;
+    color: #666;
+}
+
+.qy-online-btn {
+    height: 100rpx;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0rpx 20rpx;
+    position: fixed;
+    bottom: 0rpx;
+    left: 0rpx;
+    width: 100%;
+}
+
+.qy-online-btn image {
+    width: 40rpx;
+    height: 40rpx;
+    border-radius: 50%;
+}
+
+.qy-online-btn input {
+    width: 490rpx;
+    height: 60rpx;
+    background-color: #fff;
+    border: 1px solid #f0f0f0;
+    border-radius: 16rpx;
+}
+
+.qy-online-sendtn {
+    width: 120rpx;
+    height: 60rpx;
+    background-color: #C71021;
+    color: #fff;
+    font-size: 32rpx;
+    line-height: 60rpx;
+    text-align: center;
+    border-radius: 10rpx;
+}

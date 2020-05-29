@@ -1,0 +1,216 @@
+.wo-infos {
+    border-radius: 10rpx;
+    margin: 15rpx 12rpx 20rpx 12rpx;
+}
+
+.wo-info {
+    height: 90rpx;
+    line-height: 90rpx;
+    padding: 0 20rpx;
+    background-color: #fff;
+    overflow: hidden;
+    margin-bottom: 2rpx;
+}
+
+.wo-info:first-child {
+    border-radius: 10rpx 10rpx 0 0;
+}
+
+.wo-info:last-child {
+    border-radius: 0 0 10rpx 10rpx;
+}
+
+.wo-photo {
+    height: 145rpx;
+    line-height: 145rpx;
+}
+
+.wo-inf-title {
+    font-size: 26rpx;
+    color: #333;
+    float: left;
+}
+
+.wo-infos image {
+    width: 14rpx;
+    height: 24rpx;
+    float: right;
+    margin-left: 20rpx;
+    margin-top: 33rpx;
+}
+
+.wo-infos .wo-photo image {
+    width: 96rpx;
+    height: 96rpx;
+    float: right;
+}
+
+.wo-inf-r {
+    font-size: 26rpx;
+    color: #999;
+    float: right;
+}
+
+.wo-approve image {
+    width: 22rpx;
+    height: 22rpx;
+}
+
+.tex-wrapper {
+    margin: 16rpx 12rpx 0 12rpx;
+}
+
+textarea {
+    background-color: #fff;
+    width: 91.6%;
+    height: 254rpx;
+    border-radius: 0rpx 0rpx 10rpx 10rpx;
+    padding: 30rpx;
+}
+
+.tex-wrapper-tit {
+    font-size: 32rpx;
+    padding-left: 28rpx;
+    background-color: #fff;
+    border-bottom: 1px solid #f5f5f5;
+    height: 74rpx;
+    line-height: 74rpx;
+    border-radius: 10rpx 10rpx 0rpx 0rpx;
+}
+
+.tex-wrapper .btn {
+    width: 640rpx;
+    height: 92rpx;
+    background-image: linear-gradient(#C71B28,#FD2631);
+    color: #fff;
+    font-size: 30rpx;
+    text-align: center;
+    line-height: 92rpx;
+    position: fixed;
+    bottom: 60rpx;
+    left: 60rpx;
+    border-radius: 10rpx;
+}
+
+.modal {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    position: fixed;
+    top: 0rpx;
+    left: 0rpx;
+    z-index: 999;
+}
+
+.modal.show {
+    display: block;
+}
+
+.modal.hidden {
+    display: none;
+}
+
+.modal_inf {
+    width: 100%;
+    height: 500rpx;
+    background-color: #fff;
+    position: fixed;
+    bottom: 0rpx;
+    padding: 0 70rpx;
+    text-align: center;
+}
+
+.modal_tit {
+    color: #333;
+    font-size: 34rpx;
+    font-weight: bold;
+    margin-top: 36rpx;
+    margin-bottom: 40rpx;
+}
+
+.modal_tel {
+    padding-left: 28rpx;
+    overflow: hidden;
+    height: 68rpx;
+}
+
+.modal_tel1 {
+    float: left;
+    margin-right: 20rpx;
+}
+
+.modal_tel2 {
+    float: left;
+    line-height: 44rpx;
+}
+
+.modal_code {
+    overflow: hidden;
+    margin-bottom: 40rpx;
+}
+
+.modal_code1 {
+    width: 100%;
+    background-color: #f3f3f3;
+    border-radius: 59rpx;
+    font-size: 30rpx;
+    height: 80rpx;
+    line-height: 80rpx;
+}
+
+.modal_code1 input {
+    height: 80rpx;
+    font-size: 30rpx;
+    text-align: center;
+}
+
+.modal_code2 {
+    float: right;
+    width: 159rpx;
+    font-size: 22rpx;
+    color: #fff;
+    background-color: #C31926;
+    height: 56rpx;
+    line-height: 56rpx;
+    border-radius: 10rpx;
+}
+
+.modal_btn_wx {
+    height: 70rpx;
+    background-color: #C31926;
+    color: #fff;
+    line-height: 70rpx;
+    border-radius: 10rpx;
+    width: 100%;
+    display: inline-block;
+    font-size: 30rpx;
+}
+
+.modal_cross {
+    font-size: 50rpx;
+    font-weight: normal;
+    position: absolute;
+    top: 24rpx;
+    left: 480rpx;
+    width: 50rpx;
+    height: 50rpx;
+}
+
+.get-phone {
+    height: 70rpx;
+    font-size: 28rpx;
+    padding-left: 30rpx;
+    text-align: left;
+}
+
+.modal_btn {
+    height: 60rpx;
+    font-size: 28rpx;
+    line-height: 60rpx;
+    width: 220rpx;
+    border-radius: 10rpx;
+    text-align: center;
+    border: 1rpx solid #c31926;
+    background: #fff;
+    color: #fff;
+}

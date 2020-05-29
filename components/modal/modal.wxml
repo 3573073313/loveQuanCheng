@@ -1,0 +1,10 @@
+<cover-view class="page" wx:if="{{show}}">
+    <cover-view class="wrap">
+        <cover-view class="title" wx:if="{{showTitle}}">{{title?title:'温馨提示'}}</cover-view>
+        <cover-view class="content">{{content}}</cover-view>
+        <cover-view class="{{showCancel?'flexBtCenter':'flexCenter'}} btns">
+            <cover-view bindtap="closeModal" class="cancel btn grayBack" wx:if="{{showCancel}}">{{cancelText?cancelText:'取消'}}</cover-view>
+            <cover-view bindtap="closeModal" class="confirm btn {{isRed?'redBack':'yellowBack'}}" data-type="1">{{confirmText?confirmText:'确定'}}</cover-view>
+        </cover-view>
+    </cover-view>
+</cover-view>

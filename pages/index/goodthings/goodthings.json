@@ -1,0 +1,10 @@
+{
+    "navigationBarTitleText": "做好事",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTextStyle": "black",
+    "component": true,
+    "usingComponents": {
+        "inputSelect": "../../../components/inputSelect/inputSelect",
+        "tippage": "../../../components/onetippagecont/tippage"
+    }
+}

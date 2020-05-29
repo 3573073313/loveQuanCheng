@@ -1,0 +1,6 @@
+<template name="html-view">
+    <view class="html-view">
+        <template is="html-view-nodes" data="{{nodes:data}}"></template>
+    </view>
+</template>
+<import src="nodes.wxml"></import>

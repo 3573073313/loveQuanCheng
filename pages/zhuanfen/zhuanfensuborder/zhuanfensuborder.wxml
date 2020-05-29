@@ -1,0 +1,69 @@
+<view class="body">
+    <view class="order_info top">
+        <view class="r">
+            <view class="ord_top_name">{{activity.actName?activity.actName:activity.name}}</view>
+            <view class="ord_top_place">地址：{{activity.address?activity.address:activity.activityAddress}}</view>
+        </view>
+    </view>
+    <view class="order_info date">
+        <view class="inf_date">
+            <image src="{{imgCalendar}}"></image>
+            <picker bindchange="bindchangedate" class="picker" end="{{activity.endDate}}" mode="date" start="{{activity.starDate}}">
+                <view class="picker">
+                    <view class="l1">日期:</view>
+                    <view style="width:80%;" wx:if="{{useDate.length}}">{{useDate}}</view>
+                    <view style="width:80%;color:#989898" wx:else>请选择使用日期</view>
+                </view>
+            </picker>
+        </view>
+        <view class="inf_date">
+            <image src="{{imgTime}}"></image>
+            <picker bindchange="bindchangeTime" class="picker" end="{{activity.endTime}}" mode="time" start="{{activity.starTime}}">
+                <view class="picker">
+                    <view class="l1">时间:</view>
+                    <view style="width:80%;" wx:if="{{useTime.length}}">{{useTime}}</view>
+                    <view style="width:80%;color:#989898" wx:else>请选择使用时间</view>
+                </view>
+            </picker>
+        </view>
+    </view>
+    <view class="order_info num" wx:if="{{activity.isLimit=='1'}}">
+        <view class="inf_num1">
+            <view class="f l">数量：</view>
+            <view class="f c">
+                <image bindtap="numjian" class="minus" src="{{imgMinus}}">-</image>
+                <view class="one">{{subobj.num}}</view>
+                <image bindtap="numjia" class="add" src="{{imgAdd}}">+</image>
+            </view>
+            <view class="f r">单日余票{{surplus-subobj.num}}张</view>
+        </view>
+    </view>
+    <view class="order_info tel">
+        <view class="inf_tel1">
+            <view class="f l">联系人：</view>
+            <input bindinput="lxrxm" class="f r" placeholder="请输入联系人姓名" style="padding-top:4rpx;height:100%;width:75%;"></input>
+        </view>
+        <view class="inf_tel2">
+            <view class="f l">联系电话：</view>
+            <input bindinput="lxrphone" class="f r" placeholder="请输入联系电话" style="padding-top:2rpx;height:100%;width:70%;" type="number"></input>
+        </view>
+    </view>
+    <view bindtap="clickOrder" class="btn redBack">提交订单</view>
+    <view class="modal {{showModal==0?'show':'hidden'}}">
+        <view class="modal_inf">
+            <view class="modal_tit">确认预定</view>
+            <view class="modal_tel">
+                <view class="modal_tel1">手机号码</view>
+                <view class="modal_tel2">{{subobj.phone}}</view>
+            </view>
+            <view class="modal_code">
+                <view class="modal_code1">
+                    <input bindinput="lxrcode" placeholder="输入验证码" style="padding-top:4rpx" type="number"></input>
+                </view>
+                <button bindtap="clickCode" class="modal_code2 " disabled="{{modalCode!=0}}">{{modalCode==0?'获取验证码':modalSecond}}</button>
+            </view>
+            <button bindtap="submitorder" class="modal_btn">确认提交</button>
+            <view bindtap="gbmodal" class="modal_cross">×</view>
+        </view>
+    </view>
+</view>

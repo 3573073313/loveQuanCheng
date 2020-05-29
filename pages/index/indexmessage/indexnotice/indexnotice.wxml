@@ -1,0 +1,15 @@
+<view class="mess-items">
+    <view class="mess-item">
+        <view class="mess-item-cont">
+            <view class="mess-item-conttit">您有1000分的积分即将过期，请尽快使用</view>
+            <view class="mess-item-continfo">
+                <view class="mess-item-continfol">
+                    <image src="{{staticurl}}index_mess_admin.png"></image>
+                    <view>管理员</view>
+                </view>
+                <view>2019-7-10 10:08</view>
+            </view>
+            <view class="mess-item-contcont">000我国航空装备全寿命周期的风险管理长期处于以经验为主的状态，缺乏先进的理论指导，研究与应用仍处于起步阶段。我国航空装备全寿命周期的风险管理长期处于以经验为主的状态，缺乏先进的理论指导，研究与应用仍处于起步阶段。</view>
+        </view>
+    </view>
+</view>

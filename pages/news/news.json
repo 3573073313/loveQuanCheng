@@ -1,0 +1,11 @@
+{
+    "navigationBarTitleText": "我爱泉城",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh": true,
+    "backgroundTextStyle": "dark",
+    "usingComponents": {
+        "tippage": "../../components/onetippagecont/tippage",
+        "wxc-dialog": "../../components/dialog/dialog"
+    }
+}

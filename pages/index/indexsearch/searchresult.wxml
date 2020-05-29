@@ -1,0 +1,16 @@
+<tippage listlen="{{activesLen}}"></tippage>
+<view class="wode-collect-wrapper">
+    <view bindtap="goto" class="collect-item" data-item="{{item}}" wx:for="{{list}}" wx:key="id">
+        <view class="collect-iteml" style="display:flex;width:100%;">
+            <image data-item="{{item}}" src="{{item.listImg}}" wx:if="{{item.listImg!=='-1'}}"></image>
+            <view style="{{item.listImg!=='-1'?'width:80%;':'width:100%;'}}">
+                <view class="collect-item-tit">{{item.name}}</view>
+                <view class="collect-time">
+                    <view class="collect-type">
+              {{item.type==1?'商品':item.type==2?'新闻':'活动'}}
+            </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

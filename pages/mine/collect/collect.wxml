@@ -1,0 +1,19 @@
+<tippage listlen="{{!list.length}}"></tippage>
+<view class="container">
+    <view bindtap="goto" bindtouchmove="touchmove" bindtouchstart="touchstart" class="touch-item {{item.isTouchMove?'touch-move-active':''}}" data-index="{{index}}" data-item="{{item}}" wx:for="{{list}}" wx:key="unique">
+        <view class="content flex">
+            <image mode="aspectFill" src="{{item.img}}" wx:if="{{item.img}}"></image>
+            <view class="collect-item-tit">
+                <view class="clamp2" data-item="{{item}}" style="font-weight: bold;line-height: 50rpx;min-height: 100rpx;">
+          {{item.contentName}}
+        </view>
+                <view class="typeStyle" style="border-color:{{tabList[item.contentType-1].color}};color:{{tabList[item.contentType-1].color}}">{{item.type?item.type==2?'随手拍':'投稿':''}}{{tabList[item.contentType-1].name}}</view>
+                <view class="collect-time" data-item="{{item}}">
+                    <view>收藏时间：{{item.createDate}}</view>
+                    <view class="isOutBtn" wx:if="{{item.auditStatus=='4'}}">已下架</view>
+                </view>
+            </view>
+        </view>
+        <view catchtap="deleteItem" class="del" data-id="{{item.id}}">删除</view>
+    </view>
+</view>

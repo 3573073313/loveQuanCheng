@@ -1,0 +1,10 @@
+{
+    "navigationBarTitleText": "我的收货地址",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTextStyle": "black",
+    "usingComponents": {
+        "tippage": "../../../components/onetippagecont/tippage",
+        "tippageloading": "../../../components/onetippageloading/tippage",
+        "modal": "../../../components/modal/modal"
+    }
+}

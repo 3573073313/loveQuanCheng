@@ -1,0 +1,113 @@
+@import "../../app.wxss";
+
+.commentWrap {
+    background: #fff;
+    padding: 20rpx 43rpx 100rpx;
+}
+
+.commentItem {
+    border-top: 5rpx solid #f6f6f6;
+    padding: 30rpx 0;
+}
+
+.commentItem:first-child {
+    border-top: none;
+}
+
+.userFace>image {
+    width: 65rpx;
+    height: 65rpx;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.contentWrap {
+    width: 86%;
+}
+
+.userInfo {
+    color: #999;
+    font-size: 24rpx;
+    height: 65rpx;
+    line-height: 32.5rpx;
+}
+
+.userName {
+    color: #222;
+    font-weight: bold;
+    font-size: 30rpx;
+}
+
+.goodNumber {
+    color: #999;
+    font-size: 26rpx;
+    display: flex;
+    align-items: center;
+    height: 50rpx;
+}
+
+.goodNumber image {
+    width: 30rpx;
+    height: 30rpx;
+    margin-right: 10rpx;
+}
+
+.commentDetail {
+    margin-top: 20rpx;
+    color: #666;
+    font-size: 28rpx;
+    position: relative;
+    line-height: 40rpx;
+}
+
+.allShow {
+    position: absolute;
+    background: #fff;
+    bottom: 0;
+    right: 0;
+    letter-spacing: 6rpx;
+    padding-right: 7rpx;
+}
+
+.packUp {
+    text-align: right;
+}
+
+.date {
+    color: #999;
+    font-size: 24rpx;
+    padding: 10rpx 0;
+}
+
+.replyBtn {
+    background: #cacaca;
+    color: #fff;
+    border-radius: 5rpx;
+    font-size: 28rpx;
+    height: 45rpx;
+    line-height: 45rpx;
+    margin: 17rpx 0;
+    width: 105rpx;
+    text-align: center;
+}
+
+.reply {
+    background: #f6f6f6;
+    font-size: 26rpx;
+    padding: 20rpx;
+    color: #666;
+    border-radius: 5rpx;
+}
+
+.author {
+    color: #333;
+    margin-bottom: 10rpx;
+}
+
+.authorReply {
+}
+
+.delIcon {
+    width: 30rpx;
+    height: 30rpx;
+}

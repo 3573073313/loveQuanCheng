@@ -1,0 +1,7 @@
+<view class="tip-page" wx:if="{{listlen==true}}">
+    <view class="wraper">
+        <image src="https://jn.zhuwentec.com/jn-cultural-cdn/wxapp/blanktipPage/search_order.png"></image>
+        <text>亲，此处暂无订单，去商城逛逛吧~</text>
+        <navigator class="btn" openType="switchTab" url="/pages/quanyi/quanyi">去购物</navigator>
+    </view>
+</view>

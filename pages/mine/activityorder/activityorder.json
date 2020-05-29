@@ -1,0 +1,9 @@
+{
+    "navigationBarTitleText": "活动订单",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTextStyle": "black",
+    "component": true,
+    "usingComponents": {
+        "tippage": "../../../components/onetippagecont/tippage"
+    }
+}

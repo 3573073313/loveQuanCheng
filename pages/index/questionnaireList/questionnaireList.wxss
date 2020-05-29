@@ -1,0 +1,10 @@
+.bannerImg {
+    width: 100%;
+}
+
+.activeList {
+    width: 100%;
+    background-color: #fff;
+    margin-top: 15rpx;
+    padding: 10rpx;
+}

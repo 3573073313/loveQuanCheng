@@ -1,0 +1,99 @@
+<import src="../../../html-view/index.wxml"></import>
+<view class="container" wx:if="{{login}}">
+    <wxc-dialog bindcancel="onCancel" bindconfirm="onConfirm" class="wxc-dialog" show="{{login}}"></wxc-dialog>
+</view>
+<scroll-view>
+    <view>
+        <swiper autoplay="{{autoplay}}" circular="{{true}}" duration="{{duration}}" indicatorActiveColor="{{activeColor}}" indicatorDots="{{indicatorDots}}" interval="{{interval}}">
+            <swiper-item bindtap="lookImgSwiper" data-item="{{item}}" wx:for="{{swipers}}" wx:key="index">
+                <image class="slide-image" src="{{item}}"></image>
+            </swiper-item>
+        </swiper>
+        <image bindtap="doFavourite" class="collect" src="{{isFavourite?imgStarselect:imgStar}}"></image>
+    </view>
+    <view class="qy-wrapper">
+        <view class="qy-goods-detwrapper">
+            <view class="qy-goods-detname">{{goods.goodsName}}[{{spec.specName}}]</view>
+            <view class="qy-goods-detscore red">兑换价： {{spec.integral}}豆</view>
+            <view class="qy-goods-detsize">规格：
+        <span bindtap="clickSpec" class="{{spec.id==item.id?'speccur red redBorder':'spec'}}" data-item="{{item}}" wx:for="{{specs}}" wx:key="index">
+          {{item.specName}}
+        </span>
+            </view>
+            <view class="qy-goods-detemail">市内包邮：
+        <span class="yellow">{{goods.postage}}豆</span>
+            </view>
+            <view class="qy-goods-dettips" wx:if="{{goods.remarks}}">注：{{goods.remarks}}</view>
+        </view>
+        <view class="swiper-tab">
+            <view bindtap="clickTab" class="swiper-tab-item {{currentTab==0?'active red':''}}" data-current="0">商品详情</view>
+            <view bindtap="clickTab" class="swiper-tab-item {{currentTab==1?'active red':''}}" data-current="1">商家信息</view>
+            <view bindtap="clickTab" class="swiper-tab-item {{currentTab==2?'active red':''}}" data-current="2">使用说明</view>
+        </view>
+        <view class="{{currentTab==0?'show':'hidden'}}">
+            <view class="detail_wrapper">
+                <view class="tab_detail">
+                    <view class="tab_det1">
+                        <template is="html-view" data="{{data:goods.details}}"></template>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="{{currentTab==1?'show':'hidden'}}">
+            <view class="detail_wrapper">
+                <view class="tab_detail">
+                    <view class="tab_det1">
+                        <template is="html-view" data="{{data:goods.merchantInfo}}"></template>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="{{currentTab==2?'show':'hidden'}}">
+            <view class="detail_wrapper">
+                <view class="tab_detail">
+                    <view class="tab_det1">
+                        <template is="html-view" data="{{data:goods.instructions}}"></template>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="qy-goods-del-btns">
+        <navigator class="qy-goods-del-icon" url="/pages/quanyi/cart/cart">
+            <image src="{{staticurl}}iconGoodCar.png"></image>
+      购物车
+      <view class="dot redBack" wx:if="{{isHasDoods}}"></view>
+        </navigator>
+        <view class="goodsBtn" wx:if="{{goods.auditStatus=='2'}}">
+            <view bindtap="addCart" class="qy-goods-del-btn yellowBack" style="background-color:#FF7F00;">加入购物车</view>
+            <view bindtap="isHasMoney" class="qy-goods-del-btn redBack">立即兑换</view>
+        </view>
+        <view class="soldOut disabled" wx:if="{{goods.auditStatus=='4'}}">已下架</view>
+    </view>
+    <view class="modal {{showModal==0?'show':'hidden'}}">
+        <view class="qy-goodsdel-changemodal">
+            <view class="qy-goodsdel-changemodal-top" style="display:flex;">
+                <image src="{{goods.listImg}}"></image>
+                <view class="qy-goodsdel-changemodal-topc">
+                    <view class="qy-goodsdel-changemodal-topc-name">{{goods.goodsName}}[{{spec.specName}}]</view>
+                    <view class="qy-goodsdel-changemodal-topc-price">兑换价： {{spec.integral}}豆</view>
+                </view>
+                <view bindtap="clickClose" class="qy-goodsdel-changemodal-topc-cancle">×</view>
+            </view>
+            <view style="padding:30rpx 20rpx;">
+                <view>规格：{{spec.specName}}</view>
+                <view class="qy-goodsdel-changemodal-botsize">
+                    <view>数量:</view>
+                    <view class="qy-goodsdel-changemodal-botsizeimg">
+                        <view class="one">1</view>
+                    </view>
+                </view>
+            </view>
+            <view class="goodsBtnWrap">
+                <view bindtap="addCart" class="qy-goodsdel-changemodal-btn" style="background-color:#FF8D02;">线下自提</view>
+                <view class="qy-goodsdel-changemodal-btn disabled">邮寄兑换</view>
+            </view>
+        </view>
+    </view>
+</scroll-view>
+<modal bindconfirm="toAuthentication" cancelText="以后再说" confirmText="去认证" content="使用此功能需要先完成实名认证。" show="{{isShowModal3}}" title="亲爱的市民"></modal>

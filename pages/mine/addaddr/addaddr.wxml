@@ -1,0 +1,7 @@
+<input bindinput="qsrname" class="nameinp" placeholder="收货人姓名" style="border-top: 2rpx solid #f5f5f5;" value="{{inputValueName}}"></input>
+<input bindinput="qsrtel" class="nameinp" placeholder="手机号码" type="number" value="{{inputValueTel}}"></input>
+<view bindtap="chooseLoc" class="area">
+    <view>所在地区 {{subobj.address}}</view>
+    <view>></view>
+</view>
+<view bindtap="clickSub" class="btn">保存</view>

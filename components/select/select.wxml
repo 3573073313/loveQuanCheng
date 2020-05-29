@@ -1,0 +1,9 @@
+<view class="com-selectBox">
+    <view class="com-sContent">
+        <view class="com-sTxt">{{nowText}}</view>
+        <image animation="{{animationData}}" bindtap="selectToggle" class="com-sImg" src="../../image/arrow_down.png"></image>
+    </view>
+    <view class="com-sList" wx:if="{{selectShow}}">
+        <view bindtap="setText" class="com-sItem" data-index="{{index}}" wx:for="{{propArray}}" wx:key="index">{{item.text}}</view>
+    </view>
+</view>

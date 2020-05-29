@@ -1,0 +1,56 @@
+<form bindsubmit="formSubmit" reportSubmit="true">
+    <view class="wo-infos">
+        <view bindtap="showmodal" class="wo-info wo-photo">
+            <view class="wo-inf-title">头像</view>
+            <image src="{{subobj.avatarUrl}}"></image>
+        </view>
+        <view bindtap="clickFeedback" class="wo-info wo-name">
+            <view class="wo-inf-title">昵称</view>
+            <image src="{{staticurl}}mine_arrow-right.png"></image>
+            <view class="wo-inf-r">{{subobj.nickname}}</view>
+        </view>
+        <picker bindchange="bindPickerChange" range="{{array}}" value="{{index}}">
+            <view class="wo-info wo-sex">
+                <view class="wo-inf-title">性别</view>
+                <image src="{{staticurl}}mine_arrow-right.png"></image>
+                <view class="wo-inf-r">{{array[index]}}</view>
+            </view>
+        </picker>
+        <view bindtap="clickTelback" class="wo-info wo-tel">
+            <view class="wo-inf-title">绑定手机号</view>
+            <image src="{{staticurl}}mine_arrow-right.png"></image>
+            <view class="wo-inf-r">{{subobj.phoneNumber}}</view>
+        </view>
+        <view class="modal {{showModal==0?'show':'hidden'}}">
+            <view class="modal_inf">
+                <view class="modal_tit">修改昵称</view>
+                <view class="modal_code">
+                    <view class="modal_code1">
+                        <input bindinput="qsrname" maxlength="5" placeholder="请输入昵称" style="padding-top:4rpx" value="{{subobj.nickname}}"></input>
+                    </view>
+                </view>
+                <button bindtap="submitorder" class="modal_btn redBack" formType="submit">确定</button>
+                <view bindtap="clickHidden" class="modal_cross">×</view>
+            </view>
+        </view>
+        <view class="modal {{showModalTel==0?'show':'hidden'}}">
+            <view class="modal_inf">
+                <view class="modal_tit">修改手机号</view>
+                <view class="modal_code">
+                    <view class="modal_code1" style="height:70rpx;">
+                        <input bindinput="qsrtel" class="get-phone" maxlength="11" placeholder="请输入手机号" type="number" value="{{phoneNumber}}"></input>
+                    </view>
+                </view>
+                <view style="display:flex;justify-content:space-between;">
+                    <view bindtap="clickTelHidden" class="modal_btn" style="background-color: #fff;color:#c31926;">取消</view>
+                    <view bindtap="submitTel" class="modal_btn redBack" style="color:#fff;">确定</view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="tex-wrapper">
+        <view class="tex-wrapper-tit">个性签名</view>
+        <textarea bindinput="qsrsign" maxlength="16" placeholder="个性签名长度不能超过16个字符" placeholderStyle="font-size:26rpx;color:#999;" value="{{subobj.sign}}"></textarea>
+        <button bindtap="clickSave" class="btn redBack" formType="submit">保存信息</button>
+    </view>
+</form>

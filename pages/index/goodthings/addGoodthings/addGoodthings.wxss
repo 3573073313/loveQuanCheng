@@ -1,0 +1,390 @@
+.news-wrapper {
+    margin: 20rpx;
+    padding: 40rpx 0rpx;
+    border-radius: 10rpx;
+    background-color: #fff;
+}
+
+.swiper-tab {
+    font-size: 30rpx;
+    color: rgb(153,153,153);
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 180rpx;
+    padding-bottom: 32rpx;
+}
+
+.swiper-tab-item.active {
+    font-size: 34rpx;
+    color: rgb(51,51,51);
+    border-bottom: 2rpx solid rgb(237,60,68);
+    padding-bottom: 10rpx;
+    font-weight: bold;
+}
+
+.show {
+    display: block;
+}
+
+.hidden {
+    display: none;
+}
+
+.goodsthings-tab1-toptips {
+    font-size: 32rpx;
+    color: #999;
+    padding: 0rpx 20rpx 20rpx;
+    line-height: 50rpx;
+    border-bottom: 1px solid #f3f3f3;
+}
+
+.content {
+    border-bottom: 4rpx solid #F0F0F0;
+}
+
+.content .item .head .headimg image {
+    width: 100rpx;
+    height: 100rpx;
+    border-radius: 50%;
+    margin: 25rpx 0rpx 0rpx 0rpx;
+}
+
+.content .item .head {
+    width: 100%;
+    height: 150rpx;
+    margin: 0 20rpx;
+}
+
+.content .item .head .headimg {
+    width: 120rpx;
+    height: 150rpx;
+    float: left;
+    position: relative;
+}
+
+.content .item .head .headinfo {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 30rpx;
+    margin-bottom: 12rpx;
+    float: left;
+}
+
+.content .item .head .headinfo .headinfo_name {
+    font-size: 30rpx;
+    font-weight: bold;
+    width: 44%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.content .item .head .headinfo .headinfo_time {
+    font-size: 24rpx;
+    color: #aaa;
+    margin-top: 10rpx;
+}
+
+.ygz {
+    font-size: 24rpx;
+    background-color: #38CFD7;
+    color: #fff;
+    padding: 4rpx 6rpx;
+    border-radius: 6rpx;
+}
+
+.content .context {
+    margin-top: 0rpx;
+    margin-bottom: 0rpx;
+    text-align: justify;
+    margin: 0 20rpx;
+}
+
+.content .context text {
+    color: #666;
+}
+
+.content .context .preimg {
+    width: 100%;
+    margin-top: 25rpx;
+    overflow: hidden;
+}
+
+.gzimgs-area {
+    width: 200rpx;
+    height: 200rpx;
+    margin-right: 14rpx;
+    overflow: hidden;
+}
+
+.content .context .preimg image {
+    width: 300rpx;
+    margin-right: 10rpx;
+    margin-bottom: 10rpx;
+    border-radius: 12rpx;
+}
+
+.gzimgs-area {
+    width: 200rpx;
+    height: 200rpx;
+    margin-right: 14rpx;
+    overflow: hidden;
+    margin-bottom: 14rpx;
+    border-radius: 12rpx;
+}
+
+.tools {
+    font-size: 24rpx;
+    color: rgb(128,128,128);
+    display: flex;
+    padding-top: 20rpx;
+    border-bottom: 1px solid #f5f5f5;
+    padding-bottom: 20rpx;
+    margin: 0 20rpx;
+}
+
+.toolsl {
+    width: 40%;
+    display: flex;
+}
+
+.toolsl image {
+    width: 24rpx;
+    height: 29rpx;
+    margin-right: 10rpx;
+}
+
+.goodsthings-tab1-botinfo {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    height: 70rpx;
+    padding-right: 20rpx;
+}
+
+.goodsthings-tab1-botinfol {
+    color: #B3B3B3;
+    font-size: 22rpx;
+    display: flex;
+    align-items: center;
+    margin-left: 30rpx;
+}
+
+.goodsthings-tab1-botinfol image {
+    width: 24rpx;
+    height: 28rpx;
+    margin-right: 8rpx;
+}
+
+.goodsthings-tab1-botinfor {
+    color: #0A6BC1;
+    font-size: 22rpx;
+    display: flex;
+    align-items: center;
+}
+
+.goodsthings-tab1-botinfor image {
+    width: 24rpx;
+    height: 20rpx;
+    margin-right: 8rpx;
+}
+
+.goodthings-tab1-reply-wrapper {
+    padding: 30rpx;
+    background-color: #F7F7F7;
+    margin: 0rpx 20rpx 20rpx;
+    border-radius: 10rpx;
+}
+
+.goodthings-tab1-reply-cont {
+    font-size: 32rpx;
+    margin-bottom: 20rpx;
+}
+
+.goodthings-tab1-reply-info {
+    color: #B3B3B3;
+    font-size: 22rpx;
+    display: flex;
+    justify-content: space-between;
+}
+
+.goodthings-tab1-reply-infol {
+    display: flex;
+    align-items: center;
+}
+
+.goodthings-tab1-reply-infol image {
+    width: 24rpx;
+    height: 28rpx;
+    margin-right: 14rpx;
+}
+
+.goodsthings-tab0-topwrapper {
+    display: flex;
+    align-items: center;
+}
+
+.goodsthings-tab0-topl {
+    font-size: 26rpx;
+    color: #999;
+    margin-left: 20rpx;
+}
+
+.goodsthings-tab0-topll {
+    color: #C71021;
+}
+
+.goodsthings-tab0-tips {
+    font-size: 26rpx;
+    color: #999;
+    height: 80rpx;
+    line-height: 80rpx;
+}
+
+.release-news-wrap {
+    border-top: 1px solid #f5f5f5;
+    border-radius: 10rpx;
+    height: 100%;
+}
+
+.release-news-infos {
+    padding: 0rpx;
+    font-size: 24rpx;
+    color: #999;
+    background-color: #fff;
+    border-radius: 10rpx;
+}
+
+.release-news-infos .cont {
+    padding-top: 24rpx;
+    min-height: 350rpx;
+    width: 100%;
+    color: #333;
+    font-size: 32rpx!important;
+}
+
+.release-news-infos .add-imgs {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.release-news-infos image {
+    width: 166rpx;
+    height: 166rpx;
+    margin-right: 20rpx;
+    margin-bottom: 10rpx;
+    border-radius: 10rpx;
+}
+
+.info4-imgs {
+    position: relative;
+}
+
+.release-news-infos .del {
+    font-size: 34rpx;
+    position: absolute;
+    top: -18rpx;
+    right: 0;
+    z-index: 100;
+}
+
+.release-news-infos .del-vid {
+    font-size: 26rpx;
+}
+
+.goodthings-addr {
+    display: flex;
+    height: 60rpx;
+    align-items: center;
+}
+
+.goodthings-addr image {
+    width: 24rpx;
+    height: 29rpx;
+    margin-right: 10rpx;
+}
+
+.goodthings-tab0-btn {
+    width: 640rpx;
+    height: 92rpx;
+    background-image: linear-gradient(#C71B28,#FD2631);
+    color: #fff;
+    font-size: 30rpx;
+    text-align: center;
+    line-height: 92rpx;
+    margin-top: 60rpx;
+    border-radius: 10rpx;
+}
+
+.modal {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    position: fixed;
+    top: 0rpx;
+    left: 0rpx;
+    z-index: 9999999;
+}
+
+.modal.show {
+    display: block;
+}
+
+.modal.hidden {
+    display: none;
+}
+
+.jftab01-modal-info-wrapper {
+    width: 604rpx;
+    background-color: #fff;
+    margin: 520rpx auto;
+    border-radius: 10rpx;
+    padding: 54rpx 50rpx;
+}
+
+.jftab01-modal-info-cont {
+    font-size: 32rpx;
+    color: #999;
+    line-height: 40rpx;
+    letter-spacing: 0.7px;
+    text-align: justify;
+}
+
+.jftab01-modal-info-btn {
+    height: 80rpx;
+    background-color: #C71021;
+    color: #fff;
+    text-align: center;
+    line-height: 80rpx;
+    border-radius: 10rpx;
+    font-size: 32rpx;
+    margin-top: 40rpx;
+}
+
+.show {
+    display: block;
+}
+
+.hidden {
+    display: none;
+}
+
+.sel-img-itm {
+    width: 20rpx;
+    height: 10rpx;
+    margin-left: 10rpx;
+}
+
+.sel-pic-bor {
+    border: 1px solid #E6E6E6;
+    padding: 20rpx 10rpx;
+    border-radius: 16rpx;
+}
+
+.unload {
+    font-size: 22rpx;
+    line-height: 100rpx;
+    color: #999;
+}

@@ -1,0 +1,6 @@
+<view class="tip-page" wx:if="{{listlen==true}}">
+    <view class="wraper">
+        <image src="http://hm.ytain.com/cul-cloud/wxapp/images/tip_page03.png"></image>
+        <text>抱歉,此处没有内容...</text>
+    </view>
+</view>

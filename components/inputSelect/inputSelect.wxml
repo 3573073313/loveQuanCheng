@@ -1,0 +1,9 @@
+<view class="select_box">
+    <view catchtap="selectTap" class="select">
+        <text class="select_text">{{nowText}}</text>
+        <image class="select_img" src="https://jn.zhuwentec.com/jn-cultural-cdn/wxapp/index_arrow-down.png"></image>
+    </view>
+    <view class="option_box" style="height:{{show?selectData.length>5?300:selectData.length*60:0}}rpx;">
+        <text catchtap="optionTap" class="option" data-index="{{index}}" style="{{index==selectData.length-1&&'border:0;'}}" wx:for="{{selectData}}" wx:key="this">{{item.label}}</text>
+    </view>
+</view>

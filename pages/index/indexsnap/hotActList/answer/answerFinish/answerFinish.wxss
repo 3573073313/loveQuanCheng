@@ -1,0 +1,176 @@
+page {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.page {
+    width: 100vw;
+    min-height: 100vh;
+    background: linear-gradient(#3275ff,#3dbdff);
+}
+
+.wrap {
+    width: 94%;
+    margin: 0 auto;
+    position: relative;
+    padding-top: 60rpx;
+}
+
+.contentWrap {
+    padding: 40rpx 40rpx 60rpx;
+    background-size: 100% 100%;
+}
+
+.topWrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100rpx;
+}
+
+.user {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 30rpx;
+    color: #333;
+    font-weight: bold;
+}
+
+.userFace {
+    width: 100rpx;
+    height: 100rpx;
+    border-radius: 50%;
+    margin-right: 20rpx;
+    overflow: hidden;
+    border: 10rpx solid #fff;
+}
+
+.shareIcon {
+    width: 50rpx;
+    height: 50rpx;
+}
+
+.botWrap {
+    margin: 0 auto;
+    width: 85%;
+}
+
+.calendar {
+    margin: 10rpx 0 30rpx;
+}
+
+.calendarTop {
+    margin: 0 auto 20rpx;
+    text-align: center;
+    font-weight: bold;
+}
+
+.calendarBot {
+    border: 20rpx solid #ffd05b;
+    border-radius: 50rpx;
+    overflow: hidden;
+}
+
+.calendarTitle {
+    border-bottom: 10rpx solid #ffd05b;
+    background: #ff515f;
+    color: #fff;
+    text-align: center;
+    height: 100rpx;
+    line-height: 90rpx;
+    font-size: 40rpx;
+    font-weight: bold;
+    letter-spacing: 0.2rem;
+}
+
+.calendarCon {
+    height: 220rpx;
+    color: #ff515f;
+    font-size: 150rpx;
+    text-align: center;
+    line-height: 220rpx;
+    font-weight: bold;
+    letter-spacing: 1rem;
+    margin-left: 5%;
+}
+
+.remark {
+    position: relative;
+    transition: all 0.7s linear;
+}
+
+.remark>image {
+    width: 100%;
+    height: 100rpx;
+}
+
+.remarkText {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70%;
+    text-align: center;
+    color: #fff;
+    font-size: 35rpx;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    letter-spacing: 0.3rem;
+}
+
+.hearten {
+    margin: 20rpx 0 50rpx;
+    color: #fe3f40;
+    font-size: 25rpx;
+    letter-spacing: 0.2rem;
+    text-align: center;
+    height: 30rpx;
+    transition: all 0.7s linear;
+}
+
+.progress {
+    background: #dbdbdb;
+    width: 90%;
+    height: 50rpx;
+    margin: 0 auto;
+    clip-path: polygon(100% 0%,97% 100%,0% 100%,3% 0);
+    position: relative;
+}
+
+.progressAct {
+    width: 0;
+    height: 50rpx;
+    background: linear-gradient(to right,#3cbbff,#3275ff);
+    clip-path: polygon(100% 0%,97% 100%,0% 100%,3% 0);
+}
+
+.progressActText {
+    height: 50rpx;
+    line-height: 50rpx;
+    padding: 0 20rpx;
+    font-size: 24rpx;
+    color: #fff;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.showR {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.hiddenR {
+    opacity: 0;
+    transform: scale(0.8);
+}
+
+.canvas {
+    background: #fff;
+    width: 100vw;
+    height: 100vh;
+}

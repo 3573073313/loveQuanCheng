@@ -1,0 +1,10 @@
+{
+    "navigationBarTitleText": "商品详情页",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTextStyle": "black",
+    "component": true,
+    "usingComponents": {
+        "wxc-dialog": "../../../components/dialog/dialog",
+        "modal": "../../../components/modal/modal"
+    }
+}

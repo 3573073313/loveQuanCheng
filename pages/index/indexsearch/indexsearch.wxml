@@ -1,0 +1,45 @@
+<scroll-view>
+    <view class="search">
+        <input bindinput="bindvalue" class="search_box" placeholder="搜索"></input>
+        <image class="search_sea" src="https://jn.zhuwentec.com/jn-cultural-cdn/wxapp/search.png"></image>
+        <view bindtap="searchContent" class="search_btn">搜索</view>
+    </view>
+    <view>
+        <view class="sear_tex">
+            <view class="sear_tex1" wx:if="{{latelySearchList&&latelySearchList.length>0}}">
+                <view class="tex_title">
+                    <view>历史搜索</view>
+                    <view>
+                        <image bindtap="clickDelHistory" src="https://jn.zhuwentec.com/jn-cultural-cdn/wxapp/search_del.png" style="width:30rpx;height:30rpx;"></image>
+                    </view>
+                </view>
+                <view class="tex_cont">
+                    <view bindtap="searchLatelyTitle" data-searchLateTit="{{index}}" wx:for="{{latelySearchList}}" wx:key="index">
+          {{item}}
+        </view>
+                </view>
+            </view>
+            <view class="sear_tex2" wx:if="{{hotkeywordlist.length>0}}">
+                <view class="tex_title">热门搜索</view>
+                <view class="tex_cont tex2_cont">
+                    <view bindtap="searchHotTitle" data-searchHotTit="{{item.hotKeywordTitle}}" wx:for="{{hotkeywordlist}}" wx:key="index">
+          {{item.hotKeywordTitle}}
+        </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="wode-collect-wrapper">
+        <view class="collect-item" wx:for="{{list}}" wx:key="id">
+            <view bindtap="goto" class="collect-iteml" data-item="{{item}}" style="width:88%;">
+                <view class="collect-item-tit">{{item.name}}</view>
+                <view class="collect-time">
+                    <view>{{item.content}}</view>
+                    <view class="collect-type">
+            {{item.type==1?'商品':item.type==2?'文章':'活动'}}
+          </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</scroll-view>

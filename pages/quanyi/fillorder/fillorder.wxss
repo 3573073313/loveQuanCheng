@@ -1,0 +1,234 @@
+page {
+    padding-bottom: 150rpx;
+}
+
+.qy-fillorder-inf-wrapper {
+    margin: 20rpx;
+    background-color: #fff;
+    border-radius: 10rpx;
+    padding: 20rpx 18rpx;
+    font-size: 32rpx;
+}
+
+.qy-fillorder-name {
+    margin: 20rpx 0rpx;
+}
+
+.qy-fillorder-tel {
+    margin-bottom: 16rpx;
+}
+
+.qy-fillorder-recaddr {
+    font-size: 26rpx;
+    color: #FF7F00;
+    border-bottom: 1px solid #FF7F00;
+    width: 160rpx;
+    margin-left: 500rpx;
+}
+
+.qy-online-goods-wrapper {
+    margin: 20rpx;
+    background-color: #fff;
+    display: flex;
+    border-bottom: 1px solid #f0f0f0;
+    padding: 30rpx 20rpx;
+    border-radius: 10rpx;
+}
+
+.qy-online-goods-wrapper image {
+    width: 164rpx;
+    height: 164rpx;
+    margin-right: 24rpx;
+}
+
+.qy-online-goods {
+    width: 62%;
+    margin-top: -6rpx;
+}
+
+.qy-online-goods-name {
+    font-size: 32rpx;
+    letter-spacing: 1rpx;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+    line-height: 46rpx;
+    padding-bottom: 6rpx;
+}
+
+.qy-online-goods-price {
+    font-size: 36rpx;
+    color: #C71021;
+    display: flex;
+    justify-content: space-between;
+    margin: 16rpx 0rpx 10rpx;
+}
+
+.qy-online-goods-size {
+    font-size: 26rpx;
+    color: #666;
+    margin-top: 10rpx;
+}
+
+.modal {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    position: fixed;
+    top: 0rpx;
+    left: 0rpx;
+    z-index: 9999999;
+}
+
+.modal.show {
+    display: block;
+}
+
+.modal.hidden {
+    display: none;
+}
+
+.jftab01-modal-info-wrapper {
+    width: 604rpx;
+    background-color: #fff;
+    margin: 520rpx auto;
+    border-radius: 10rpx;
+    padding: 54rpx 50rpx;
+}
+
+.jftab01-modal-info-cont {
+    font-size: 32rpx;
+    line-height: 40rpx;
+    letter-spacing: 0.7px;
+    text-align: justify;
+}
+
+.jftab01-modal-info-btn {
+    display: flex;
+    justify-content: space-between;
+}
+
+.jftab01-modal-info-btn0 {
+    width: 45%;
+    height: 80rpx;
+    background-color: #f5f5f5;
+    color: #000;
+    text-align: center;
+    line-height: 80rpx;
+    border-radius: 10rpx;
+    font-size: 32rpx;
+    margin-top: 40rpx;
+}
+
+.jftab01-modal-info-btn1 {
+    width: 45%;
+    height: 80rpx;
+    background-color: #C71021;
+    color: #fff;
+    text-align: center;
+    line-height: 80rpx;
+    border-radius: 10rpx;
+    font-size: 32rpx;
+    margin-top: 40rpx;
+}
+
+.qy-online-goods-wrapper image.minus,.qy-online-goods-wrapper image.add {
+    width: 34rpx;
+    height: 34rpx;
+    border-radius: 6rpx;
+    margin-right: 0rpx;
+}
+
+.one {
+    margin: 0rpx 20rpx;
+    color: #000;
+}
+
+.qy-online-goods-wrapper image.qy-carted {
+    width: 40rpx;
+    height: 40rpx;
+    margin-top: 58rpx;
+}
+
+.qy-goods-wrapper {
+    margin: 20rpx;
+    background-color: #fff;
+    border-radius: 10rpx;
+    font-size: 32rpx;
+}
+
+.qy-goods-num {
+    margin: 0rpx 20rpx;
+    padding: 20rpx 0rpx;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.qy-goods-numl {
+    color: #C71021;
+}
+
+.qy-fillorder-btn-wrapper {
+    width: 100%;
+    height: 100rpx;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    bottom: 0rpx;
+}
+
+.qy-fillorder-btn {
+    width: 260rpx;
+    background-color: #C71021;
+    color: #fff;
+    height: 100rpx;
+    line-height: 100rpx;
+    text-align: center;
+}
+
+.modal {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    position: fixed;
+    top: 0rpx;
+    left: 0rpx;
+    z-index: 9999999;
+}
+
+.modal.show {
+    display: block;
+}
+
+.modal.hidden {
+    display: none;
+}
+
+.qy-fillorder-noaddr {
+    background-color: #fff;
+    margin-top: 480rpx;
+    height: 360rpx;
+    width: 80%;
+    border-radius: 10rpx;
+    margin-left: 10%;
+    padding: 40rpx;
+}
+
+.qy-fillorder-noaddr-cont {
+    font-size: 26rpx;
+    color: #666;
+    margin: 40rpx 0rpx 60rpx;
+}
+
+.qy-fillorder-noaddr-btn {
+    background-color: #C71021;
+    height: 80rpx;
+    line-height: 80rpx;
+    color: #fff;
+    text-align: center;
+    border-radius: 10rpx;
+}

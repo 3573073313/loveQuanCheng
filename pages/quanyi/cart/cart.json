@@ -1,0 +1,11 @@
+{
+    "navigationBarTitleText": "购物车",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTextStyle": "black",
+    "usingComponents": {
+        "tippage": "../../../components/onetippageorder/tippage",
+        "tippageloading": "../../../components/onetippageloading/tippage",
+        "wxc-dialog": "../../../components/dialog/dialog",
+        "modal": "../../../components/modal/modal"
+    }
+}

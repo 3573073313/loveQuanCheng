@@ -1,0 +1,337 @@
+.exchange-wrapper {
+    margin: 20rpx;
+    background-color: #fff;
+    border-radius: 10rpx;
+    padding: 20rpx 0rpx;
+    padding-bottom: 0rpx;
+}
+
+.swiper-tab {
+    width: 100%;
+    text-align: center;
+    height: 66rpx;
+    line-height: 60rpx;
+    display: flex;
+    white-space: nowrap;
+    color: #ccc;
+    font-size: 33rpx;
+    background-color: #fff;
+    margin-bottom: 20rpx;
+}
+
+.swiper-tab-item {
+    color: #999;
+    font-size: 26rpx;
+    width: max-content;
+    min-width: 18%;
+    display: inline-block;
+    margin-right: 20rpx;
+}
+
+.active {
+    color: #c31926;
+    border-bottom: 4rpx solid #c31926;
+    font-size: 30rpx;
+    font-weight: bold;
+    display: inline-block;
+}
+
+.qy-online-goods-wrapper {
+    background-color: #fff;
+    display: flex;
+    border-bottom: 1px solid #f8f8f8;
+    padding-bottom: 24rpx;
+}
+
+.qy-online-goods-wrapper image {
+    width: 164rpx;
+    height: 164rpx;
+    margin-right: 24rpx;
+}
+
+.qy-online-goods {
+    width: 47%;
+    padding-top: 6rpx;
+    font-size: 22rpx;
+    line-height: 40rpx;
+}
+
+.qy-online-goods-name {
+    font-size: 32rpx;
+    letter-spacing: 1rpx;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    line-height: 46rpx;
+    padding-bottom: 10rpx;
+    color: #000;
+}
+
+.qy-online-goods-price {
+    color: #c71021;
+}
+
+.qy-online-goods-integral {
+    font-size: 30rpx;
+    color: #c71021;
+    margin: 10rpx 0;
+}
+
+.qy-online-goods-size {
+    font-size: 26rpx;
+    color: #666;
+}
+
+.countPrice {
+    width: 25%;
+    text-align: right;
+}
+
+.totalWrap {
+    text-align: right;
+    line-height: 60rpx;
+}
+
+.payPoints {
+    font-weight: bold;
+    font-size: 33rpx;
+    color: #c31926;
+}
+
+.totalPrice {
+    color: #000;
+}
+
+.integral {
+    font-size: 22rpx;
+    margin-left: 5rpx;
+    color: #c31926;
+}
+
+.exchange-item {
+    font-size: 26rpx;
+    color: #666;
+    padding: 0rpx 20rpx;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.headerTitle {
+    padding: 20rpx 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.exchange-item-status {
+    color: #c31926;
+}
+
+.mine-exchange-bot {
+    font-size: 32rpx;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 80rpx;
+}
+
+.mine-exchange-bottime {
+    font-size: 26rpx;
+    color: #999;
+    padding-left: 8rpx;
+}
+
+.mine-exchange-botbtns0 {
+    background-color: #b3b3b3;
+    color: #fff;
+    padding: 10rpx 24rpx;
+    border-radius: 10rpx;
+    margin-right: 16rpx;
+    min-width: 120rpx;
+    text-align: center;
+}
+
+.mine-exchange-botbtns1 {
+    background-color: #c71021;
+    color: #fff;
+    padding: 10rpx 20rpx;
+    border-radius: 10rpx;
+    margin-left: 20rpx;
+    font-size: 27rpx;
+    min-width: 120rpx;
+    text-align: center;
+}
+
+.modal {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    position: fixed;
+    top: 0rpx;
+    left: 0rpx;
+    z-index: 999;
+}
+
+.show {
+    display: block;
+}
+
+.hidden {
+    display: none;
+}
+
+.modal_inf {
+    width: 550rpx;
+    height: 280rpx;
+    background-color: #fff;
+    border-radius: 10rpx;
+    margin: 377rpx auto 0rpx;
+    padding-top: 68rpx;
+    text-align: center;
+    position: relative;
+    padding-left: 30rpx;
+    padding-right: 30rpx;
+}
+
+.ques-modal-sure {
+    width: 32%;
+    height: 46rpx;
+    line-height: 46rpx;
+    color: #fff;
+    text-align: center;
+    background-color: #c31926;
+    border-radius: 10rpx;
+}
+
+.ques-modal-cancel {
+    width: 32%;
+    height: 46rpx;
+    line-height: 46rpx;
+    color: #fff;
+    text-align: center;
+    background-color: #afacac;
+    border-radius: 10rpx;
+}
+
+.modal-btn-wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.ques-cancel {
+    position: absolute;
+    top: 2rpx;
+    right: 12rpx;
+    font-size: 40rpx;
+}
+
+::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    color: transparent;
+}
+
+.showQrCode {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0,0,0,0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+
+.codeWrap {
+    width: 550rpx;
+    height: 550rpx;
+    background: #fff;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    border-radius: 10rpx;
+    position: relative;
+}
+
+.showQrCode image {
+    width: 60%;
+}
+
+.codeText {
+    font-size: 35rpx;
+    text-align: center;
+}
+
+.close {
+    position: absolute;
+    right: 3rpx;
+    top: -10rpx;
+    font-size: 50rpx;
+    color: #999;
+    font-weight: 100;
+}
+
+.modal_inf_code {
+    width: 550rpx;
+    height: 550rpx;
+    background-color: #fff;
+    border-radius: 10rpx;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal_inf_code image {
+    width: 310rpx;
+    height: 310rpx;
+}
+
+.ques-modal-sure {
+    width: 40%;
+    height: 60rpx;
+    line-height: 56rpx;
+    color: #fff;
+    text-align: center;
+    background-color: #c31926;
+    border-radius: 10rpx;
+}
+
+.ques-modal-cancel {
+    width: 40%;
+    height: 60rpx;
+    line-height: 56rpx;
+    color: #fff;
+    text-align: center;
+    background-color: #00bfff;
+    border-radius: 10rpx;
+}
+
+.modal-btn-wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.ques-cancel-code {
+    position: absolute;
+    bottom: 100rpx;
+    right: 0;
+    font-size: 70rpx;
+    font-weight: 100;
+    width: 100%;
+    height: 150rpx;
+    display: flex;
+    justify-content: center;
+}
+
+.ques-cancel-code view {
+    width: 150rpx;
+    height: 150rpx;
+    background: rgba(255,255,255,0.7);
+    text-align: center;
+    line-height: 150rpx;
+    border-radius: 50%;
+}

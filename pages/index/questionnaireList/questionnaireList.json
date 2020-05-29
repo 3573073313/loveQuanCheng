@@ -1,0 +1,7 @@
+{
+    "navigationBarTitleText": "问计",
+    "usingComponents": {
+        "activity": "/components/activity/activity",
+        "tippage": "/components/onetippagecont/tippage"
+    }
+}

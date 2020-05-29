@@ -1,0 +1,189 @@
+.wode-perinfo {
+    padding: 0rpx 20rpx;
+    display: flex;
+    height: 300rpx;
+    background: url(https://jn.zhuwentec.com/jn-cultural-cdn/wxapp/mine_top_bg.png) no-repeat;
+}
+
+.wode-perinfo-tx {
+    margin-top: 25rpx;
+    margin-right: 20rpx;
+}
+
+.wode-perinfo-tx image {
+    width: 112rpx;
+    height: 112rpx;
+    border-radius: 50%;
+}
+
+.wode-perinfo-inf {
+    display: flex;
+    margin-top: 34rpx;
+    margin-bottom: 12rpx;
+    align-items: center;
+}
+
+.wode-perinfo-name {
+    font-size: 38rpx;
+    margin-right: 24rpx;
+    color: #fff;
+    max-width: 45%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.wode-perinfo-score {
+    color: rgb(197,27,40);
+    font-size: 24rpx;
+    background-color: rgb(255,255,255);
+    padding: 8rpx 16rpx;
+    border-radius: 8rpx;
+    margin-right: 12rpx;
+}
+
+.wode-perinfo-label {
+    color: #fff;
+    font-size: 26rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.wode-perinfo-set {
+    margin-top: 40rpx;
+}
+
+.wode-perinfo-set image {
+    width: 44rpx;
+    height: 42rpx;
+}
+
+.index-tasks {
+    margin: 0rpx 20rpx 20rpx;
+    background-color: #fff;
+    padding: 46rpx 40rpx;
+    border-radius: 10rpx;
+}
+
+.index-tasks-tit {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 20rpx;
+    padding-right: 20rpx;
+}
+
+.index-tasks-titl {
+    font-size: 30rpx;
+    color: rgba(0,0,0,0.9);
+    font-weight: bold;
+}
+
+.wode-tasks {
+    margin-top: 24rpx;
+    display: flex;
+    justify-content: space-around;
+}
+
+.wode-task {
+    text-align: center;
+    width: 150rpx;
+    display: inline-block;
+}
+
+.wode-task image {
+    width: 56rpx;
+    height: 52rpx;
+    margin-bottom: 14rpx;
+}
+
+.wode-task-tex {
+    font-size: 26rpx;
+}
+
+.wode-task-order {
+    width: 28%;
+    position: relative;
+}
+
+.wode-task-wmd-num {
+    width: max-content;
+    height: 30rpx;
+    line-height: 30rpx;
+    font-size: 22rpx;
+    background-color: #e94a0b;
+    color: #fff;
+    position: absolute;
+    border-radius: 8rpx;
+    top: -14rpx;
+    left: 76rpx;
+    padding: 0rpx 10rpx;
+}
+
+.wode-task-smrz {
+    width: max-content;
+    height: 30rpx;
+    line-height: 28rpx;
+    font-size: 22rpx;
+    background-color: #01ba53;
+    color: #fff;
+    position: relative;
+    border-radius: 8rpx;
+    top: -128rpx;
+    left: 84rpx;
+    padding: 0 10rpx;
+}
+
+::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    color: transparent;
+}
+
+.countWrap {
+    position: absolute;
+    top: 0rpx;
+    right: 63rpx;
+    left: auto;
+    text-align: center;
+    padding: 0;
+    background: #fff;
+    color: #e94a0b;
+    border: 1rpx solid #e94a0b;
+}
+
+.countStyle {
+    font-size: 22rpx;
+    border-radius: 50%;
+    width: 35rpx;
+    height: 35rpx;
+    line-height: 33rpx;
+}
+
+.isBigStyle {
+    padding: 0 10rpx;
+    height: 30rpx;
+    line-height: 26rpx;
+    font-size: 50rpx;
+    border-radius: 30rpx;
+    right: 38rpx;
+}
+
+.content-tip {
+    position: absolute;
+    top: 8rpx;
+    right: 32%;
+    font-size: 22rpx;
+    border: 1px solid #e94a0b;
+    color: #e94a0b;
+    border-radius: 50%;
+    height: 35rpx;
+    line-height: 33rpx;
+    width: 35rpx;
+    background: #fff;
+}
+
+.wode-activity-order {
+    padding-top: 26rpx;
+}

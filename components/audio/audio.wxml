@@ -1,0 +1,11 @@
+<view bindtap="{{time?'setPlay':''}}" class="audio flex" wx:if="{{show}}">
+    <view class="audioImgLeft">
+        <image mode="aspectFill" src="{{staticurl}}logo.png"></image>
+        <view class="isPlay" style="{{isPlay?'':'padding-left: 10rpx'}}">{{isPlay?'■':'▶'}}</view>
+    </view>
+    <view class="audioRight flex">
+        <view class="audioTime">{{useTime}}</view>
+        <slider bindchange="sliderchange" blockSize="12" value="{{value}}"></slider>
+        <view class="audioTime">{{time}}</view>
+    </view>
+</view>

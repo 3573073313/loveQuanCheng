@@ -1,0 +1,51 @@
+<view class="formWrap" wx:if="{{recruitForm.length}}">
+    <view class="{{item.type!=='textarea'?item.type=='file'?'fileForm':'flexBtCenter formItem':'formItemArea'}}" wx:if="{{isOrder?item.value!=undefined:true}}" wx:for="{{recruitForm}}" wx:key="unique">
+        <view class="title {{item.isRequired==1?'required':''}}" style="{{item.type=='textarea'?'margin-top: 20rpx;':''}}">{{item.title}}:</view>
+        <view bindtap="{{item.type=='textarea'?'getFocus':''}}" class="{{item.type!=='textarea'?'content':'textareaCon'}}" data-index="{{index}}" wx:if="{{item.type!=='radio'&&item.type!=='file'}}">
+            <input bindinput="inputFuc" data-index="{{index}}" disabled="{{isOrder}}" maxlength="{{item.maxlength}}" placeholder="{{item.placeholder}}" type="{{item.type}}" value="{{item.value}}" wx:if="{{item.type=='text'||item.type=='number'||item.type=='idcard'}}"></input>
+            <block wx:if="{{item.type=='textarea'}}">
+                <textarea bindblur="textareaBlur" bindinput="inputFuc" data-index="{{index}}" disabled="{{isOrder}}" focus="{{item.focus}}" maxlength="{{item.maxlength}}" placeholder="{{item.placeholder}}" value="{{item.value}}" wx:if="{{item.focus&&!isOrder}}"></textarea>
+                <view class="textarea" style="{{!item.value||!item.value.length?'color:#999':''}}" wx:else>{{!item.value||!item.value.length?item.placeholder:item.value}}</view>
+            </block>
+            <picker bindchange="bindPickerChange" data-index="{{index}}" disabled="{{isOrder}}" range="{{item.pickerList}}" rangeKey="{{'name'}}" style="{{item.value==0?'color:#999':''}}" value="{{item.value}}" wx:if="{{item.type=='picker'}}">
+                <view class="picker">
+          {{item.pickerList[item.value].name}}
+          <text class="iconPick" wx:if="{{item.value==0}}">▼</text>
+                </view>
+            </picker>
+        </view>
+        <view class="radioWrap flexBtCenter" wx:if="{{item.type=='radio'}}">
+            <view bindtap="{{isOrder?'':'chooseRadio'}}" class="flex" data-value="0">
+                <view class="radioIcon {{item.value==0?'radioIconFill':''}}">
+                    <view class="radioIconCon"></view>
+                </view>
+                <view>男</view>
+            </view>
+            <view bindtap="{{isOrder?'':'chooseRadio'}}" class="flex" data-value="1">
+                <view class="radioIcon {{item.value==1?'radioIconFill':''}}">
+                    <view class="radioIconCon"></view>
+                </view>
+                <view>女</view>
+            </view>
+        </view>
+        <view class="fileWrap" wx:if="{{item.type=='file'}}">
+            <view class="fileItemVideo" wx:if="{{item.videoUrl}}">
+                <video objectFit="cover" src="{{item.videoUrl}}" style="height:300rpx;width:100%;"></video>
+                <image bindtap="deleteVideo" class="del" data-index="{{index}}" mode="heightFix" src="{{staticUrl}}delWhite.png" wx:if="{{!isOrder}}"></image>
+            </view>
+            <view class="fileItem" wx:if="{{item.pictures}}" wx:for="{{item.pictures}}" wx:for-index="i" wx:for-item="img" wx:key="unique">
+                <image bindtap="previewImg" class="img" data-i="{{i}}" data-index="{{index}}" data-src="{{img}}" mode="aspectFill" src="{{img}}"></image>
+                <image bindtap="deleteImg" class="del" data-index="{{index}}" mode="heightFix" src="{{staticUrl}}delWhite.png" wx:if="{{!isOrder}}"></image>
+            </view>
+            <view bindtap="lookDetail" class="otherFile flexBtCenter" data-index="{{index}}" wx:if="{{item.fileName}}">
+                <view class="fileType">{{item.fileType}}</view>
+                <view class="fileName">{{item.fileName}}</view>
+                <image catchtap="deleteFile" class="del" data-index="{{index}}" mode="heightFix" src="{{staticUrl}}delWhite.png" wx:if="{{!isOrder}}"></image>
+            </view>
+            <view bindtap="upLoad" class="upLoadFile" data-index="{{index}}" wx:if="{{!item.videoUrl&&(!item.pictures||item.pictures.length<9)&&!item.fileName&&!isOrder}}">+</view>
+        </view>
+    </view>
+    <view bindtap="{{isSubmit?'':'checkoutForm'}}" class="goodthings-tab0-btn" wx:if="{{!isOrder}}">
+    确认提交
+  </view>
+</view>

@@ -1,0 +1,9 @@
+{
+    "navigationBarTitleText": "累计用分",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh": true,
+    "usingComponents": {
+        "tippage": "../../../components/onetippagecont/tippage"
+    }
+}

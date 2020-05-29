@@ -1,0 +1,11 @@
+{
+    "navigationBarTitleText": "随手拍",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTextStyle": "black",
+    "component": true,
+    "usingComponents": {
+        "snapinputSelect": "../../../../components/snapinputSelect/snapinputSelect",
+        "address": "../../../../components/address/address",
+        "modal": "../../../../components/modal/modal"
+    }
+}
